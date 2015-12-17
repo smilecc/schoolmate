@@ -1,0 +1,48 @@
+[ 2015-12-16T19:16:49+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001716s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001302s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
+[ 2015-12-16T19:16:50+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000464s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
+[ 2015-12-16T20:07:32+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
+[ 2015-12-16T22:06:41+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
