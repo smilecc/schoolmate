@@ -48,7 +48,7 @@ Class UserModel extends Model{
 		}
 
 		// 校对密码
-		$registerRand = M('UserSalt')->where('id=%d AND type=0',$userinfo['id'])->getField('random');
+		$registerRand = M('UserSalt')->where('userid=%d AND type=0',$userinfo['id'])->getField('random');
 		if($userinfo['password'] == \User\Api\UserApi::LoginEncode($password.$registerRand))
 		{
 			$resultArr['status'] = true;

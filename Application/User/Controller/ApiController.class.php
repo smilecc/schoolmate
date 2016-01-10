@@ -14,4 +14,9 @@ class ApiController extends Controller {
     {
     	echo json_encode(\User\Api\UserApi::Register($username,$password,$email));
     }
+
+    public function logout()
+    {
+        \User\Api\UserApi::Logout();
+    }
 }

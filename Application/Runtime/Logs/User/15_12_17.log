@@ -1,0 +1,143 @@
+[ 2015-12-17T20:52:46+08:00 ] ::1 /User/Api/login?password=sxcu2ic222&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001100s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+NOTIC: [2] session_destroy(): Trying to destroy uninitialized session /Users/smilec/Code/PHP/schoolmate/Application/User/Api/UserApi.class.php 第 94 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0016s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002130s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002256s ]
+
+[ 2015-12-17T20:52:55+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+NOTIC: [2] session_destroy(): Trying to destroy uninitialized session /Users/smilec/Code/PHP/schoolmate/Application/User/Api/UserApi.class.php 第 94 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0015s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000734s ]
+
+[ 2015-12-17T20:53:03+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000538s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+NOTIC: [2] session_destroy(): Trying to destroy uninitialized session /Users/smilec/Code/PHP/schoolmate/Application/User/Api/UserApi.class.php 第 94 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0014s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2015-12-17T20:54:32+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0013s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001002s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001088s ]
+
+[ 2015-12-17T20:54:35+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000514s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0013s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000554s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+
+[ 2015-12-17T20:55:59+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0014s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( id=3 AND type=0 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000690s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000784s ]
+
+[ 2015-12-17T20:57:11+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000623s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0014s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( userid=3 AND type=0 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: INSERT INTO `user_salt` (`random`,`userid`,`type`) VALUES ('888958482','3','1') [ RunTime:0.0013s ]
+NOTIC: [8] Undefined index: admin /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Org/Util/Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from think_role as role,think_role_user as user,think_access as access ,think_node as node where user.user_id='3' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2015-12-17T20:57:13+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000537s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0021s ]
+SQL: SELECT md5(random) FROM `user_salt` WHERE ( userid=3 )  [ RunTime:0.0016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000994s ]
+
+[ 2015-12-17T20:57:27+08:00 ] ::1 /User/Api/login?password=sxcuic&email=sxcuican@163.com
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000616s ]
+NOTIC: [2] session_destroy(): Trying to destroy uninitialized session /Users/smilec/Code/PHP/schoolmate/Application/User/Api/UserApi.class.php 第 94 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user` WHERE ( email="sxcuican@163.com" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `user_salt` [ RunTime:0.0015s ]
+SQL: SELECT `random` FROM `user_salt` WHERE ( userid=3 AND type=0 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `user_salt` (`random`,`userid`,`type`) VALUES ('1011200197','3','1') [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: admin /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Org/Util/Rbac.class.php 第 88 行.
+SQL: select node.id,node.name from think_role as role,think_role_user as user,think_access as access ,think_node as node where user.user_id='3' and user.role_id=role.id and ( access.role_id=role.id  or (access.role_id=role.pid and role.pid!=0 ) ) and role.status=1 and access.node_id=node.id and node.level=1 and node.status=1 [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000553s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000615s ]
+

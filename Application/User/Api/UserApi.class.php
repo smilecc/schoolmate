@@ -37,6 +37,7 @@ class UserApi{
             if(in_array(cookie('token'),$saltArr))
             {
                 session('user_status',2);
+                \Org\Util\Rbac::saveAccessList(cookie('userid'));
                 return true;
             }
             else
@@ -50,6 +51,7 @@ class UserApi{
     // 用户登录
     public static function Login($email,$password)
     {
+        //self::Logout();
         if(self::AutoLogin())
         {
             $resArr = array(
@@ -69,6 +71,7 @@ class UserApi{
     // 认证登录状态 若通过 则设置用户cookie
     protected static function SetLoginCookie($resArr)
     {
+        // 状态通过
         if($resArr['status'])
         {
             $random = D('User')->LoginRandom($resArr['userid']);
@@ -82,13 +85,15 @@ class UserApi{
             /// 1 is password Login
             /// 2 is cookies Login
             session('user_status',1);
+            \Org\Util\Rbac::saveAccessList($resArr['userid']);
         }
     }
 
     //用户登出
     public static function Logout()
     {
-        session('user_status',NULL);
+        session_unset();
+        session_destroy();
         cookie('token',NULL);
         cookie('username',NULL);
         cookie('userid',NULL);
