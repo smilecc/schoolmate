@@ -11,6 +11,7 @@ Class UserModel extends Model{
 	
 	protected function RegisterRandom($userid)
 	{
+		trace($userid);
 		return $this->Random($userid,0);
 	}
 
@@ -18,7 +19,7 @@ Class UserModel extends Model{
 	{
 		$data = array(
 			'random' => rand(),
-			'userid' => $userid,
+			'user_id' => $userid,
 			'type'	 => $type
 			);
 		M('UserSalt')->add($data);
@@ -117,7 +118,8 @@ Class UserModel extends Model{
 		// 入库
 		$insertArray = array(
 			'username'	=> $username,
-			'email'		=> $email
+			'email'		=> $email,
+			'userstatus'=> 1
 		);
 		
 		$this->create($insertArray);
