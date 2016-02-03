@@ -1,0 +1,36 @@
+[ 2016-01-10T17:06:57+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000945s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001431s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
+[ 2016-01-10T17:07:05+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000532s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+
+[ 2016-01-10T17:56:41+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001311s ]
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+ERR: 1146:Table 'test.test_hello' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `test_hello`
+

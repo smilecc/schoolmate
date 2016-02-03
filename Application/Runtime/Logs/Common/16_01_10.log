@@ -1,0 +1,18 @@
+[ 2016-01-10T17:06:39+08:00 ] ::1 /docs-assets/ico/favicon.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001857s ]
+ERR: 无法加载模块:Docs-assets
+
+[ 2016-01-10T17:06:39+08:00 ] ::1 /apple-touch-icon-precomposed.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001798s ]
+ERR: 无法加载模块:Apple-touch-icon-precomposed
+
+[ 2016-01-10T17:06:39+08:00 ] ::1 /apple-touch-icon.png
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000748s ]
+ERR: 无法加载模块:Apple-touch-icon
+

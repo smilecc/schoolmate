@@ -1,0 +1,72 @@
+<block name="header">
+    <div class='navbar navbar-default' id='navbar'>
+      <a class='navbar-brand' href='#'>
+        <i class='icon-beer'></i>
+        {:C('SITE_NAME')}管理平台
+      </a>
+      <ul class='nav navbar-nav pull-right'>
+<!--         <li class='dropdown'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            <i class='icon-envelope'></i>
+            Messages
+            <span class='badge'>5</span>
+            <b class='caret'></b>
+          </a>
+          <ul class='dropdown-menu'>
+            <li>
+              <a href='#'>New message</a>
+            </li>
+            <li>
+              <a href='#'>Inbox</a>
+            </li>
+            <li>
+              <a href='#'>Outbox</a>
+            </li>
+            <li>
+              <a href='#'>Trash</a>
+            </li>
+          </ul>
+        </li> -->
+        <li>
+          <a href='#'>
+            <i class='icon-cog'></i>
+            返回主站
+          </a>
+        </li>
+        <li class='dropdown user'>
+          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+            <i class='icon-user'></i>
+            <strong>John DOE</strong>
+            <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
+            <b class='caret'></b>
+          </a>
+          <ul class='dropdown-menu'>
+            <li>
+              <a href='#'>Edit Profile</a>
+            </li>
+            <li class='divider'></li>
+            <li>
+              <a href="/">Sign out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body" id="msg-text">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+</block>

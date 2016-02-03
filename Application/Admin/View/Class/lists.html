@@ -1,0 +1,72 @@
+<div id="class-list-cover">
+  <div>加载中...</div>
+</div>
+<table class='table' id="class-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>班级名</th>
+      <th>班主任</th>
+      <th>入学时间</th>
+      <th class='actions'>
+        操作
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+  <foreach name="list" item="vo">
+    <tr>
+      <td>{$vo['id']}</td>
+      <td>{$vo['classname']}</td>
+      <td>{$vo['headmaster']}</td>
+      <td>@mdo</td>
+      <td class='action'>
+        <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
+          <i class='icon-zoom-in'></i>
+        </a>
+        <a class='btn btn-info' href='#'>
+          <i class='icon-edit'></i>
+        </a>
+        <a class='btn btn-danger' href='#'>
+          <i class='icon-trash'></i>
+        </a>
+      </td>
+    </tr>
+    </foreach>
+  </tbody>
+</table>
+<div class='panel-footer'>
+  <ul class='pagination pagination-sm'>
+    <li>
+      <a href='#' onclick="Load({$page-1})">«</a>
+    </li>
+
+    <PHP>
+      $pagingIsLoaded = false;
+      if($page <= 4){
+        $pagestart = 1;
+        $pageend = $pagecount < 8 ? $pagecount + 1 : 9;
+      }else if($page >= $pagecount - 4){
+        $pagestart = $pagecount - 7;
+        $pageend = $pagecount + 1;
+      }else{
+        $pagestart = $page - 4;
+        $pageend = $page + 4;
+      }
+    </PHP>
+
+    <for start="$pagestart" end="$pageend">
+      <li {:$page==$i?"class='active'":''}>
+        <a href='#' onclick="Load({$i})">{$i}</a>
+      </li>
+    </for>
+
+    <li>
+      <a href='#' onclick="Load({$page+1})">»</a>
+    </li>
+
+  </ul>
+  <div class='pull-right'>
+    当前展示的是 {$page} 页，共 {$pagecount} 页
+  </div>
+</div>

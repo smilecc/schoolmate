@@ -1,0 +1,58 @@
+<!-- Sidebar -->
+<section id='sidebar'>
+  <i class='icon-align-justify icon-large' id='toggle'></i>
+  <ul id='dock'>
+    <li class='launcher' id="sb-dashboard">
+      <i class='icon-dashboard'></i>
+      <a href="{:U('/Admin/Index')}">概述</a>
+    </li>
+    <li class='launcher' id="sb-class">
+      <i class='icon-sitemap'></i>
+      <a href="{:U('/Admin/Class')}">班级</a>
+    </li>
+    <li class='launcher' id="sb-solicit">
+      <i class='icon-money'></i>
+      <a href="/tables.html">募捐</a>
+    </li>
+    <li class='launcher dropdown hover' id="sb-user">
+      <i class='icon-user'></i>
+      <a href='#'>用户</a>
+      <ul class='dropdown-menu'>
+        <li class='dropdown-header'>用户管理</li>
+        <li>
+          <a href='#'>用户列表</a>
+        </li>
+        <li>
+          <a href='#'>权限管理</a>
+        </li>
+      </ul>
+    </li>
+    <li class='launcher dropdown hover' id="sb-work">
+      <i class='icon-leaf'></i>
+      <a href='#'>就业</a>
+      <ul class='dropdown-menu'>
+        <li class='dropdown-header'>就业服务管理</li>
+        <li>
+          <a href='#'>调查发起</a>
+        </li>
+        <li>
+          <a href='#'>调查统计</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <div data-toggle='tooltip' id='beaker' title='Made by Can'></div>
+</section>
+<!-- Tools -->
+<section id='tools'>
+  <ul class='breadcrumb' id='breadcrumb'>
+    <li class='title'>管理平台</li>
+    <block name="navtab">
+      <li><a href="#">Lorem</a></li>
+      <li class='active'><a href="#">ipsum</a></li>
+    </block>
+  </ul>
+  <block name="toolbar">
+
+  </block>
+</section>
