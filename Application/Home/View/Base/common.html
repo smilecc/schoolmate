@@ -8,17 +8,27 @@
 	<include file="Public/head"/>
 </head>
 <body>
- 
-	<div id="space_height">
 
-		<!-- 头部 -->
-		<include file="Public/header"/>
-		<!-- /头部 -->
-		<div class="container">
-			<include file="Public/body"/>
+		<div id="wrapper">
+			<!-- 头部 -->
+			<include file="Public/header"/>
+			<!-- /头部 -->
+	        <div id="page-wrapper">
+	            <div id="page-inner">
+
+	                <div class="row">
+	                    <div class="col-md-12">
+	                        <h1 class="page-header">
+	                            <block name="header-title">Title <small>introduce</small></block>
+	                        </h1>
+	                    </div>
+	                </div>
+	                <!-- /. ROW  -->
+					<include file="Public/body"/>
+				</div>
+			</div>
 		</div>
-	
-	</div>
+
 	<!-- /主体 -->
 
 	<!-- 底部 -->

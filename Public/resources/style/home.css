@@ -1,0 +1,21 @@
+html,body{
+	height: 100%;
+}
+
+#wrapper,#page-wrapper{
+	min-height: 100%;
+}
+
+#main-menu > li > a:hover,#main-menu > li > ul > li > a:hover{
+	background-color: #225081!important;
+}
+
+.fm-activity input[type="text"]{
+	width: 400px;
+}
+
+.activity-btn > button{
+	margin-top: 20px;
+	width: 70px;
+	margin-left: 5px;
+}

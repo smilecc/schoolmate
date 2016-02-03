@@ -47,8 +47,8 @@
           </ul>
         </li> -->
         <li>
-          <a href='#'>
-            <i class='icon-cog'></i>
+          <a href='/'>
+            <i class='icon-signout'></i>
             返回主站
           </a>
         </li>
@@ -56,7 +56,6 @@
           <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
             <i class='icon-user'></i>
             <strong>John DOE</strong>
-            <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
             <b class='caret'></b>
           </a>
           <ul class='dropdown-menu'>
@@ -65,7 +64,7 @@
             </li>
             <li class='divider'></li>
             <li>
-              <a href="/">Sign out</a>
+              <a href="/">注销</a>
             </li>
           </ul>
         </li>

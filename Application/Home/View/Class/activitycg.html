@@ -1,0 +1,44 @@
+<extend name="Base/common"/>
+<block name="title">添加活动 - {:C('SITE_NAME')}</block>
+<block name="header-title">增改活动 <small>增加或修改一个活动</small></block>
+<block name="body">
+<script type="text/javascript">$('#li-class').addClass('active')</script>
+
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="__PUBLIC__/timer/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            活动详情
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <form role="form" class="fm-activity">
+                                        <div class="form-group">
+                                            <label>活动名称</label>
+                                            <input class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>活动时间</label>
+                                            <input class="form-control" type="text" id="ipt-timer" placeholder="点击此框选择时间" readonly>
+                                        </div>
+									    <script id="container" name="content" type="text/plain" style="width:100%;height:240px;">活动的介绍说明</script>
+                                        <script type="text/javascript">
+                                        	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+									        var um = UM.getEditor('container');
+									    </script>
+									    <div class="activity-btn">
+                                        	<button type="submit" class="btn btn-primary">提交</button>
+                                        	<button type="reset" class="btn btn-default">返回</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- /.row (nested) -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+</block>

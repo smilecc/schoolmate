@@ -1,4 +1,25 @@
-<extend name="Base/common"/>
-<block name="body">
-	123
-</block>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="__PUBLIC__/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+    html,body{
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+<script src="__PUBLIC__/resources/home/js/jquery-1.10.2.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
+
+<script id="container" name="content" type="text/plain" class="form-group">
+                                                这里写你的初始化内容
+                                        </script>
+<script type="text/javascript">
+    var um = UM.getEditor('container');
+</script>
+</body>
+</html>

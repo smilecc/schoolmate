@@ -1,5 +1,111 @@
 <extend name="Base/common"/>
-<block name="title">班级 - {:C('SITE_NAME')}</block>
+<block name="title">我的班级 - {:C('SITE_NAME')}</block>
+<block name="header-title">我的班级 <small>我的班级的概述</small></block>
 <block name="body">
-	Class
+<script type="text/javascript">$('#li-class').addClass('active')</script>
+	<div class="row">
+		<div class="col-md-8">
+
+	    	<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">班级活动</h3>
+			  </div>
+			  <div class="panel-body">
+			    班级名：{$info['classname']}<br/>
+			    班主任：{$info['headmaster']}<br/>
+			    入学年份：{$info['attendan']}年
+			  </div>
+			</div>
+
+	    	<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">班级相册</h3>
+			  </div>
+			  <div class="panel-body">
+			    班级名：{$info['classname']}<br/>
+			    班主任：{$info['headmaster']}<br/>
+			    入学年份：{$info['attendan']}年
+			  </div>
+			</div>
+
+	    	<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">班级成员</h3>
+			  </div>
+			  <div class="panel-body">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th>Engine version</th>
+                                            <th>CSS grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="odd gradeX">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 4.0</td>
+                                            <td>Win 95+</td>
+                                            <td class="center">4</td>
+                                            <td class="center">X</td>
+                                        </tr>
+                                        <tr class="even gradeC">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.0</td>
+                                            <td>Win 95+</td>
+                                            <td class="center">5</td>
+                                            <td class="center">C</td>
+                                        </tr>
+                                        <tr class="odd gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 5.5</td>
+                                            <td>Win 95+</td>
+                                            <td class="center">5.5</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        <tr class="even gradeA">
+                                            <td>Trident</td>
+                                            <td>Internet Explorer 6</td>
+                                            <td>Win 98+</td>
+                                            <td class="center">6</td>
+                                            <td class="center">A</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+			  </div>
+			</div>
+
+<!-- 		    <div class="page-header class-activity-header">
+		      <h1 id="hphoto">班级相册</h1>
+		    </div>activity
+
+		    <div class="page-header class-activity-header">
+		      <h1 id="hmember">班级成员</h1>
+		    </div>activity -->
+	    </div>
+	    <div class="col-md-4 class-col-right">
+	    	<div class="panel panel-default">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">班级信息</h3>
+			  </div>
+			  <div class="panel-body">
+			    班级名：{$info['classname']}<br/>
+			    班主任：{$info['headmaster']}<br/>
+			    入学年份：{$info['attendan']}年
+			  </div>
+			</div>
+			<div class="list-group">
+			  <a href="#hactivity" class="list-group-item">
+			    班级活动
+			  </a>
+			  <a href="#hphoto" class="list-group-item">班级相册
+			  </a>
+			  <a href="#hmember" class="list-group-item">班级成员
+			  </a>
+			</div>
+	    </div>
+    </div>
 </block>
