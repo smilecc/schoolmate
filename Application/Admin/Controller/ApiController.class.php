@@ -43,4 +43,35 @@ class ApiController extends Controller {
             }
         }
     }
+
+    public function ClassChange(){
+        if(IS_POST)
+        {
+            $data = array(
+                    'id' => I('id'),
+                    'classname' => I('name'),
+                    'headmaster' => I('headmaster'),
+                    'attendandate_id' => I('attendandate')
+                );
+
+            // 判断是否存在空字段
+            if(CheckFieldNotNull($data) == false)
+            {
+                echo GetResult(false,'有字段为空');
+                return;
+            }
+
+            // 入库
+            $id = D('Class')->ChangeClass($data);
+
+            if($id > 0)
+            {
+                echo GetResult();
+            }
+            else
+            {
+                echo GetResult(false);
+            }
+        }
+    }
 }

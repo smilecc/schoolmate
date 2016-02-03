@@ -20,8 +20,8 @@ class ClassModel extends Model {
 		}
 	}
 
-	public function Change()
+	public function ChangeClass($data)
 	{
-		
+		return $this->save($data);
 	}
 }

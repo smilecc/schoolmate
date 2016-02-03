@@ -20,10 +20,11 @@
       <td><?php echo ($vo['headmaster']); ?></td>
       <td><?php echo ($vo['attendan']); ?></td>
       <td class='action'>
-        <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
+<!--         <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
           <i class='icon-zoom-in'></i>
-        </a>
-        <a class='btn btn-info' href='#'>
+        </a> -->
+        <a class='btn btn-info' href='#' onclick="showChangeModal(<?php echo ($vo['id']); ?>,this)" classname="<?php echo ($vo['classname']); ?>" 
+            headmaster="<?php echo ($vo['headmaster']); ?>" attendan="<?php echo ($vo['attendandate_id']); ?>">
           <i class='icon-edit'></i>
         </a>
         <a class='btn btn-danger' href='#' onclick="showDeleteModal(<?php echo ($vo['id']); ?>)">
@@ -41,7 +42,7 @@
 
     <?php $pagingIsLoaded = false; if($page <= 4){ $pagestart = 1; $pageend = $pagecount < 8 ? $pagecount + 1 : 9; }else if($page >= $pagecount - 4){ $pagestart = $pagecount - 7; $pageend = $pagecount + 1; }else{ $pagestart = $page - 4; $pageend = $page + 4; } ?>
 
-    <?php $__FOR_START_1040058087__=$pagestart;$__FOR_END_1040058087__=$pageend;for($i=$__FOR_START_1040058087__;$i < $__FOR_END_1040058087__;$i+=1){ ?><li <?php echo $page==$i?"class='active'":'';?>>
+    <?php $__FOR_START_204060869__=$pagestart;$__FOR_END_204060869__=$pageend;for($i=$__FOR_START_204060869__;$i < $__FOR_END_204060869__;$i+=1){ ?><li <?php echo $page==$i?"class='active'":'';?>>
         <a href='#' onclick="Load(<?php echo ($i); ?>)"><?php echo ($i); ?></a>
       </li><?php } ?>
 

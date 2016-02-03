@@ -21,10 +21,11 @@
       <td>{$vo['headmaster']}</td>
       <td>{$vo['attendan']}</td>
       <td class='action'>
-        <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
+<!--         <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
           <i class='icon-zoom-in'></i>
-        </a>
-        <a class='btn btn-info' href='#'>
+        </a> -->
+        <a class='btn btn-info' href='#' onclick="showChangeModal({$vo['id']},this)" classname="{$vo['classname']}" 
+            headmaster="{$vo['headmaster']}" attendan="{$vo['attendandate_id']}">
           <i class='icon-edit'></i>
         </a>
         <a class='btn btn-danger' href='#' onclick="showDeleteModal({$vo['id']})">

@@ -37,6 +37,17 @@ $(function(){
     	page = 1;
     	Reload();
     });
+
+    // 修改按钮
+    $('#btn-change-submit').click(function(){
+		$('#fm-cgclass').ajaxSubmit({
+				success: function(data){
+				  if(parseJn(data)){
+						Reload();
+					}
+				}
+			});
+    });
 });
 
 function Reload(){
@@ -92,4 +103,13 @@ function showDeleteModal(id){
 			}
 		});
 	});
+}
+
+function showChangeModal(id,sender){
+	$('#changeModal').modal('show');
+
+	$('#ipt-cg-id').val(id);
+	$('#ipt-cg-classname').val($(sender).attr('classname'));
+	$('#ipt-cg-headmaster').val($(sender).attr('headmaster'));
+	$('#slt-cg-attendandate').children('option[value='+ $(sender).attr('attendan') +']').attr('selected','selected');
 }

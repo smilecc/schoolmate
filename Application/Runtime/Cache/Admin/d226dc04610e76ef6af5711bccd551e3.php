@@ -243,6 +243,48 @@
   </div>
 </div>
 
+<!-- Change Class Modal -->
+<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">修改班级信息</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" id="fm-cgclass" method="post" action="<?php echo U('/Admin/Api/ClassChange');?>">
+        <input type="hidden" id="ipt-cg-id" name="id">
+          <div class="form-group">
+            <label for="ipt-cg-classname" class="col-sm-2 control-label">班级名</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ipt-cg-classname" name="name" placeholder="班级的名字">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="ipt-cg-headmaster" class="col-sm-2 control-label">班主任</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="ipt-cg-headmaster" name="headmaster" placeholder="班主任的名字">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="slt-cg-attendandate" class="col-sm-2 control-label">入学年份</label>
+            <div class="col-sm-10">
+              <select class="form-control" id="slt-cg-attendandate" name="attendandate">
+                <option value="-1">请选择...</option>
+                <?php if(is_array($attendanlist)): foreach($attendanlist as $key=>$vo): ?><option value="<?php echo ($vo['id']); ?>"><?php echo ($vo['attendan']); ?></option><?php endforeach; endif; ?>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="btn-change-submit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class='panel panel-default grid'>
           <div class='panel-heading'>
             <i class='icon-table icon-large'></i>

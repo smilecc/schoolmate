@@ -2,7 +2,7 @@
 // 输出信息
 function GetResult($status=true, $info='操作成功',$append=array())
 {
-	if(false == $status){
+	if(false == $status && $info == '操作成功'){
 		$info = '系统繁忙，操作失败';
 	}
 
@@ -18,6 +18,7 @@ function GetResult($status=true, $info='操作成功',$append=array())
 // 检查数组内空字段
 function CheckFieldNotNull($array)
 {
+	trace($array);
 	foreach ($array as $key => $value) {
 		if(strlen($value) == 0)
 		{
