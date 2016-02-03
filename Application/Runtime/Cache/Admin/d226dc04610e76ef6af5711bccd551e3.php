@@ -183,7 +183,7 @@
   });
 </script>
 
-<!-- Modal -->
+<!-- Create Class Modal -->
 <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -219,6 +219,25 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         <button type="button" class="btn btn-primary" id="btn-add-submit">提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Class Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+      是否删除该班级？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">确认</button>
       </div>
     </div>
   </div>
@@ -276,6 +295,7 @@
     <script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
     <script src="//cdn.bootcss.com/modernizr/2.6.3/modernizr.min.js" type="text/javascript"></script>
     <script src="/Public/resources/admin/javascripts/application-985b892b.js" type="text/javascript"></script>
+    <script src="/Public/resources/script/global.js" type="text/javascript"></script>
     <!-- Google Analytics -->
     <script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];

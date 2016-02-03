@@ -26,7 +26,7 @@
         <a class='btn btn-info' href='#'>
           <i class='icon-edit'></i>
         </a>
-        <a class='btn btn-danger' href='#'>
+        <a class='btn btn-danger' href='#' onclick="showDeleteModal(<?php echo ($vo['id']); ?>)">
           <i class='icon-trash'></i>
         </a>
       </td>
@@ -41,7 +41,7 @@
 
     <?php $pagingIsLoaded = false; if($page <= 4){ $pagestart = 1; $pageend = $pagecount < 8 ? $pagecount + 1 : 9; }else if($page >= $pagecount - 4){ $pagestart = $pagecount - 7; $pageend = $pagecount + 1; }else{ $pagestart = $page - 4; $pageend = $page + 4; } ?>
 
-    <?php $__FOR_START_793718179__=$pagestart;$__FOR_END_793718179__=$pageend;for($i=$__FOR_START_793718179__;$i < $__FOR_END_793718179__;$i+=1){ ?><li <?php echo $page==$i?"class='active'":'';?>>
+    <?php $__FOR_START_1040058087__=$pagestart;$__FOR_END_1040058087__=$pageend;for($i=$__FOR_START_1040058087__;$i < $__FOR_END_1040058087__;$i+=1){ ?><li <?php echo $page==$i?"class='active'":'';?>>
         <a href='#' onclick="Load(<?php echo ($i); ?>)"><?php echo ($i); ?></a>
       </li><?php } ?>
 

@@ -12,13 +12,16 @@ class ApiController extends Controller {
     				'headmaster' => I('headmaster'),
     				'attendandate_id' => I('attendandate')
     			);
+
+            // 判断是否存在空字段
     		if(CheckFieldNotNull($data) == false)
     		{
     			echo GetResult(false,'有字段为空');
     			return;
     		}
 
-    		$id = M('Class')->add($data);
+            // 入库
+    		$id = D('Class')->CreateClass($data);
 
     		if($id > 0)
     		{
@@ -29,5 +32,15 @@ class ApiController extends Controller {
     			echo GetResult(false,'系统错误');
     		}
     	}
+    }
+
+    public function ClassDelete($id){
+        if(IS_POST){
+            if(D('Class')->DeleteClass($id)){
+                echo GetResult();
+            }else{
+                echo GetResult(false);
+            }
+        }
     }
 }

@@ -3,6 +3,8 @@ var search = '';
 $(function(){
     $('#sb-class').addClass('active');
     Reload();
+
+    // 添加班级按钮 事件响应
     $('#btn-add-submit').click(function(){
       var attendandate = $('#slt-attendandate').children('option:selected').val();
 
@@ -24,10 +26,12 @@ $(function(){
           });
     });
 
+    // 刷新按钮
     $('#cls-reload').click(function(){
     	Reload();
     });
 
+    // 搜索按钮
     $('#btn-search').click(function(){
     	search = $('#ipt-search').val();
     	page = 1;
@@ -58,7 +62,7 @@ function Reload(){
     		$('#cls-reload').children().removeClass('icon-spin');
     		$('#class-list-cover').fadeOut(200);
 		});
-	},1000);
+	},0);
 }
 
 function Load(setpage){
@@ -67,15 +71,25 @@ function Load(setpage){
 	Reload();
 }
 
-function msg(text){
-	// 关闭全部模态框
-	$('.modal').modal('hide');
-	setTimeout(function(){
-		$('#msg-text').text(text);
-		$('#msgModal').modal('show');
-	},500);
-}
-
 function setRecords(num){
 	$('#records').text(num);
+}
+
+function showDeleteModal(id){
+	$('#deleteModal').modal('show');
+
+	$('#btn-delete').one('click',function(){
+		$.ajax({
+			url:'/index.php/Admin/Api/ClassDelete',
+			type:'POST',
+			data:{
+				'id':id
+			},
+			success:function(data){
+				if(parseJn(data)){
+					Reload();
+				}
+			}
+		});
+	});
 }
