@@ -19,7 +19,7 @@
       <td>{$vo['id']}</td>
       <td>{$vo['classname']}</td>
       <td>{$vo['headmaster']}</td>
-      <td>@mdo</td>
+      <td>{$vo['attendan']}</td>
       <td class='action'>
         <a class='btn btn-success' data-toggle='tooltip' href='#' title='Zoom'>
           <i class='icon-zoom-in'></i>
@@ -70,3 +70,4 @@
     当前展示的是 {$page} 页，共 {$pagecount} 页
   </div>
 </div>
+<script type="text/javascript">setRecords({$records})</script>

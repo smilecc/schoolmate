@@ -1,3 +1,5 @@
+var search = '';
+
 $(function(){
     $('#sb-class').addClass('active');
     Reload();
@@ -25,6 +27,12 @@ $(function(){
     $('#cls-reload').click(function(){
     	Reload();
     });
+
+    $('#btn-search').click(function(){
+    	search = $('#ipt-search').val();
+    	page = 1;
+    	Reload();
+    });
 });
 
 function Reload(){
@@ -37,7 +45,12 @@ function Reload(){
 	$('#cls-reload').children().addClass('icon-spin');
 
 	setTimeout(function(){
-		$('#class-list').load('/index.php/Admin/Class/lists.html?page=' + page,function(){
+		var strload = '/index.php/Admin/Class/lists.html?page=' + page;
+		if(search != ''){
+			strload = '/index.php/Admin/Class/lists.html?page=' + page + '&search=' + search;
+		}
+
+		$('#class-list').load(strload,function(){
 			$('#class-list-cover').height($('#class-table').height());
 			$('#class-list-cover').width($('#class-table').width());
 			$('#class-list-cover>div').css('margin-top','-'+($('#class-list-cover>div').height()/2) + 'px');
@@ -55,9 +68,14 @@ function Load(setpage){
 }
 
 function msg(text){
+	// 关闭全部模态框
 	$('.modal').modal('hide');
 	setTimeout(function(){
 		$('#msg-text').text(text);
 		$('#msgModal').modal('show');
 	},500);
+}
+
+function setRecords(num){
+	$('#records').text(num);
 }

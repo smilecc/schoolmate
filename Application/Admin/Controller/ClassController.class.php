@@ -12,23 +12,38 @@ class ClassController extends Controller {
         $this->display();
     }
 
-    public function lists($page){
-        $count = M('Class')->count('id');
-        $this->assign('clscount',$count);
-
-        // 处理页码
-        $pagecount = (integer)(($count / 10) + 1);
-
-        // 防止超出大小
-        if($page <= 0){
-            $page = 1;
-        }
-        if($page > $pagecount){
-            $page = $pagecount;
-        }
-
+    public function lists($page,$search=''){
         // 映射
-        $list = M('Class')->order('id desc')->page($page,10)->select();
+        if($search == '')
+        {
+            $count = M('Class')->count('id');
+            $this->assign('clscount',$count);
+
+            // 处理页码
+            $pagecount = (integer)(($count / 10) + 1);
+
+            // 防止超出大小
+            if($page <= 0){
+                $page = 1;
+            }
+            if($page > $pagecount){
+                $page = $pagecount;
+            }
+            $list = M('Class')->order('id desc')->page($page,10)->select();
+        }
+        else
+        {
+            $search = array('like','%'.$search.'%');
+            $where['classname'] = $search;
+            $where['headmaster'] = $search;
+            $where['_logic'] = 'OR';
+            $count = M('Class')->where($where)->count();
+            $pagecount = (integer)(($count / 10) + 1);
+            $list = M('Class')->where($where)->order('id desc')->page($page,10)->select();
+        }
+
+        D('Attendandate')->DisposeClass($list);
+        $this->assign('records',$count);
         $this->assign('page',$page);
         $this->assign('pagecount',$pagecount);
     	$this->assign('list',$list);

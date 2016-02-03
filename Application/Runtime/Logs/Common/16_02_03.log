@@ -4,3 +4,9 @@ INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
 INFO: [ app_init ] --END-- [ RunTime:0.000816s ]
 ERR: 无法加载模块:Tables
 
+[ 2016-02-03T13:02:54+08:00 ] ::1 /tables.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001015s ]
+ERR: 无法加载模块:Tables
+

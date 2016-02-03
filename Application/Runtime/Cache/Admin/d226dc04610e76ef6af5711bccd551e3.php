@@ -237,7 +237,7 @@
                   <i class='icon-refresh'></i>
                 </a>
               </div>
-              <div class='badge'><?php echo ($clscount); ?> 条记录</div>
+              <div class='badge'><span id="records"><?php echo ($clscount); ?></span> 条记录</div>
             </div>
           </div>
           <div class='panel-body filters'>
@@ -247,9 +247,9 @@
               </div>
               <div class='col-md-3'>
                 <div class='input-group'>
-                  <input class='form-control' placeholder='快速搜索...' type='text'>
+                  <input class='form-control' id="ipt-search" placeholder='搜索班级名或班主任...' type='text'>
                   <span class='input-group-btn'>
-                    <button class='btn' type='button'>
+                    <button class='btn' type='button' id="btn-search">
                       <i class='icon-search'></i>
                     </button>
                   </span>
