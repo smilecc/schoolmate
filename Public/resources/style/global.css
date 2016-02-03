@@ -17,3 +17,6 @@
 .dropdown.user{
 	margin-right: 10px;
 }
+.launcher > .dropdown-menu{
+	left: 0;
+}

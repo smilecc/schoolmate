@@ -16,6 +16,9 @@
 <!-- Google Fonts-->
 <link href='http://fonts.useso.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 <link href="/Public/resources/style/home.css" rel="stylesheet" />
+
+<link href="/Public/umeditor/themes/default/css/umeditor.css" type="text/css" rel="stylesheet">
+    <link href="/Public/timer/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 <script src="/Public/resources/home/js/jquery-1.10.2.js"></script>
 
 <title>我的班级 - <?php echo C('SITE_NAME');?></title>
