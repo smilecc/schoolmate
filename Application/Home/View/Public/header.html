@@ -223,12 +223,12 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 我的主页</a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 用户设置</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{:U('/User/Api/logout')}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="{:U('/User/Api/logout')}"><i class="fa fa-sign-out fa-fw"></i> 退出登录</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -248,13 +248,13 @@
                                 <a href="{:U('/Home/Class')}">班级概述</a>
                             </li>
                             <li>
-                                <a href="#">班级活动</a>
+                                <a href="{:U('/Home/Class/activity')}">班级活动</a>
                             </li>
                             <li>
                                 <a href="#">班级相册</a>
                             </li>
                             <li>
-                                <a href="#">班级通讯录</a>
+                                <a href="{:U('/Home/Class/member')}">班级通讯录</a>
                             </li>
                         </ul>
                     </li>

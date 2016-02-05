@@ -22,7 +22,7 @@
 <script src="/Public/resources/home/js/jquery-1.10.2.js"></script>
 <link href="/Public/resources/home/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-<title>班级概述 - <?php echo C('SITE_NAME');?></title>
+<title>班级活动 - <?php echo C('SITE_NAME');?></title>
 
 </head>
 <body>
@@ -352,115 +352,77 @@
 	                <div class="row">
 	                    <div class="col-md-12">
 	                        <h1 class="page-header">
-	                            班级概述 <small>这里将描述你的班级的概述</small>
+	                            班级活动 <small>隶属于我的班级的活动</small>
 	                        </h1>
 	                    </div>
 	                </div>
 	                <!-- /. ROW  -->
 					
 <script type="text/javascript">$('#li-class').addClass('active')</script>
-	<div class="row">
-		<div class="col-md-8">
-
-	    	<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">班级活动</h3>
-			  </div>
-			  <div class="panel-body">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-activity">
-                        <thead>
-                            <tr>
-		                        <th>#</th>
-		                        <th>活动名称</th>
-		                        <th>发起人</th>
-		                        <th>审核状态</th>
-		                        <th>发起日期</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-		                	<?php if(is_array($activity_list)): foreach($activity_list as $key=>$vo): ?><tr class="odd gradeX">
-			                        <td><?php echo ($vo["id"]); ?></td>
-			                        <td><?php echo ($vo["activitytitle"]); ?></td>
-			                        <td><?php echo ($vo["realname"]); ?></td>
-			                        <td><?php echo $vo['checkidetifier']==0?'未通过':'通过';?></td>
-			                        <td><?php echo ($vo["createddate"]); ?></td>
-			                    </tr><?php endforeach; endif; ?>
-                        </tbody>
-                    </table>
-                    <a href="<?php echo U('/Home/Class/activity');?>" class="pull-right">查看更多 ></a>
-			  </div>
-			</div>
-
-	    	<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">班级相册</h3>
-			  </div>
-			  <div class="panel-body">
-			    班级名：<?php echo ($info['classname']); ?><br/>
-			    班主任：<?php echo ($info['headmaster']); ?><br/>
-			    入学年份：<?php echo ($info['attendan']); ?>年
-			  </div>
-			</div>
-
-	    	<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">班级成员</h3>
-			  </div>
-			  <div class="panel-body">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-member">
-                        <thead>
-                            <tr>
-		                        <th>姓名</th>
-		                        <th>性别</th>
-		                        <th>电话</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-		                	<?php if(is_array($member_list)): foreach($member_list as $key=>$vo): ?><tr class="odd gradeX">
-			                        <td><?php echo ($vo["realname"]); ?></td>
-			                        <td>
-			                        	<?php switch($vo['sex']): case "1": ?>男<?php break;?>
-			                        		<?php case "2": ?>女<?php break;?>
-			                        	<?php default: ?>未填<?php endswitch;?>
-			                        </td>
-			                        <td><?php echo ($vo['phone']==null?'未填':$vo['phone']); ?></td>
-			                    </tr><?php endforeach; endif; ?>
-                        </tbody>
-                    </table>
-                    <a href="<?php echo U('/Home/Class/member');?>" class="pull-right">查看更多 ></a>
-			  </div>
-			</div>
-
-<!-- 		    <div class="page-header class-activity-header">
-		      <h1 id="hphoto">班级相册</h1>
-		    </div>activity
-
-		    <div class="page-header class-activity-header">
-		      <h1 id="hmember">班级成员</h1>
-		    </div>activity -->
-	    </div>
-	    <div class="col-md-4 class-col-right">
-	    	<div class="panel panel-default">
-			  <div class="panel-heading">
-			    <h3 class="panel-title">班级信息</h3>
-			  </div>
-			  <div class="panel-body">
-			    班级名：<?php echo ($info['classname']); ?><br/>
-			    班主任：<?php echo ($info['headmaster']); ?><br/>
-			    入学年份：<?php echo ($info['attendan']); ?>年
-			  </div>
-			</div>
-			<div class="list-group">
-			  <a href="#hactivity" class="list-group-item">
-			    班级活动
-			  </a>
-			  <a href="#hphoto" class="list-group-item">班级相册
-			  </a>
-			  <a href="#hmember" class="list-group-item">班级成员
-			  </a>
-			</div>
-	    </div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+         活动列表
     </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>活动名称</th>
+                        <th>发起人</th>
+                        <th>审核状态</th>
+                        <th>发起日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                	<?php if(is_array($list)): foreach($list as $key=>$vo): ?><tr class="odd gradeX">
+	                        <td><?php echo ($vo["id"]); ?></td>
+	                        <td><?php echo ($vo["activitytitle"]); ?></td>
+	                        <td><?php echo ($vo["realname"]); ?></td>
+	                        <td><?php echo $vo['checkidetifier']==0?'未通过':'通过';?></td>
+	                        <td><?php echo ($vo["createddate"]); ?></td>
+	                    </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+    <script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+    <script>
+            $(document).ready(function () {
+                $('#dataTables-activity').dataTable({
+                	order: [[ 0, 'desc' ]],
+				    language: {
+					    "sProcessing":   "处理中...",
+					    "sLengthMenu":   "显示 _MENU_ 项结果",
+					    "sZeroRecords":  "没有匹配结果",
+					    "sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					    "sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					    "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					    "sInfoPostFix":  "",
+					    "sSearch":       "搜索 ",
+					    "sUrl":          "",
+					    "sEmptyTable":     "表中数据为空",
+					    "sLoadingRecords": "载入中...",
+					    "sInfoThousands":  ",",
+					    "oPaginate": {
+					        "sFirst":    "首页",
+					        "sPrevious": "上页",
+					        "sNext":     "下页",
+					        "sLast":     "末页"
+					    },
+					    "oAria": {
+					        "sSortAscending":  ": 以升序排列此列",
+					        "sSortDescending": ": 以降序排列此列"
+					    }
+					}
+				});
+			});
+    </script>
 
 				</div>
 			</div>

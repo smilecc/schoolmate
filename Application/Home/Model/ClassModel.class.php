@@ -2,32 +2,11 @@
 namespace Home\Model;
 use Think\Model;
 class ClassModel extends Model {
-	public function CreateClass($classname,$attendandate_id=null,$headmaster=null)
-	{
-		$data = array(
-			'classname' => $classname,
-			'attendandate_id' => $attendandate_id,
-			'headmaster' => $headmaster
-			);
-
-		$id = $this->add($data);
-		return $id;
-	}
-
-	public function DeleteClass($classid)
-	{
-		if($this->where('id=%d',$classid)->delete() > 0)
-		{
-			return true;
+	public function GetMember($classid,$num=-1){
+		$db = M('User')->where('class_id=%d',$classid)->join('alumnus ON user.id = alumnus.user_id');
+		if($num != -1){
+			$db->limit($num);
 		}
-		else
-		{
-			return false;
-		}
-	}
-
-	public function Change()
-	{
-		
+		return $db->select();
 	}
 }

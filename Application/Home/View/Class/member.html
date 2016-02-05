@@ -1,6 +1,6 @@
 <extend name="Base/common"/>
-<block name="title">班级活动 - {:C('SITE_NAME')}</block>
-<block name="header-title">班级活动 <small>隶属于我的班级的活动</small></block>
+<block name="title">班级通讯录 - {:C('SITE_NAME')}</block>
+<block name="header-title">班级通讯录 <small>我的同学们</small></block>
 <block name="body">
 <script type="text/javascript">$('#li-class').addClass('active')</script>
 <div class="panel panel-default">
@@ -12,21 +12,27 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-activity">
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>活动名称</th>
-                        <th>发起人</th>
-                        <th>审核状态</th>
-                        <th>发起日期</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>电话</th>
+                        <th>邮箱</th>
+                        <th>生日</th>
                     </tr>
                 </thead>
                 <tbody>
                 	<foreach name="list" item="vo">
 	                	<tr class="odd gradeX">
-	                        <td>{$vo.id}</td>
-	                        <td>{$vo.activitytitle}</td>
 	                        <td>{$vo.realname}</td>
-	                        <td>{:$vo['checkidetifier']==0?'未通过':'通过'}</td>
-	                        <td>{$vo.createddate}</td>
+	                        <td>
+                    			<switch name="vo['sex']" >
+	                        		<case value="1">男</case>
+	                        		<case value="2">女</case>
+	                        	<default />未填
+	                        	</switch>
+	                        </td>
+	                        <td>{:$vo['phone']==null?'未填':$vo['phone']}</td>
+	                        <td>{:$vo['email']}</td>
+	                        <td>{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
 	                    </tr>
                     </foreach>
                 </tbody>

@@ -30,4 +30,14 @@ class ActivityModel extends Model {
 			return GetResult(false);
 		}
 	}
+
+	public function GetClassAll($classid){
+		return M('Activity')->field('activity.*,user.realname')->table('activity activity,user user')
+        ->where('class_id=%d AND user_id=user.id',$classid)->order('id desc')->select();
+	}
+
+	public function GetClassList($num,$classid){
+		return M('Activity')->field('activity.*,user.realname')->table('activity activity,user user')
+        ->where('class_id=%d AND user_id=user.id',$classid)->order('id desc')->limit($num)->select();
+	}
 }

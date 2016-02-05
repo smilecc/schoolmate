@@ -1827,3 +1827,2667 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000708s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000811s ]
 
+[ 2016-02-05T15:35:20+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000738s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001147s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000272s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026395s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001102s ]
+
+[ 2016-02-05T15:37:30+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000499s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022196s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000505s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000916s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001028s ]
+
+[ 2016-02-05T15:38:46+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001174s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001432s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000195s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000350s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027392s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027479s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001186s ]
+
+[ 2016-02-05T15:40:28+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000860s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000142s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001066s ]
+
+[ 2016-02-05T15:40:44+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000797s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000155s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024207s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000186s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001562s ]
+
+[ 2016-02-05T15:41:13+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0014s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021336s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021407s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000716s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000819s ]
+
+[ 2016-02-05T15:45:40+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000841s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001051s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027482s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027575s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000471s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001261s ]
+
+[ 2016-02-05T15:45:41+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017077s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000799s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000914s ]
+
+[ 2016-02-05T15:46:03+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000755s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000261s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021289s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000256s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001032s ]
+
+[ 2016-02-05T15:46:06+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000151s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022421s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000932s ]
+
+[ 2016-02-05T15:46:07+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016733s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016802s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000240s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000893s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2016-02-05T15:46:19+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000722s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000796s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0014s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000274s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023819s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023924s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000449s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001016s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001140s ]
+
+[ 2016-02-05T15:47:01+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000887s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000174s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028761s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001427s ]
+
+[ 2016-02-05T15:48:45+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000921s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001124s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000168s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000267s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034165s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034257s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000549s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001638s ]
+
+[ 2016-02-05T15:49:58+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000790s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029048s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000701s ]
+
+[ 2016-02-05T15:50:26+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028547s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000705s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000801s ]
+
+[ 2016-02-05T15:50:46+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028253s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028327s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000188s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000724s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000864s ]
+
+[ 2016-02-05T15:50:52+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031381s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031527s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000236s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-02-05T15:56:50+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001031s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001078s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001161s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000176s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036486s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036574s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000697s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001354s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001472s ]
+
+[ 2016-02-05T16:02:58+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000975s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000995s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000205s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000352s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038967s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001864s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002013s ]
+
+[ 2016-02-05T16:03:09+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000193s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032874s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000745s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2016-02-05T16:03:30+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000644s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000685s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000372s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000566s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033212s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033296s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000286s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000795s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000911s ]
+
+[ 2016-02-05T16:03:55+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000656s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000609s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000189s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000289s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033758s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001103s ]
+
+[ 2016-02-05T16:03:56+08:00 ] ::1 /index.php/Home/Class/cdn.datatables.net/plug-ins/1.10.10/i18n/Chinese.json
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001048s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001175s ]
+ERR: 非法操作:cdn.datatables.net
+
+[ 2016-02-05T16:04:03+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000635s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000712s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028228s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028303s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000272s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000619s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000771s ]
+
+[ 2016-02-05T16:04:04+08:00 ] ::1 /index.php/Home/Class/cdn.datatables.net/plug-ins/1.10.10/i18n/Chinese.json
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000729s ]
+ERR: 非法操作:cdn.datatables.net
+
+[ 2016-02-05T16:04:37+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000518s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028893s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000192s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000715s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000835s ]
+
+[ 2016-02-05T16:05:00+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000551s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027578s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000776s ]
+
+[ 2016-02-05T16:05:13+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000139s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028510s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028598s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000894s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000999s ]
+
+[ 2016-02-05T16:06:51+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021680s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000803s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000909s ]
+
+[ 2016-02-05T16:08:09+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000573s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019563s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000244s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000813s ]
+
+[ 2016-02-05T16:08:49+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000245s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021596s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000233s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001099s ]
+
+[ 2016-02-05T16:09:16+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019370s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019442s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000191s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000642s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000734s ]
+
+[ 2016-02-05T16:19:33+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001558s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d AND user_id=user.id )' at line 1
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=%d AND user_id=user.id ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%d AND user_id=user.id )' at line 1
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=%d AND user_id=user.id ) 
+
+[ 2016-02-05T16:20:12+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000503s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000580s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+
+[ 2016-02-05T16:20:45+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000666s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+
+[ 2016-02-05T16:20:55+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+
+[ 2016-02-05T16:21:34+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000519s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+ERR: 1054:Unknown column 'user.username' in 'field list'
+ [ SQL语句 ] : SELECT activity.*,user.username FROM `activity` WHERE ( class_id=1 AND user_id=user.id ) 
+
+[ 2016-02-05T16:22:29+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000591s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024740s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000683s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:22) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:22) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:22) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001269s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001381s ]
+
+[ 2016-02-05T16:23:05+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000635s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000159s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019316s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019471s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000240s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:23) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:23) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:23) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000892s ]
+
+[ 2016-02-05T16:24:20+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000395s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000781s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id )  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020119s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000250s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000816s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000953s ]
+
+[ 2016-02-05T16:25:12+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000748s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021252s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021328s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000880s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000985s ]
+
+[ 2016-02-05T16:25:41+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001025s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001189s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000136s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024401s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024513s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001211s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001359s ]
+
+[ 2016-02-05T16:26:07+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000765s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022131s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022259s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000875s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000998s ]
+
+[ 2016-02-05T16:26:10+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000669s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000114s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020677s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000735s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2016-02-05T16:26:12+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000231s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021995s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022077s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000231s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000903s ]
+
+[ 2016-02-05T16:26:24+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000661s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022702s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001748s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001864s ]
+
+[ 2016-02-05T16:26:26+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021436s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021536s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000168s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000731s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000867s ]
+
+[ 2016-02-05T16:26:43+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000223s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021578s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000863s ]
+
+[ 2016-02-05T16:26:56+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000561s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0018s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000800s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2016-02-05T16:28:56+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001465s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001599s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030987s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001170s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001327s ]
+
+[ 2016-02-05T16:29:54+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001126s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023163s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000646s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001432s ]
+
+[ 2016-02-05T16:30:57+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000730s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000188s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024354s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000336s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000932s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2016-02-05T16:31:42+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000677s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000163s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021992s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022067s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000222s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000871s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000980s ]
+
+[ 2016-02-05T16:31:48+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000516s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020519s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020647s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000217s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001031s ]
+
+[ 2016-02-05T16:32:29+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000710s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000533s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022534s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000846s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000961s ]
+
+[ 2016-02-05T16:33:13+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000594s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000665s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000196s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022401s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000170s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000233s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000903s ]
+
+[ 2016-02-05T16:33:22+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000639s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022624s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000875s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-02-05T16:33:41+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022959s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023110s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000187s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000880s ]
+
+[ 2016-02-05T16:33:57+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000653s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000129s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021823s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000263s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000368s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000853s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2016-02-05T16:35:03+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025309s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025395s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000177s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000749s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-02-05T16:35:16+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000428s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020197s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020272s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000268s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000757s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000856s ]
+
+[ 2016-02-05T16:35:38+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+NOTIC: [8] Undefined index: createtime /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 384 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023077s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023158s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-02-05T16:35:49+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000693s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022311s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000165s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000215s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000785s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000888s ]
+
+[ 2016-02-05T16:36:51+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000488s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000269s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021146s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021248s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000415s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000678s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2016-02-05T16:36:52+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000598s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022821s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000294s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000787s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2016-02-05T16:38:19+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000487s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021090s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000206s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000897s ]
+
+[ 2016-02-05T16:38:23+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022868s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022958s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000210s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001138s ]
+
+[ 2016-02-05T16:38:25+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000692s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000349s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000830s ]
+
+[ 2016-02-05T16:43:31+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0011s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+ERR: Think\Model:myClassid方法不存在！
+
+[ 2016-02-05T16:45:54+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000683s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+ERR: Think\Model:myClassid方法不存在！
+
+[ 2016-02-05T16:46:10+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000629s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000239s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000377s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027906s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000612s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001217s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001340s ]
+
+[ 2016-02-05T16:47:55+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000958s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027426s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027507s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000732s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001265s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001362s ]
+
+[ 2016-02-05T16:55:57+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000918s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001208s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001332s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000271s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001238s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001374s ]
+
+[ 2016-02-05T16:56:08+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+
+[ 2016-02-05T16:56:23+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000084s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024206s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000661s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000789s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001153s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001272s ]
+
+[ 2016-02-05T16:57:52+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000803s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001147s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0011s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000334s ]
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001288s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001404s ]
+
+[ 2016-02-05T16:58:09+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 420 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: checkidetifier /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 426 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027607s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000182s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001184s ]
+
+[ 2016-02-05T16:58:39+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `alumnus` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `alumnus` WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000191s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 420 行.
+NOTIC: [8] Undefined index: sex /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+NOTIC: [8] Undefined index: checkidetifier /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 426 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029290s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029365s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000215s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000269s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:21) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:21) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Users/smilec/Code/PHP/schoolmate/Application/Home/Controller/ClassController.class.php:21) /Users/smilec/Code/PHP/schoolmate/ThinkPHP/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001384s ]
+
+[ 2016-02-05T17:00:47+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001064s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+ERR: 1052:Column 'id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM user user,alumnus alumnus WHERE ( alumnus.class_id=1 AND user_id=id ) 
+ERR: 1052:Column 'id' in where clause is ambiguous
+ [ SQL语句 ] : SELECT * FROM user user,alumnus alumnus WHERE ( alumnus.class_id=1 AND user_id=id ) 
+
+[ 2016-02-05T17:00:59+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000982s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001187s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0011s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0024s ]
+ERR: 1146:Table 'schoolmate.user,alumnus' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user,alumnus`
+ERR: 1146:Table 'schoolmate.user,alumnus' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `user,alumnus`
+
+[ 2016-02-05T17:05:00+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001165s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0015s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000182s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032755s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032943s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001525s ]
+
+[ 2016-02-05T17:07:52+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+
+[ 2016-02-05T17:09:19+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-02-05T17:09:52+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-02-05T17:10:31+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+
+[ 2016-02-05T17:10:53+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000728s ]
+
+[ 2016-02-05T17:11:35+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+
+[ 2016-02-05T17:12:28+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+
+[ 2016-02-05T17:12:37+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000725s ]
+
+[ 2016-02-05T17:12:38+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-02-05T17:12:48+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000364s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000583s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 421 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024314s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000174s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000771s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000908s ]
+
+[ 2016-02-05T17:13:39+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000557s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000632s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025321s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025431s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000224s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000922s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001051s ]
+
+[ 2016-02-05T17:14:15+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000820s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000857s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000946s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0012s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028790s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001248s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001379s ]
+
+[ 2016-02-05T17:15:12+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000741s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0015s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000218s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027104s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027178s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000176s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000848s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001013s ]
+
+[ 2016-02-05T17:15:14+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000582s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021705s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000216s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000577s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+
+[ 2016-02-05T17:15:21+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000747s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000725s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0014s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026195s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000169s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000220s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000917s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001047s ]
+
+[ 2016-02-05T17:15:22+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000690s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019375s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000156s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000208s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000899s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001033s ]
+
+[ 2016-02-05T17:15:24+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000200s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027122s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000227s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000743s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-02-05T17:17:06+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000953s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000945s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001052s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0013s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000121s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000195s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030016s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030081s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001273s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001585s ]
+
+[ 2016-02-05T17:17:07+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000723s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined variable: list /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/e3d0873ada31b507b465213b5274193a.php 第 379 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021683s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021757s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000217s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000822s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000920s ]
+
+[ 2016-02-05T17:19:31+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001092s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001211s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0017s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0011s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000083s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026437s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-02-05T17:19:51+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.username FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0025s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 ) LIMIT 5   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000255s ]
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025965s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000997s ]
+
+[ 2016-02-05T17:20:02+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000477s ]
+
+[ 2016-02-05T17:20:03+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+
+[ 2016-02-05T17:23:46+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001229s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001109s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0013s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SELECT activity.*,user.realname FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 ) LIMIT 5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000276s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000409s ]
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030869s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030938s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000684s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001168s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001269s ]
+
+[ 2016-02-05T17:23:49+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `class` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `attendandate` [ RunTime:0.0015s ]
+SQL: SELECT `attendan` FROM `attendandate` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SELECT activity.*,user.realname FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc LIMIT 5   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `class` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `user` INNER JOIN alumnus ON user.id = alumnus.user_id  WHERE ( class_id=1 ) LIMIT 5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 384 行.
+NOTIC: [8] Undefined variable:  /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/7fde59dcc6730b00f0ea2d8c62973961.php 第 422 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022515s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022591s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000221s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001196s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001342s ]
+
+[ 2016-02-05T17:24:30+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000705s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `activity` [ RunTime:0.0012s ]
+SQL: SELECT activity.*,user.realname FROM activity activity,user user WHERE ( class_id=1 AND user_id=user.id ) ORDER BY id desc  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+NOTIC: [8] Undefined index: username /Users/smilec/Code/PHP/schoolmate/Application/Runtime/Cache/Home/c8b8ba7f85873303f00923eb7efca613.php 第 382 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022087s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022153s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000788s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000895s ]
+
+[ 2016-02-05T17:24:45+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+
+[ 2016-02-05T17:25:59+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+
+[ 2016-02-05T17:26:01+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000468s ]
+
+[ 2016-02-05T17:26:04+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000904s ]
+
+[ 2016-02-05T17:26:19+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000459s ]
+
+[ 2016-02-05T17:28:08+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000967s ]
+
+[ 2016-02-05T17:28:10+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+
+[ 2016-02-05T17:28:12+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000447s ]
+
+[ 2016-02-05T17:28:15+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+
+[ 2016-02-05T17:30:12+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+
+[ 2016-02-05T17:32:44+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+
+[ 2016-02-05T17:33:38+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+
+[ 2016-02-05T17:33:47+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000424s ]
+
+[ 2016-02-05T17:33:49+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+
+[ 2016-02-05T17:33:51+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-02-05T17:33:58+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+
+[ 2016-02-05T17:34:14+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+
+[ 2016-02-05T17:35:07+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000483s ]
+
+[ 2016-02-05T17:36:31+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000776s ]
+
+[ 2016-02-05T17:36:39+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+
+[ 2016-02-05T17:38:27+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+
+[ 2016-02-05T17:39:10+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+
+[ 2016-02-05T17:39:16+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+
+[ 2016-02-05T17:39:39+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+
+[ 2016-02-05T17:39:40+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000036s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+
+[ 2016-02-05T17:40:02+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+
+[ 2016-02-05T17:40:20+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000874s ]
+
+[ 2016-02-05T17:40:32+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+
+[ 2016-02-05T17:40:40+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000378s ]
+
+[ 2016-02-05T17:40:41+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000370s ]
+
+[ 2016-02-05T17:40:42+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+
+[ 2016-02-05T17:40:43+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+
+[ 2016-02-05T17:40:44+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+
+[ 2016-02-05T17:40:45+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000491s ]
+
+[ 2016-02-05T17:40:46+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000359s ]
+
+[ 2016-02-05T17:40:47+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000369s ]
+
+[ 2016-02-05T17:40:48+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000507s ]
+
+[ 2016-02-05T17:41:05+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+
+[ 2016-02-05T17:41:05+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000375s ]
+
+[ 2016-02-05T17:41:10+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+
+[ 2016-02-05T17:41:11+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+
+[ 2016-02-05T17:41:13+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+
+[ 2016-02-05T17:41:14+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+
+[ 2016-02-05T17:41:15+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+
+[ 2016-02-05T17:59:30+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+
+[ 2016-02-05T17:59:31+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+
+[ 2016-02-05T17:59:33+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000358s ]
+
+[ 2016-02-05T17:59:34+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+
+[ 2016-02-05T17:59:36+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+
+[ 2016-02-05T17:59:37+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000478s ]
+
+[ 2016-02-05T17:59:38+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000485s ]
+
+[ 2016-02-05T17:59:39+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000406s ]
+
+[ 2016-02-05T18:02:58+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000414s ]
+
+[ 2016-02-05T18:03:00+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+
+[ 2016-02-05T18:03:01+08:00 ] ::1 /index.php/Home/Class/member.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+
+[ 2016-02-05T18:03:47+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+
+[ 2016-02-05T18:03:48+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+
+[ 2016-02-05T18:03:54+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+
+[ 2016-02-05T18:03:54+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+
+[ 2016-02-05T18:03:55+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+
+[ 2016-02-05T18:03:56+08:00 ] ::1 /index.php/Home/Class.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+
+[ 2016-02-05T18:03:56+08:00 ] ::1 /index.php/Home/Class/activity.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+
