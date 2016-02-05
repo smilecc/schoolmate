@@ -19,3 +19,6 @@ html,body{
 	width: 70px;
 	margin-left: 5px;
 }
+.modal-footer{
+	margin-top: 0;
+}

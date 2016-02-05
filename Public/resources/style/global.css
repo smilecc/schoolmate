@@ -20,3 +20,10 @@
 .launcher > .dropdown-menu{
 	left: 0;
 }
+.login-logo{
+	margin-bottom: 10px !important;
+}
+.label-error{
+	color: red;
+	display: none;
+}

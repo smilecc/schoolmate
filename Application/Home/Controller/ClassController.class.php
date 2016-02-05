@@ -2,8 +2,12 @@
 namespace Home\Controller;
 use Think\Controller;
 class ClassController extends Controller {
+    private function myClassid(){
+        return 1;
+    }
+
     public function index(){
-    	$classid = 1;
+    	$classid = self::myClassid();
     	$classinfo = M('Class')->where('id=%d',$classid)->find();
     	$classinfo['attendan'] = M('Attendandate')->where('id=%d',$classinfo['attendandate_id'])->getField('attendan');
 
@@ -12,6 +16,7 @@ class ClassController extends Controller {
     }
 
     public function activitycg(){
+        $this->assign('classid',self::myClassid());
     	$this->display();
     }
 }

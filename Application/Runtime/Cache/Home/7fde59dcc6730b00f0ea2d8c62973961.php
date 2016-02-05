@@ -29,7 +29,22 @@
 		<div id="wrapper">
 			<!-- 头部 -->
 			
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body" id="msg-text">
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
 <header>
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -243,7 +258,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo U('/User/Api/logout');?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -465,6 +480,8 @@
 <script src="/Public/resources/home/js/morris/morris.js"></script>
 <!-- Custom Js -->
 <script src="/Public/resources/home/js/custom-scripts.js"></script>
+<script src="/Public/resources/script/global.js"></script>
+<script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
 	<!-- /底部 -->
 </div>
 </body>

@@ -12,8 +12,22 @@ class ActivityModel extends Model {
 			'checkidetifier' 	=> C('ACTIVITY_CHECK_DEFAULT')
 			);
 
+		trace($data);
+		if(CheckFieldNotNull($data) == false)
+		{
+			return GetResult(false,'存在未填字段');
+		}
+
 		$data = array_merge($data,$options);
 		$id = $this->add($data);
-		return $id;
+		
+		if($id > 0)
+		{
+			return GetResult(true,'操作成功',array('id' => $id));
+		}
+		else
+		{
+			return GetResult(false);
+		}
 	}
 }

@@ -29,7 +29,22 @@
 		<div id="wrapper">
 			<!-- 头部 -->
 			
+<div class="modal fade" id="msgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body" id="msg-text">
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
 <header>
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
@@ -349,38 +364,64 @@
 <script type="text/javascript" src="/Public/umeditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="/Public/timer/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            活动详情
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <form role="form" class="fm-activity">
-                                        <div class="form-group">
-                                            <label>活动名称</label>
-                                            <input class="form-control" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>活动时间</label>
-                                            <input class="form-control" type="text" id="ipt-timer" placeholder="点击此框选择时间" readonly>
-                                        </div>
-									    <script id="container" name="content" type="text/plain" style="width:100%;height:240px;">活动的介绍说明</script>
-                                        <script type="text/javascript">
-                                        	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-									        var um = UM.getEditor('container');
-									    </script>
-									    <div class="activity-btn">
-                                        	<button type="submit" class="btn btn-primary">提交</button>
-                                        	<button type="reset" class="btn btn-default">返回</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        活动详情
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <form role="form" class="fm-activity" action="<?php echo U('/Home/Api/CreateActivitty');?>" method="post" id="form">
+                    <input type="hidden" name="classid" value="<?php echo ($classid); ?>" />
+                    <div class="form-group">
+                        <label>活动名称</label>
+                        <input class="form-control" type="text" name="title" required>
                     </div>
+                    <div class="form-group">
+                        <label>活动时间</label>
+                        <input class="form-control" type="text" id="ipt-timer" name="time" placeholder="点击此框选择时间" readonly>
+                    </div>
+
+                    <label>活动说明</label>
+				    <script id="container" name="content" type="text/plain" style="width:100%;height:300px;"></script>
+                    <script type="text/javascript">
+                    	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+				        var um = UM.getEditor('container');
+				    </script>
+				    <div class="activity-btn">
+                    	<button type="submit" class="btn btn-primary" id="btn-submit">提交</button>
+                    	<button type="reset" class="btn btn-default" id="btn-reset">重置</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.row (nested) -->
+    </div>
+    <!-- /.panel-body -->
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#form').submit(function(e){
+            if($(this)[0].checkValidity()) {
+                    $(this).ajaxSubmit({
+                        success:function(data){
+                            var obj = JSON.parse(data);
+                            if(obj['status']){
+                                window.location.href = "<?php echo U('/Home/Class');?>";
+                            } else {
+                                msg(obj['info']);
+                            }
+                        }
+                    });
+                }else document.forms[0].reportValidity();
+            return false;
+        });
+
+        $('#btn-reset').click(function(){
+            um.setContent('', false);
+        });
+    });
+</script>
 
 				</div>
 			</div>
@@ -398,6 +439,8 @@
 <script src="/Public/resources/home/js/morris/morris.js"></script>
 <!-- Custom Js -->
 <script src="/Public/resources/home/js/custom-scripts.js"></script>
+<script src="/Public/resources/script/global.js"></script>
+<script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
 	<!-- /底部 -->
 </div>
 </body>

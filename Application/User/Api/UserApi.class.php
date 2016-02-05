@@ -33,7 +33,7 @@ class UserApi{
                 return false;
             }
 
-            $saltArr = M('UserSalt')->where('userid=%d',cookie('userid'))->getField('md5(random)',true);
+            $saltArr = M('UserSalt')->where('user_id=%d',cookie('userid'))->getField('md5(random)',true);
             if(in_array(cookie('token'),$saltArr))
             {
                 session('user_status',2);
@@ -92,6 +92,11 @@ class UserApi{
     //用户登出
     public static function Logout()
     {
+        // 清除盐
+        if(cookie('token') != null){
+            M('UserSalt')->where("user_id=%d AND md5(random)='%s'",cookie('userid'),cookie('token'))->delete();
+        }
+
         session_unset();
         session_destroy();
         cookie('token',NULL);

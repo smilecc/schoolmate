@@ -9,36 +9,62 @@
 <script type="text/javascript" src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="__PUBLIC__/timer/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            活动详情
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <form role="form" class="fm-activity">
-                                        <div class="form-group">
-                                            <label>活动名称</label>
-                                            <input class="form-control" type="text">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>活动时间</label>
-                                            <input class="form-control" type="text" id="ipt-timer" placeholder="点击此框选择时间" readonly>
-                                        </div>
-									    <script id="container" name="content" type="text/plain" style="width:100%;height:240px;">活动的介绍说明</script>
-                                        <script type="text/javascript">
-                                        	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-									        var um = UM.getEditor('container');
-									    </script>
-									    <div class="activity-btn">
-                                        	<button type="submit" class="btn btn-primary">提交</button>
-                                        	<button type="reset" class="btn btn-default">返回</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        活动详情
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <form role="form" class="fm-activity" action="{:U('/Home/Api/CreateActivitty')}" method="post" id="form">
+                    <input type="hidden" name="classid" value="{$classid}" />
+                    <div class="form-group">
+                        <label>活动名称</label>
+                        <input class="form-control" type="text" name="title" required>
                     </div>
+                    <div class="form-group">
+                        <label>活动时间</label>
+                        <input class="form-control" type="text" id="ipt-timer" name="time" placeholder="点击此框选择时间" readonly>
+                    </div>
+
+                    <label>活动说明</label>
+				    <script id="container" name="content" type="text/plain" style="width:100%;height:300px;"></script>
+                    <script type="text/javascript">
+                    	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+				        var um = UM.getEditor('container');
+				    </script>
+				    <div class="activity-btn">
+                    	<button type="submit" class="btn btn-primary" id="btn-submit">提交</button>
+                    	<button type="reset" class="btn btn-default" id="btn-reset">重置</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /.row (nested) -->
+    </div>
+    <!-- /.panel-body -->
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#form').submit(function(e){
+            if($(this)[0].checkValidity()) {
+                    $(this).ajaxSubmit({
+                        success:function(data){
+                            var obj = JSON.parse(data);
+                            if(obj['status']){
+                                window.location.href = "{:U('/Home/Class')}";
+                            } else {
+                                msg(obj['info']);
+                            }
+                        }
+                    });
+                }else document.forms[0].reportValidity();
+            return false;
+        });
+
+        $('#btn-reset').click(function(){
+            um.setContent('', false);
+        });
+    });
+</script>
 </block>

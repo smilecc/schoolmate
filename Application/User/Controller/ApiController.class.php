@@ -18,5 +18,6 @@ class ApiController extends Controller {
     public function logout()
     {
         \User\Api\UserApi::Logout();
+        $this->redirect('/User/Page/login');
     }
 }
