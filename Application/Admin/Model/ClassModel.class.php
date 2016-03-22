@@ -24,4 +24,9 @@ class ClassModel extends Model {
 	{
 		return $this->save($data);
 	}
+
+	public function GetAll()
+	{
+		return $this->query("SELECT class.id,attendandate.attendan,class.classname FROM class,attendandate WHERE(attendandate.id = class.attendandate_id)");
+	}
 }

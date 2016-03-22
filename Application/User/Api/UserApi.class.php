@@ -22,7 +22,7 @@ class UserApi{
     {
         if(cookie('token') != NULL && (session('user_status') == 2 || session('user_status') == 1))
         {
-            // token 不为空 且session存在值
+            // token 不为空 且session存在
             return true;
         }
         else

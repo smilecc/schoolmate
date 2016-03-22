@@ -8,4 +8,11 @@ class PageController extends Controller {
     {
     	$this->display();
     }
+
+    public function register()
+    {
+    	$attendan_list = M('Attendandate')->order('attendan desc')->select();
+    	$this->assign('attendan',$attendan_list);
+    	$this->display();
+    }
 }

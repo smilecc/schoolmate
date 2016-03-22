@@ -23,6 +23,13 @@
 .login-logo{
 	margin-bottom: 10px !important;
 }
+.btn-login{
+	width: 140px;
+}
+#label-error{
+	margin: 5px auto;
+	font-weight: bold;
+}
 .label-error{
 	color: red;
 	display: none;
