@@ -7,6 +7,6 @@ return array(
 	'RBAC_USER_TABLE'   => 'think_role_user',
 	'RBAC_ACCESS_TABLE' => 'think_access',
 	'RBAC_NODE_TABLE'   => 'think_node',
-	"USER_AUTH_KEY" 	=> 'uid',
-	"ADMIN_AUTH_KEY" 	=> 'admin'
+	// "USER_AUTH_KEY" 	=> 'uid',
+	"ADMIN_AUTH_KEY" 	=> 'test'
 );

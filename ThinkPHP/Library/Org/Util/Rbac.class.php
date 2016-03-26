@@ -86,7 +86,9 @@ class Rbac {
         // 如果使用普通权限模式，保存当前用户的访问权限列表
         // 对管理员开发所有权限
         if(C('USER_AUTH_TYPE') !=2 && !$_SESSION[C('ADMIN_AUTH_KEY')] )
+        {
             $_SESSION['_ACCESS_LIST']	=	self::getAccessList($authId);
+        }
         return ;
     }
 

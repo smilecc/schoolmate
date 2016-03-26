@@ -30,7 +30,7 @@ return  array(
     'APP_AUTOLOAD_PATH'     =>  '', // 自动加载的路径 关闭APP_USE_NAMESPACE后有效
 
     /* Cookie设置 */
-    'COOKIE_EXPIRE'         =>  0,       // Cookie有效期
+    'COOKIE_EXPIRE'         =>  2592000, // Cookie有效期
     'COOKIE_DOMAIN'         =>  '',      // Cookie有效域名
     'COOKIE_PATH'           =>  '/',     // Cookie路径
     'COOKIE_PREFIX'         =>  '',      // Cookie前缀 避免冲突
@@ -58,7 +58,7 @@ return  array(
     'DB_NAME'               =>  'schoolmate',          // 数据库名
     'DB_USER'               =>  'root',      // 用户名
     'DB_PWD'                =>  'root',          // 密码
-    'DB_PORT'               =>  '8889',        // 端口
+    'DB_PORT'               =>  '3306',        // 端口
     'DB_PREFIX'             =>  '',    // 数据库表前缀
     'DB_PARAMS'          	=>  array(), // 数据库连接参数    
     'DB_DEBUG'  			=>  TRUE, // 数据库调试模式 开启后可以记录SQL日志

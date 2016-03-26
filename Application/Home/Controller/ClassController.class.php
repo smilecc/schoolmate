@@ -1,7 +1,8 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class ClassController extends Controller {
+class ClassController extends BaseController {
+
 	private function myClassid(){
 	    return 1;
 	}
@@ -40,5 +41,9 @@ class ClassController extends Controller {
 	    $member_list = D('Class')->GetMember(self::myClassid());
 	    $this->assign('list',$member_list);
 	    $this->display();
+	}
+
+	public function album(){
+		$this->display();
 	}
 }

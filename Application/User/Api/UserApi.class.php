@@ -37,6 +37,7 @@ class UserApi{
             if(in_array(cookie('token'),$saltArr))
             {
                 session('user_status',2);
+                session('id',$resArr['userid']);
                 \Org\Util\Rbac::saveAccessList(cookie('userid'));
                 return true;
             }
@@ -85,6 +86,8 @@ class UserApi{
             /// 1 is password Login
             /// 2 is cookies Login
             session('user_status',1);
+            session('id',$resArr['userid']);
+            trace($resArr['userid'],'userid');
             \Org\Util\Rbac::saveAccessList($resArr['userid']);
         }
     }

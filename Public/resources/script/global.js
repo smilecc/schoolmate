@@ -2,7 +2,7 @@ function msg(text){
 	// 关闭全部模态框
 	$('.modal').modal('hide');
 	setTimeout(function(){
-		$('#msg-text').text(text);
+		$('#msg-text').html(text);
 		$('#msgModal').modal('show');
 	},500);
 }

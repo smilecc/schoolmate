@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class ApiController extends Controller {
+class ApiController extends BaseController {
     public function index(){ }
 
     public function ClassCreate(){
