@@ -6,47 +6,96 @@
 	<script type="text/javascript">$('#sb-user').addClass('active')</script>
 	<script type="text/javascript" src="__PUBLIC__/resources/script/admin-role.js"></script>
 
-<div class="modal fade" id="editWebModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">创建班级</h4>
-      </div>
-      <div class="modal-body">
-        <form class="form-horizontal" id="fm-addclass" method="post" action="{:U('/Admin/Api/ClassCreate')}">
-          <div class="form-group">
-            <label for="ipt-classname" class="col-sm-2 control-label">用户名</label>
-            <div class="col-sm-10">
-              <label for="ipt-classname" class="col-sm-2 control-label" id="usernameEditModal">班级名</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="ipt-headmaster" class="col-sm-2 control-label">真实姓名</label>
-            <div class="col-sm-10">
-              <label for="ipt-classname" class="col-sm-2 control-label" id="realnameEditModal">班级名</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="ipt-headmaster" class="col-sm-2 control-label">修改权限</label>
-            <div class="col-sm-10">
-              <select class="form-control" id="slt-attendandate" name="attendandate">
-                <option value="-1">请选择...</option>
-                <foreach name="attendanlist" item="vo">
-                  <option value="{$vo['id']}">{$vo['attendan']}</option>
-                </foreach>
-              </select>
-            </div>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary" id="btn-add-submit">提交</button>
-      </div>
-    </div>
-  </div>
-</div>
+	<div class="modal fade" id="editWebModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改权限</h4>
+				</div>
+				<div class="modal-body form-horizontal">
+					<div class="form-group">
+						<label for="ipt-classname" class="col-sm-2 control-label">用户名</label>
+						<div class="col-sm-10">
+							<label for="ipt-classname" class="col-sm-2 control-label" id="usernameEditModal">NULL</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="ipt-headmaster" class="col-sm-2 control-label">真实姓名</label>
+						<div class="col-sm-10">
+							<label for="ipt-classname" class="col-sm-2 control-label" id="realnameEditModal">NULL</label>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="ipt-headmaster" class="col-sm-2 control-label">修改权限</label>
+						<div class="col-sm-10">
+							<select class="form-control" id="slt-webrole" name="role_id">
+								<option value="-1">请选择...</option>
+								<foreach name="rolelist" item="vo">
+									<option value="{$vo['id']}">{$vo['name']}</option>
+								</foreach>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="btn-edit-submit">提交</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="addWebModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">添加用户</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/op_user_role')}">
+					<div class="modal-body">
+						
+							<div class="form-group">
+								<label for="ipt-classname" class="col-sm-2 control-label">用户名</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="ipt-username" name="username" placeholder="用户名">
+								</div>
+							</div>
+							<input type="hidden" name="type" value="add">
+							<input type="hidden" name="role_id" value="3" />
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-edit-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">删除用户</h4>
+				</div>
+				<form class="form-horizontal" id="fm-delete" method="post" action="{:U('/Admin/Api/delete_role_user')}">
+					<div class="modal-body">
+						您确定要删除这一项吗？
+						 <input type="hidden" id="ipt-delete-userid" value="-1" name="user_id" />
+						 <input type="hidden" id="ipt-delete-roleid" value="-1" name="role_id" />
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-delete">确定</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<div class='panel panel-default'>
 		<div class='panel-heading'>
@@ -55,7 +104,7 @@
 			<div class='panel-tools'>
 				<div class='btn-group'>
 					<a class='btn' data-toggle="modal" data-target="#createModal">
-						<i class='icon-plus'> 添加</i>
+						<i class='icon-plus' data-toggle="modal" data-target="#addWebModal"> 添加</i>
 					</a>
 				</div>
 				<div class='badge'><span id="records">{:count($weblist)}</span> 条记录</div>
@@ -73,13 +122,13 @@
 				<tbody>
 					<foreach name="weblist" item="vo">
 						<tr class="odd gradeX">
-							<td>{$vo.username}</td>
-							<td>{$vo.realname}</td>
+							<td id="web-username-{$vo.user_id}">{$vo.username}</td>
+							<td id="web-realname-{$vo.user_id}">{$vo.realname}</td>
 							<td userid="{$vo.user_id}">
 								<a class="web-edit" href="#" id="web-edit-{$vo.user_id}">
 									<i class="icon-edit"></i> 修改
 								</a>
-								<a class="web-delete" href="#" id="web-delete-{$vo.user_id}">
+								<a class="web-delete" href="#" id="web-delete-{$vo.user_id}" role="3">
 									<i class="icon-edit"></i> 删除
 								</a>
 							</td>

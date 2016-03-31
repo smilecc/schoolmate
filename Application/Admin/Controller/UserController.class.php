@@ -10,6 +10,9 @@ class UserController extends BaseController {
 	public function role() {
 		$weblist = M('ThinkRoleUser')->field('roleuser.*,user.username,user.realname')->table('think_role_user roleuser,user user')
 		->where('role_id = 3 AND user_id = user.id')->select();
+		$rolelist = M('ThinkRole')->select();
+
+		$this->assign('rolelist',$rolelist);
 		$this->assign('weblist',$weblist);
 		$this->display();
 	}

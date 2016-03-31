@@ -75,9 +75,27 @@ class ApiController extends Controller {
 		}
 	}
 
-	public function op_user_role($user_id, $role_id, $type) {
+	public function op_user_role($user_id=null, $role_id, $type, $mode='form') {
 		if(IS_POST)
 		{
+			if($user_id == null)
+			{
+				if(null == I('username'))
+				{
+					$this->error('出问题了');
+					exit();
+				} else {
+					$username = I('username');
+					$user_id = M('User')->where("username='%s'",$username)->getField('id');
+
+					if($user_id == null)
+					{
+							$this->error('用户名不存在');
+							exit();
+					}
+				}
+			}
+
 			$data = array(
 				'user_id' => $user_id,
 				'role_id' => $role_id
@@ -99,7 +117,32 @@ class ApiController extends Controller {
 			{
 				$res_arr = array('status' => false);
 			}
-			echo json_encode($res_arr);
+			if($mode == 'ajax')
+			{
+				echo json_encode($res_arr);
+			}
+			else
+			{
+				if($res_arr['status'])
+				{
+					$this->success('操作成功', "/Admin/User/role");
+				}
+				else
+				{
+					$this->error('操作失败');
+				}
+			}	
+		}
+	}
+
+	public function delete_role_user($user_id, $role_id) {
+		if(M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->delete() > 0)
+		{
+			$this->success('删除成功');
+		}
+		else
+		{
+			$this->error('删除失败');
 		}
 	}
 }
