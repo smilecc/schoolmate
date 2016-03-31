@@ -12,3 +12,12 @@ function parseJn(text){
 	msg(obj['info']);
 	return obj['status'];
 }
+
+var CAJAX = function(a_url, a_data, a_successFunction){
+	$.ajax({
+		url:a_url,
+		type:'POST',
+		data:a_data,
+		success:a_successFunction
+	});
+};

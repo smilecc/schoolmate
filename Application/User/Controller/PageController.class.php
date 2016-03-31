@@ -23,4 +23,9 @@ class PageController extends Controller {
     	$this->assign('attendan',$attendan_list);
     	$this->display();
     }
+
+    public function intro()
+    {
+        $this->display();
+    }
 }

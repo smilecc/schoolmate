@@ -1,0 +1,19 @@
+<table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+	<thead>
+		<tr>
+			<th>用户名</th>
+			<th>姓名</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name="list" item="vo">
+			<tr class="odd gradeX">
+				<td>{$vo.realname}</td>
+				<td>{$vo.username}</td>
+				<td>
+				</td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
