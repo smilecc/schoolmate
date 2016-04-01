@@ -125,7 +125,7 @@ class ApiController extends Controller {
 			{
 				if($res_arr['status'])
 				{
-					$this->success('操作成功', "/Admin/User/role");
+					$this->success('操作成功');
 				}
 				else
 				{
@@ -136,7 +136,7 @@ class ApiController extends Controller {
 	}
 
 	public function delete_role_user($user_id, $role_id) {
-		if(M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->delete() > 0)
+		if(M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->setField('role_id', '1') > 0)
 		{
 			$this->success('删除成功');
 		}
@@ -144,5 +144,16 @@ class ApiController extends Controller {
 		{
 			$this->error('删除失败');
 		}
+	}
+
+	public function get_class($attendandate_id)
+	{
+		$res_arr = M('Class')->where('attendandate_id=%d',$attendandate_id)->select();
+		echo json_encode($res_arr);
+	}
+
+	public function get_student($class_id)
+	{
+
 	}
 }

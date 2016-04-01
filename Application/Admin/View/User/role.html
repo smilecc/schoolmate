@@ -56,14 +56,14 @@
 				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/op_user_role')}">
 					<div class="modal-body">
 						
-							<div class="form-group">
-								<label for="ipt-classname" class="col-sm-2 control-label">用户名</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" id="ipt-username" name="username" placeholder="用户名">
-								</div>
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-2 control-label">用户名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-username" name="username" placeholder="用户名">
 							</div>
-							<input type="hidden" name="type" value="add">
-							<input type="hidden" name="role_id" value="3" />
+						</div>
+						<input type="hidden" name="type" value="add">
+						<input type="hidden" name="role_id" value="3" />
 						
 					</div>
 					<div class="modal-footer">
@@ -85,12 +85,70 @@
 				<form class="form-horizontal" id="fm-delete" method="post" action="{:U('/Admin/Api/delete_role_user')}">
 					<div class="modal-body">
 						您确定要删除这一项吗？
-						 <input type="hidden" id="ipt-delete-userid" value="-1" name="user_id" />
-						 <input type="hidden" id="ipt-delete-roleid" value="-1" name="role_id" />
+						<input type="hidden" id="ipt-delete-userid" value="-1" name="user_id" />
+						<input type="hidden" id="ipt-delete-roleid" value="-1" name="role_id" />
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 						<button type="submit" class="btn btn-primary" id="btn-delete">确定</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="addClassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">添加用户</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/op_user_role')}">
+					<div class="modal-body">
+						
+						<div class="form-group">
+							<div>
+								<label for="ipt-classname" class="col-sm-2 control-label">学年</label>
+								<div class="col-sm-10">
+									<select class="form-control" id="slt-classattendan">
+										<option value="-1">请选择...</option>
+										<foreach name="attendanlist" item="vo">
+											<option value="{$vo['id']}">{$vo['attendan']}</option>
+										</foreach>
+									</select>
+								</div>
+							</div>
+							<div>
+								<label for="ipt-classname" class="col-sm-2 control-label role-addclassrole">班级</label>
+								<div class="col-sm-10">
+									<select class="form-control role-addclassrole" id="slt-classlist">
+										<option value="-1">请选择...</option>
+										<foreach name="attendanlist" item="vo">
+											<option value="{$vo['id']}">{$vo['attendan']}</option>
+										</foreach>
+									</select>
+								</div>
+							</div>
+							<div>
+								<label for="ipt-classname" class="col-sm-2 control-label role-addclassrole">姓名</label>
+								<div class="col-sm-10">
+									<select class="form-control role-addclassrole" id="slt-userlist" name="user_id">
+										<option value="-1">请选择...</option>
+										<foreach name="attendanlist" item="vo">
+											<option value="{$vo['id']}">{$vo['attendan']}</option>
+										</foreach>
+									</select>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" name="type" value="add">
+						<input type="hidden" name="role_id" value="2" />
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-edit-submit">提交</button>
 					</div>
 				</form>
 			</div>
@@ -125,11 +183,8 @@
 							<td id="web-username-{$vo.user_id}">{$vo.username}</td>
 							<td id="web-realname-{$vo.user_id}">{$vo.realname}</td>
 							<td userid="{$vo.user_id}">
-								<a class="web-edit" href="#" id="web-edit-{$vo.user_id}">
-									<i class="icon-edit"></i> 修改
-								</a>
 								<a class="web-delete" href="#" id="web-delete-{$vo.user_id}" role="3">
-									<i class="icon-edit"></i> 删除
+									<i class="icon-remove"></i> 删除
 								</a>
 							</td>
 						</tr>
@@ -144,7 +199,7 @@
 			班级管理
 			<div class='panel-tools'>
 				<div class='btn-group'>
-					<a class='btn' data-toggle="modal" data-target="#createModal">
+					<a class='btn' data-toggle="modal" data-target="#addClassModal">
 						<i class='icon-plus'> 添加</i>
 					</a>
 				</div>
@@ -157,6 +212,7 @@
 					<tr>
 						<th>用户名</th>
 						<th>姓名</th>
+						<th>班级</th>
 						<th>操作</th>
 					</tr>
 				</thead>
@@ -165,7 +221,11 @@
 						<tr class="odd gradeX">
 							<td>{$vo.realname}</td>
 							<td>{$vo.username}</td>
-							<td>
+							<td>{$vo.classname}</td>
+							<td userid="{$vo.user_id}">
+								<a class="web-delete" href="#" id="web-delete-{$vo.user_id}" role="2">
+									<i class="icon-remove"></i> 删除
+								</a>
 							</td>
 						</tr>
 					</foreach>

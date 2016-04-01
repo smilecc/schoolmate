@@ -25,7 +25,12 @@ $(function(){
 						type: 'edit',
 						mode: 'ajax'
 					},function(data){
-						alert(data);
+						var jobj = JSON.parse(data);
+						if(jobj['status']) {
+							window.location.reload();
+						} else {
+							alert('系统错误，请稍后再试');
+						}
 				});
 			}
 		});
