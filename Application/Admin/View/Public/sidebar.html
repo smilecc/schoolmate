@@ -1,32 +1,41 @@
 <!-- Sidebar -->
 <section id='sidebar'>
-  <i class='icon-align-justify icon-large' id='toggle'></i>
-  <ul id='dock'>
-    <li class='launcher' id="sb-dashboard">
-      <i class='icon-dashboard'></i>
-      <a href="{:U('/Admin/Index')}">概述</a>
-    </li>
-    <li class='launcher' id="sb-class">
-      <i class='icon-sitemap'></i>
-      <a href="{:U('/Admin/Class')}">班级</a>
-    </li>
-    <li class='launcher' id="sb-solicit">
-      <i class='icon-money'></i>
-      <a href="{:U('/Admin/Donation')}">募捐</a>
-    </li>
-    <li class='launcher dropdown hover' id="sb-user">
-      <i class='icon-user'></i>
-      <a href='#'>用户</a>
-      <ul class='dropdown-menu'>
-        <li class='dropdown-header'>用户管理</li>
-        <li>
-          <a href='{:U('/Admin/User')}'>数据导入</a>
-        </li>
-        <li>
-          <a href='{:U('/Admin/User/role')}'>权限管理</a>
-        </li>
-      </ul>
-    </li>
+	<i class='icon-align-justify icon-large' id='toggle'></i>
+	<ul id='dock'>
+		<li class='launcher' id="sb-dashboard">
+			<i class='icon-dashboard'></i>
+			<a href="{:U('/Admin/Index')}">概述</a>
+		</li>
+		<li class='launcher dropdown hover' id="sb-class">
+			<i class='icon-sitemap'></i>
+			<a href="#">班级</a>
+			<ul class='dropdown-menu'>
+				<li class='dropdown-header'>班级管理</li>
+				<li>
+					<a href='{:U('/Admin/Class/index')}'>班级管理</a>
+				</li>
+				<li>
+					<a href='#'>批量导入</a>
+				</li>
+			</ul>
+		</li>
+		<li class='launcher' id="sb-solicit">
+			<i class='icon-money'></i>
+			<a href="{:U('/Admin/Donation')}">募捐</a>
+		</li>
+		<li class='launcher dropdown hover' id="sb-user">
+			<i class='icon-user'></i>
+			<a href='#'>用户</a>
+			<ul class='dropdown-menu'>
+				<li class='dropdown-header'>用户管理</li>
+				<li>
+					<a href='{:U('/Admin/User')}'>数据导入</a>
+				</li>
+				<li>
+					<a href='{:U('/Admin/User/role')}'>权限管理</a>
+				</li>
+			</ul>
+		</li>
 <!--     <li class='launcher dropdown hover' id="sb-work">
       <i class='icon-leaf'></i>
       <a href='#'>就业</a>
@@ -39,20 +48,20 @@
           <a href='#'>调查统计</a>
         </li>
       </ul>
-    </li> -->
-  </ul>
-  <div data-toggle='tooltip' id='beaker' title='Made by Can'></div>
+  </li> -->
+</ul>
+<div data-toggle='tooltip' id='beaker' title='Made by Can'></div>
 </section>
 <!-- Tools -->
 <section id='tools'>
-  <ul class='breadcrumb' id='breadcrumb'>
-    <li class='title'>管理平台</li>
-    <block name="navtab">
-      <li><a href="#">Lorem</a></li>
-      <li class='active'><a href="#">ipsum</a></li>
-    </block>
-  </ul>
-  <block name="toolbar">
+	<ul class='breadcrumb' id='breadcrumb'>
+		<li class='title'>管理平台</li>
+		<block name="navtab">
+			<li><a href="#">Lorem</a></li>
+			<li class='active'><a href="#">ipsum</a></li>
+		</block>
+	</ul>
+	<block name="toolbar">
 
-  </block>
+	</block>
 </section>
