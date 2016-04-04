@@ -154,6 +154,7 @@ class ApiController extends Controller {
 
 	public function get_student($class_id)
 	{
-
+		$res_arr = M('Alumnus')->where('class_id=%d',$class_id)->select();
+		echo json_encode($res_arr);
 	}
 }

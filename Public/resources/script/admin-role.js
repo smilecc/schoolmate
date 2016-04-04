@@ -35,6 +35,20 @@ $(function(){
 			}
 		});
 	});
+
+	$('#slt-classattendan').change(function(){
+		var select_attendan = $(this).children('option:selected').val();
+		if(select_attendan == -1) {
+			$('#slt-classlist').hide();
+			$('#slt-userlist').hide();
+		} else {
+			CAJAX('/index.php/Admin/Api/get_class',{
+				attendandate_id: select_attendan
+			},function(data){
+				var class_obj = JSON.parse(data);
+			});
+		}
+	});
 });
 
 // CAJAX(
