@@ -37,3 +37,6 @@
 .role-addclassrole{
 	margin-top: 20px;
 }
+.role-hide{
+	display: none;
+}
