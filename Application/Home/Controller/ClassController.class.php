@@ -21,6 +21,11 @@ class ClassController extends BaseController {
 	    $member_list = D('Class')->GetMember(self::myClassid(),5);
 	    $this->assign('member_list',$member_list);
 
+	    // 获取相册
+		$albumid = D('Album')->GetIdByUserid(session('id'));
+		$album_arr = M('Albumphoto')->where('album_id=%d',$albumid)->order('id desc')->limit(4)->select();
+		$this->assign('albumlist',$album_arr);
+
 		$this->assign('info',$classinfo);
 		$this->display();
 	}
@@ -44,7 +49,9 @@ class ClassController extends BaseController {
 	}
 
 	public function album(){
-		
+		$albumid = D('Album')->GetIdByUserid(session('id'));
+		$album_arr = M('Albumphoto')->where('album_id=%d',$albumid)->order('id desc')->select();
+		$this->assign('albumlist',$album_arr);
 		$this->display();
 	}
 }

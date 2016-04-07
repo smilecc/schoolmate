@@ -12,12 +12,38 @@
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 						<h4 class="modal-title" id="myModalLabel">图片上传</h4>
 					</div>
-					<div class="modal-body">
-						<input type="file" accept="image/*" id="file" name="file" />
+					<div class="modal-body form-horizontal" style="padding-left: 40px;padding-right: 40px;">
+						<div class="form-group">
+							<input type="text" class="form-control" name="photodescription" placeholder="照片描述（可空）">
+						</div>
+						<div class="form-group">
+							<input type="file" accept="image/*" id="file" name="file" />
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 						<button type="submit" class="btn btn-primary">确认上传</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form method="post" action="{:U('/Home/Api/delete_photo')}" enctype="multipart/form-data">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">图片上传</h4>
+					</div>
+					<div class="modal-body">
+						确定删除这张图片吗？
+					</div>
+					<input type="hidden" name="photoid" id="ipt-photoid" value="-1" />
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-danger">确认</button>
 					</div>
 				</form>
 			</div>
@@ -29,6 +55,31 @@
 			相册列表 <a style="font-weight: normal;" href="#" data-toggle="modal" data-target="#myModal">上传新照片</a>
 		</div>
 		<div class="panel-body">
+			<div class="row">
+				<foreach name="albumlist" item="vo">
+					<div class="col-xs-6 col-lg-2 col-md-3 album-div">
+						<span class="glyphicon glyphicon-remove album-remove" aria-hidden="true" onclick="delete_photo({$vo['id']})"></span>
+						<a target="_blank" href="/{$vo['photourl']}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{:($vo['photodescription']==null?'无介绍':$vo['photodescription'])}">
+							<img src="/{$vo['code1']}sm_{$vo['code2']}" alt="image" >
+						</a>
+					</div>
+				</foreach>
+			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	$(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+		$('.album-div').mouseover(function(){
+			$(this).children('.album-remove').show();
+		});
+		$('.album-div').mouseout(function(){
+			$(this).children('.album-remove').hide();
+		});
+	})
+	function delete_photo(id){
+		$('#ipt-photoid').val(id);
+		$('#deleteModal').modal('show');
+	}
+	</script>
 </block>

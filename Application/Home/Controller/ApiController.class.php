@@ -16,30 +16,39 @@ class ApiController extends Controller {
 
 	public function upload_photo(){
 		$upload = new \Think\Upload();// 实例化上传类
-		$upload->maxSize   =     3145728 ;// 设置附件上传大小
+		$upload->maxSize   =     10145728 ;// 设置附件上传大小
 		$upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
 		$upload->rootPath  =     './Public/Uploads/'; // 设置附件上传根目录
 		// 上传文件 
 		$info   =   $upload->uploadOne($_FILES['file']);
 
 		if(!$info) {// 上传错误提示错误信息
-			print_r($_FILES);
-			//$this->error($upload->getError());
+			$this->error($upload->getError());
 		}else{
 			$image = new \Think\Image();
 			$image->open($upload->rootPath.$info['savepath'].$info['savename']);
-			$image->thumb(300, 165, \Think\Image::IMAGE_THUMB_FIXED)->save($upload->rootPath.$info['savepath'].'sm_'.$info['savename']);
+			$image->thumb(418, 300, \Think\Image::IMAGE_THUMB_FIXED)->save($upload->rootPath.$info['savepath'].'sm_'.$info['savename']);
 
 			$photo = array(
 				'code1'		=> $upload->rootPath.$info['savepath'],
 				'code2'		=> $info['savename'],
 				'photourl'  => $upload->rootPath.$info['savepath'].$info['savename'],
-				'user_id'	=> cookie('userid'),
-				'album_id'	=> D('Album')->GetIdByUserid(cookie('userid'))
+				'user_id'	=> session('id'),
+				'album_id'	=> D('Album')->GetIdByUserid(session('id')),
+				'photodescription' => I('photodescription')
 				);
 			M('Albumphoto')->add($photo);
 
 			$this->success('上传成功');
+		}
+	}
+
+	public function delete_photo($photoid) {
+		$count = M('Albumphoto')->where('id=%d',$photoid)->delete();
+		if($count == 0) {
+			$this->error('删除失败，系统繁忙，请稍后再试');
+		} else {
+			$this->success('删除成功');
 		}
 	}
 }

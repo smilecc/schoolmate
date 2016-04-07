@@ -23,3 +23,17 @@ html,body{
 .modal-footer{
 	margin-top: 0;
 }
+
+.album-remove{
+	position: absolute;
+    padding: 5px;
+    margin: 7px;
+    background-color: red;
+    color: white;
+    border-radius: 60px;
+    display: none;
+    cursor: pointer;
+}
+.album-remove:hover{
+	background-color: #000;
+}

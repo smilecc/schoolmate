@@ -42,9 +42,16 @@
 			    <h3 class="panel-title">班级相册</h3>
 			  </div>
 			  <div class="panel-body">
-			    班级名：{$info['classname']}<br/>
-			    班主任：{$info['headmaster']}<br/>
-			    入学年份：{$info['attendan']}年
+				<div class="row">
+					<foreach name="albumlist" item="vo">
+						<div class="col-xs-6 col-md-3 album-div">
+							<a href="#" class="thumbnail">
+								<img src="/{$vo['code1']}sm_{$vo['code2']}" alt="image" >
+							</a>
+						</div>
+					</foreach>
+				</div>
+				<a href="{:U('/Home/Class/album')}" class="pull-right">查看更多 ></a>
 			  </div>
 			</div>
 
