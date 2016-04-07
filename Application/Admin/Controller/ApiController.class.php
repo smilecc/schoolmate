@@ -70,7 +70,7 @@ class ApiController extends Controller {
 			}
 			else
 			{
-				echo GetResult(false);
+				echo GetResult(false,'操作失败，数据未修改或系统繁忙');
 			}
 		}
 	}
@@ -151,6 +151,7 @@ class ApiController extends Controller {
 		$res_arr = M('Class')->where('attendandate_id=%d',$attendandate_id)->select();
 		echo json_encode($res_arr);
 	}
+
 
 	public function get_student($class_id)
 	{

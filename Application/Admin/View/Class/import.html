@@ -1,9 +1,9 @@
 <extend name="Base/common"/>
 <block name="navtab">
-	<li class='active'><a href="#">用户数据导入</a></li>
+	<li class='active'><a href="#">班级数据导入</a></li>
 </block>
 <block name="body">
-	<script type="text/javascript">$('#sb-user').addClass('active')</script>
+	<script type="text/javascript">$('#sb-class').addClass('active')</script>
 	<div class='panel panel-default'>
 		<div class='panel-heading'>
 			<i class='icon-table icon-large'></i>
@@ -16,7 +16,7 @@
 			<if condition="$alert">
 				<div class="alert alert-success" role="alert">导入成功！请勿重复操作！</div>
 			</if>
-			<form id="form-upload" action="{:U('/Admin/Excel/upload')}" method="post">
+			<form id="form-upload" action="{:U('/Admin/Excel/upload_class')}" method="post">
 				<div class="form-group">
 					<label for="exampleInputFile">Excel 文件上传 <a href="#">点击下载模板文件</a></label>
 					<input type="file" id="file" name="file">
@@ -44,7 +44,7 @@
 							switch(obj['status'])
 							{
 								case 0:
-								window.location.href = '{:U('/Admin/User/index?alert=1')}';
+								window.location.href = '{:U('/Admin/Class/import?alert=1')}';
 								break;
                             	case 1: // Upload file error
                             	msg(obj['info']);
@@ -54,7 +54,7 @@
                             	var lineObj = obj['lines'];
                             	var alertText = obj['info'] + '<br/>存在以下问题，<strong>请修复问题后重新上传</strong>：<br/>';
                             	for (var i = lineObj.length - 1; i >= 0; i--) {
-                            		alertText += ('第' + lineObj[i].line + '行 找不到学年对应的班级 - <strong>'+ lineObj[i].year + lineObj[i].classname +'</strong><br/>')
+                            		alertText += ('第' + lineObj[i].line + '行 找不到学年 - <strong>'+ lineObj[i].attendan + lineObj[i].classname +'</strong><br/>')
                             	};
                             	msg(alertText);
                             	break;

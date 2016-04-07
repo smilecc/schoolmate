@@ -1,29 +1,47 @@
 var search = '';
 
+function SetBtnStatus(id, status){
+	status.bool = !status.bool;
+	$('#' + id).attr('disabled', status.bool);
+
+	if(status.bool) {
+		$('#' + id).text('正在提交');
+	} else {
+		$('#' + id).text(status.backstr);
+	}
+}
+
 $(function(){
-    $('#sb-class').addClass('active');
-    Reload();
+	$('#sb-class').addClass('active');
+	Reload();
 
     // 添加班级按钮 事件响应
     $('#btn-add-submit').click(function(){
-      var attendandate = $('#slt-attendandate').children('option:selected').val();
+    	var attendandate = $('#slt-attendandate').children('option:selected').val();
 
-      if(attendandate == -1){
-        alert('请选择一个入学年份');
-        return;
-      }
+    	if(attendandate == -1){
+    		alert('请选择一个入学年份');
+    		return;
+    	}
 
-      $('#fm-addclass').ajaxSubmit({
-            success: function(data){
-              var obj = JSON.parse(data);
-              if(obj['status']){
-                msg(obj['info']);
-                Load(1);
-              }else{
-                alert(obj['info']);
-              }
-            }
-          });
+    	SetBtnStatus('btn-add-submit', {
+    		bool: false
+    	});
+    	$('#fm-addclass').ajaxSubmit({
+    		success: function(data){
+    			var obj = JSON.parse(data);
+				SetBtnStatus('btn-add-submit', {
+					bool: true,
+					backstr: '提交'
+				});
+    			if(obj['status']){
+    				msg(obj['info']);
+    				Load(1);
+    			}else{
+    				alert(obj['info']);
+    			}
+    		}
+    	});
     });
 
     // 刷新按钮
@@ -40,13 +58,20 @@ $(function(){
 
     // 修改按钮
     $('#btn-change-submit').click(function(){
-		$('#fm-cgclass').ajaxSubmit({
-				success: function(data){
-				  if(parseJn(data)){
-						Reload();
-					}
-				}
-			});
+    	SetBtnStatus('btn-change-submit', {
+    		bool: false
+    	});
+    	$('#fm-cgclass').ajaxSubmit({
+    		success: function(data){
+				SetBtnStatus('btn-change-submit', {
+					bool: true,
+					backstr: '提交'
+				});
+    			if(parseJn(data)){
+    				Reload();
+    			}
+    		}
+    	});
     });
 });
 
@@ -70,8 +95,8 @@ function Reload(){
 			$('#class-list-cover').width($('#class-table').width());
 			$('#class-list-cover>div').css('margin-top','-'+($('#class-list-cover>div').height()/2) + 'px');
 			$('#class-list-cover>div').css('margin-left','-'+($('#class-list-cover>div').width()/2) + 'px');
-    		$('#cls-reload').children().removeClass('icon-spin');
-    		$('#class-list-cover').fadeOut(200);
+			$('#cls-reload').children().removeClass('icon-spin');
+			$('#class-list-cover').fadeOut(200);
 		});
 	},0);
 }
@@ -90,6 +115,9 @@ function showDeleteModal(id){
 	$('#deleteModal').modal('show');
 
 	$('#btn-delete').one('click',function(){
+		SetBtnStatus('btn-delete', {
+			bool: false
+		});
 		$.ajax({
 			url:'/index.php/Admin/Api/ClassDelete',
 			type:'POST',
@@ -97,6 +125,10 @@ function showDeleteModal(id){
 				'id':id
 			},
 			success:function(data){
+				SetBtnStatus('btn-delete', {
+					bool: true,
+					backstr: '确认'
+				});
 				if(parseJn(data)){
 					Reload();
 				}

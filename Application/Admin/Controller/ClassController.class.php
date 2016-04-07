@@ -50,6 +50,11 @@ class ClassController extends BaseController {
     	$this->display();
     }
 
+    public function import($alert = false){
+        $this->assign('alert',$alert);
+        $this->display();
+    }
+
     // 初始化 入学日期 1970 - 2015
     public function CreateAttendan()
     {
