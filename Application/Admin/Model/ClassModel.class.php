@@ -5,6 +5,11 @@ class ClassModel extends Model {
 	public function CreateClass($data)
 	{
 		$id = $this->add($data);
+		$AlbumData = array(
+			'class_id'  => $id,
+			'albumname' => $data['classname']
+			);
+		M('Album')->add($AlbumData);
 		return $id;
 	}
 

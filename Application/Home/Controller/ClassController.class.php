@@ -44,6 +44,7 @@ class ClassController extends BaseController {
 	}
 
 	public function album(){
+		
 		$this->display();
 	}
 }

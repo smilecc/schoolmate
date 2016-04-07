@@ -123,7 +123,7 @@ class ExcelController extends Controller {
 					));
 			} else {
 				foreach ($insertList as $key => $value) {
-					M('Class')->add($value);
+					D('Class')->CreateClass($value);
 				}
 				echo json_encode(array('status' => 0, 'info' => '操作成功'));
 			}
