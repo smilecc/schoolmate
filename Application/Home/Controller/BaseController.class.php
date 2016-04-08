@@ -8,7 +8,7 @@ class BaseController extends Controller {
 		if($auto_login->AutoLogin())
 		{
 			// session _ACCESS_LIST
-			// print_r($_SESSION['_ACCESS_LIST']);
+			// print_r($_SESSION);
 			$access = \Org\Util\Rbac::AccessDecision();
 			if(!$access)
 			{

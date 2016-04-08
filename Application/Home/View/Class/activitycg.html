@@ -9,6 +9,9 @@
 <script type="text/javascript" src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
 <script type="text/javascript" src="__PUBLIC__/timer/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 
+<span id="page-title" style="display: none;">{$detail.activitytitle}</span>
+<span id="page-content" style="display: none;">{$detail.activitycontent}</span>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         活动详情
@@ -18,24 +21,28 @@
             <div class="col-lg-12">
                 <form role="form" class="fm-activity" action="{:U('/Home/Api/CreateActivitty')}" method="post" id="form">
                     <input type="hidden" name="classid" value="{$classid}" />
+                    <input type="hidden" name="aid" value="{$aid}">
                     <div class="form-group">
                         <label>活动名称</label>
-                        <input class="form-control" type="text" name="title" required>
+                        <input class="form-control" type="text" id="ipt-title" name="title" id="" required>
                     </div>
-                    <div class="form-group">
+<!--                     <div class="form-group">
                         <label>活动时间</label>
                         <input class="form-control" type="text" id="ipt-timer" name="time" placeholder="点击此框选择时间" readonly>
-                    </div>
+                    </div> -->
 
                     <label>活动说明</label>
 				    <script id="container" name="content" type="text/plain" style="width:100%;height:300px;"></script>
                     <script type="text/javascript">
-                    	$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+                    	//$("#ipt-timer").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 				        var um = UM.getEditor('container');
+                        $('#ipt-title').val($('#page-title').text());
+                        um.setContent($('#page-content').text(), false);
 				    </script>
 				    <div class="activity-btn">
                     	<button type="submit" class="btn btn-primary" id="btn-submit">提交</button>
                     	<button type="reset" class="btn btn-default" id="btn-reset">重置</button>
+                        <button type="button" class="btn btn-default" onclick="history.go(-1)">返回</button>
                     </div>
                 </form>
             </div>
@@ -52,7 +59,7 @@
                         success:function(data){
                             var obj = JSON.parse(data);
                             if(obj['status']){
-                                window.location.href = "{:U('/Home/Class')}";
+                                window.location.href = "{:U('/Home/Class/activitydetail')}"+'?aid='+obj['id'];
                             } else {
                                 msg(obj['info']);
                             }

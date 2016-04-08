@@ -2,12 +2,12 @@
 namespace Home\Model;
 use Think\Model;
 class ActivityModel extends Model {
-	public function CreateActivity($title,$content,$classid,$options=array())
+	public function CreateActivity($title, $content, $classid, $aid, $options=array())
 	{
 		$data = array(
 			'activitytitle' 	=> $title,
 			'activitycontent' 	=> $content,
-			'user_id' 			=> cookie('userid'),
+			'user_id' 			=> session('id'),
 			'class_id' 			=> $classid,
 			'checkidetifier' 	=> C('ACTIVITY_CHECK_DEFAULT')
 			);
@@ -19,7 +19,12 @@ class ActivityModel extends Model {
 		}
 
 		$data = array_merge($data,$options);
-		$id = $this->add($data);
+		if($aid == -1) {
+			$id = $this->add($data);
+		} else {
+			$this->where('id=%d', $aid)->save($data);
+			$id = $aid;
+		}
 		
 		if($id > 0)
 		{

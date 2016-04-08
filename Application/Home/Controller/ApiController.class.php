@@ -9,10 +9,21 @@ class ApiController extends Controller {
 			$title = I('title');
 			$content =  I('content');
 			$classid = I('classid');
+			$aid = I('aid');
 
-			echo D('Activity')->CreateActivity($title,$content,$classid);
+			echo D('Activity')->CreateActivity($title, $content, $classid, $aid);
 		}
 	}    
+
+	public function delete_activity($aid) {
+		if(IS_POST) {
+			if(M('Activity')->where('id=%d', $aid)->delete() > 0) {
+				$this->success('删除成功', '/Home/Class/activity');
+			} else {
+				$this->error('删除失败');
+			}
+		}
+	}
 
 	public function upload_photo(){
 		$upload = new \Think\Upload();// 实例化上传类

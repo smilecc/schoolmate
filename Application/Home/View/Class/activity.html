@@ -5,27 +5,27 @@
 <script type="text/javascript">$('#li-class').addClass('active')</script>
 <div class="panel panel-default">
     <div class="panel-heading">
-         活动列表
+         活动列表 <if condition="session('user_role') eq 2"><a class="btn btn-success btn-xs" style="font-weight: normal;" href="{:U('/Home/Class/activitycg')}">发起新活动</a></if>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-activity">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <!-- <th>#</th> -->
                         <th>活动名称</th>
                         <th>发起人</th>
-                        <th>审核状态</th>
+                        <!-- <th>审核状态</th> -->
                         <th>发起日期</th>
                     </tr>
                 </thead>
                 <tbody>
                 	<foreach name="list" item="vo">
 	                	<tr class="odd gradeX">
-	                        <td>{$vo.id}</td>
-	                        <td>{$vo.activitytitle}</td>
+	                        <!-- <td>{$vo.id}</td> -->
+	                        <td><a href="{:U('/Home/Class/activitydetail').'?aid='.$vo['id']}">{$vo.activitytitle}</a></td>
 	                        <td>{$vo.realname}</td>
-	                        <td>{:$vo['checkidetifier']==0?'未通过':'通过'}</td>
+	                        <!-- <td>{:$vo['checkidetifier']==0?'未通过':'通过'}</td> -->
 	                        <td>{$vo.createddate}</td>
 	                    </tr>
                     </foreach>

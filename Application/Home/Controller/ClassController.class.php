@@ -3,11 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 class ClassController extends BaseController {
 
-	private function myClassid(){
-	    return 1;
+	private function myClassid() {
+	    return M('Alumnus')->where('user_id=%d', session('id'))->getField('class_id');
 	}
 
-	public function index(){
+	public function index() {
 	    // 获取基本数据
 		$classid = self::myClassid();
 		$classinfo = M('Class')->where('id=%d',$classid)->find();
@@ -30,28 +30,39 @@ class ClassController extends BaseController {
 		$this->display();
 	}
 
-	public function activity(){
+	public function activity() {
 		$list = D('Activity')->GetClassAll(self::myClassid());
 
 		$this->assign('list',$list);
 		$this->display();
 	}
 
-	public function activitycg(){
+	public function activitycg($aid=-1) {
 	    $this->assign('classid',self::myClassid());
+	    if($aid != -1) {
+			$detail = M('Activity')->where('id=%d', $aid)->find();
+			$this->assign('detail',$detail);
+	    }
+	    $this->assign('aid', $aid);
 		$this->display();
 	}
 
-	public function member(){
+	public function member() {
 	    $member_list = D('Class')->GetMember(self::myClassid());
 	    $this->assign('list',$member_list);
 	    $this->display();
 	}
 
-	public function album(){
+	public function album() {
 		$albumid = D('Album')->GetIdByUserid(session('id'));
 		$album_arr = M('Albumphoto')->where('album_id=%d',$albumid)->order('id desc')->select();
 		$this->assign('albumlist',$album_arr);
+		$this->display();
+	}
+
+	public function activitydetail($aid) {
+		$detail = M('Activity')->where('id=%d', $aid)->find();
+		$this->assign('detail',$detail);
 		$this->display();
 	}
 }
