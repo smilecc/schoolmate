@@ -3,6 +3,76 @@ namespace User\Model;
 use Think\Model;
 
 Class UserModel extends Model{
+	// 查询用户正确性 若正确则返回userid
+	/*
+		SELECT `user`.realname,`user`.sex FROM user,alumnus
+		WHERE alumnus.user_id = `user`.id 
+	*/
+	public function CheckStudent($realname, $sex, $classid, $classmate)
+	{
+		$class_arr = M('User')->field('user.id,user.realname,user.sex,user.username')->table('user user,alumnus alumnus')
+		->where('alumnus.user_id = `user`.id AND class_id=%d', $classid)->select();
+		
+		// 处理用户名
+		$realname = trim($realname);
+		$classmate = trim($classmate);
+
+		// 查找存在情况
+		$find_user = false;
+		$find_classmate = false;
+		$backup_user = null; // 防止出现同名用户抢占性别不确定用户的情况
+		$res_arr = array('userid' => -1);
+
+		foreach ($class_arr as $key => $value) {
+			// 查找姓名
+			if ($value['realname'] == $realname) {
+
+				if ($value['username'] != null) {
+					continue;
+				}
+
+				if($value['sex'] == $sex) {
+					$find_user = true;
+					$res_arr['userid'] = $value['id'];
+					continue;
+				}
+
+				if ($value['sex'] == 0) {
+					$backup_user = $value['id'];
+				}
+				continue;
+			}
+
+			// 查找同学
+			if($value['realname'] == $classmate) {
+				$find_classmate = true;
+			}
+		}
+
+		// 找不到相同性别 若存在未知性别 则替补
+		if($find_user == false && $backup_user != null) {
+			$res_arr['userid'] = $backup_user;
+			$find_user = true;
+		}
+
+		if($find_user) {
+			if($find_classmate) {
+				// 完成验证
+				$res_arr['status'] = true;
+			} else {
+				// 找不到同学
+				$res_arr['status'] = false;
+				$res_arr['info'] = '该班级没有该姓名的同学';
+			}
+		} else {
+			// 找不到姓名
+			$res_arr['status'] = false;
+			$res_arr['info'] = '对不起，该班级未注册成员中不存在您';
+		}
+
+		return $res_arr;
+	}
+
 	// 创建或更新用户登录随机数
 	public function LoginRandom($userid)
 	{
@@ -64,7 +134,7 @@ Class UserModel extends Model{
 		return $resultArr;
 	}
 
-	public function CreateUser($username,$password,$email)
+	public function CreateUser($username, $password, $email, $uid=-1)
 	{
 		$resultArr = array(
 			'status' => false
@@ -122,24 +192,42 @@ Class UserModel extends Model{
 			'userstatus'=> 1
 		);
 		
-		$this->create($insertArray);
-		$result = $this->add();
+		if($uid == -1)
+		{
+			$this->create($insertArray);
+			$result = $this->add();
+			$condition = $result;
+		} 
+		else
+		{
+			$condition = $this->where('id=%d',$uid)->save($insertArray);
+			$result = $uid;
+		}
 
 		// 返回数据
-		if($result)
+		if($condition)
 		{
 			// 注册用户密码盐值
 			$rand = $this->RegisterRandom($result);
 			// 给定密码
 			$this->where('id=%d',$result)->setField('password',\User\Api\UserApi::LoginEncode($password.$rand));
-			$resultArr['info'] = 'Success';
+			$resultArr['info'] = '注册成功';
 			$resultArr['status'] = true;
 		}
 		else
 		{
-			$resultArr['info'] = 'System Error';
+			$resultArr['info'] = '系统繁忙，请稍后再试';
 		}
 		return $resultArr;
+	}
+
+	public function SaveUser($uid, $username, $password, $email, $sex)
+	{
+		if($sex == 1 || $sex == 2) {
+			$this->where('id=%d',$uid)->setField('sex', $sex);
+		}
+
+		return $this->CreateUser($username, $password, $email, $uid);
 	}
 
 	public function ChangePassword($old,$new)

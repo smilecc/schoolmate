@@ -52,6 +52,18 @@ class ExcelController extends Controller {
 				$student['sex'] = trim($data->sheets[0]['cells'][$i][4]);
 				$student['id'] = isset($data->sheets[0]['cells'][$i][5]) ? trim($data->sheets[0]['cells'][$i][5]) : null;
 
+				switch ($student['sex']) {
+					case '男':
+						$student['sex'] = 1;
+						break;
+					case '女':
+						$student['sex'] = 2;
+						break;
+					default:
+						$student['sex'] = 0;
+						break;
+				}
+
 				// 存在则入库 不存在则反馈给用户
 				if(isset($classList[$student['attendandate'].$student['classname']]) == false) {
 					$errorList[] = array(

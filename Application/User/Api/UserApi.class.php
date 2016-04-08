@@ -117,4 +117,3 @@ class UserApi{
     	return D('User')->CreateUser($username,$password,$email);
     }
 }
-?>
