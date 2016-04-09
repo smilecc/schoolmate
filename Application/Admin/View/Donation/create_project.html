@@ -1,0 +1,177 @@
+<extend name="Base/common"/>
+<block name="navtab">
+  <li><a href="#">新增捐赠</a></li>
+  <li class='active'><a href="#">选择捐赠项目</a></li>
+</block>
+<block name="body">
+<script src="//cdn.bootcss.com/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap-select/1.10.0/js/i18n/defaults-zh_CN.min.js"></script>
+	<script type="text/javascript">$('#sb-donation').addClass('active')</script>
+
+	<!-- 增加项目Modal -->
+	<div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">创建捐赠项目</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/donation_project_create')}">
+					<div class="modal-body">
+						
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-2 control-label">项目名称</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-name" name="pro_name" placeholder="项目名称" required>
+							</div>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-edit-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 增加项目Modal -->
+	<div class="modal fade" id="editinfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">填写捐赠信息</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="get" action="{:U('/Admin/Donation/create_info')}">
+					<div class="modal-body">
+						<input type="hidden" name="proid" id="ipt-proid" value="-1" />
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-3 control-label">捐赠来源</label>
+							<div class="col-sm-9">
+								<select class="form-control selectpicker" id="slt-source" name="source">
+									<option value="-1">请选择...</option>
+									<option value="1">分会捐赠</option>
+									<option value="2">个人捐赠</option>
+									<option value="3">机构公司捐赠</option>
+								</select>
+								<!-- <input type="text" class="form-control" id="ipt-name" name="pro_name" placeholder="项目名称"> -->
+							</div>
+						</div>
+
+						<div class="form-group div-hide" id="div-user">
+							<label for="ipt-classname" class="col-sm-3 control-label">捐赠人用户名</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="ipt-username" name="username" placeholder="捐赠人用户名">
+							</div>
+						</div>
+
+						<div class="form-group div-hide" id="div-branch">
+							<label for="ipt-classname" class="col-sm-3 control-label">捐赠分会名称</label>
+							<div class="col-sm-9">
+								<select class="form-control selectpicker" data-live-search="true" data-size="5">
+									<option value="-1">请选择...</option>
+									<foreach name="branchlist" item="vo">
+										<option value="{$vo.id}">{$vo.branch_name}</option>
+									</foreach>
+								</select>
+								<!-- <input type="text" class="form-control" id="ipt-name" name="pro_name" placeholder="项目名称"> -->
+							</div>
+						</div>
+
+						<div class="form-group div-hide" id="div-company">
+							<label for="ipt-classname" class="col-sm-3 control-label">捐赠机构名称</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="ipt-company" name="companyname" placeholder="捐赠机构名称">
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-add-submit" disabled="disabled">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			<i class='icon-table icon-large'></i>
+			捐赠项目选择
+			<div class='panel-tools'>
+				<div class='btn-group'>
+					<a class='btn' data-toggle="modal" data-target="#addProjectModal">
+						<i class='icon-plus'> 创建捐赠项目</i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class='panel-body'>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover" id="dataTables-project">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>捐赠项目名称</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<foreach name="prolist" item="vo">
+								<tr class="odd gradeX">
+									<td>{$vo.id}</td>
+									<td>{$vo.donationname}</td>
+									<td>
+										<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-ok"></span> 选定该项目</a>
+									</td>
+								</tr>
+							</foreach>
+						</tbody>
+					</table>
+				</div>
+		</div>
+	</div>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#dataTables-project').dataTable(cn_lang);
+			$('.select-a').click(function(){
+				var proid = $(this).attr('proid');
+				$('#ipt-proid').val(proid);
+				$('#editinfoModal').modal('show');
+			});
+
+			$('#slt-source').change(function(){
+				var source =  $(this).children('option:selected').val();
+
+				$('.div-hide').hide();
+				$('#ipt-company').attr('required', false);
+				$('#ipt-username').attr('required', false);
+				if (source != '-1') {
+					$('#btn-add-submit').attr('disabled', false);
+				};
+
+				switch(source){
+					case '1':
+						$('#div-branch').show();
+						break;
+					case '2':
+						$('#div-user').show();
+						$('#ipt-username').attr('required', true);
+						break;
+					case '3':
+						$('#div-company').show();
+						$('#ipt-company').attr('required', true);
+						break;
+					default:
+						$('#btn-add-submit').attr('disabled', true);
+						break;
+				}
+			});
+		})
+	</script>
+</block>

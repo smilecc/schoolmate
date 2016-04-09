@@ -41,6 +41,10 @@
 	display: none;
 }
 
+.div-hide{
+	display: none;
+}
+
 body{
 	font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }

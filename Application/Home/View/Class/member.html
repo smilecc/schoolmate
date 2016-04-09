@@ -2,77 +2,77 @@
 <block name="title">班级通讯录 - {:C('SITE_NAME')}</block>
 <block name="header-title">班级通讯录 <small>我的同学们</small></block>
 <block name="body">
-<script type="text/javascript">$('#li-class').addClass('active')</script>
-<div class="panel panel-default">
-    <div class="panel-heading">
-         班级成员列表
-    </div>
-    <div class="panel-body">
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover" id="dataTables-activity">
-                <thead>
-                    <tr>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>电话</th>
-                        <th>邮箱</th>
-                        <th>生日</th>
-                    </tr>
-                </thead>
-                <tbody>
-                	<foreach name="list" item="vo">
-	                	<tr class="odd gradeX">
-	                        <td>{$vo.realname}</td>
-	                        <td>
-                    			<switch name="vo['sex']" >
-	                        		<case value="1">男</case>
-	                        		<case value="2">女</case>
-	                        	<default />未填
-	                        	</switch>
-	                        </td>
-	                        <td>{:$vo['phone']==null?'未填':$vo['phone']}</td>
-	                        <td>{:$vo['email']}</td>
-	                        <td>{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
-	                    </tr>
-                    </foreach>
-                </tbody>
-            </table>
-        </div>
-        
-    </div>
-</div>
+	<script type="text/javascript">$('#li-class').addClass('active')</script>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			班级成员列表
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+					<thead>
+						<tr>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>电话</th>
+							<th>邮箱</th>
+							<th>生日</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="list" item="vo">
+							<tr class="odd gradeX">
+								<td>{$vo.realname}</td>
+								<td>
+									<switch name="vo['sex']" >
+										<case value="1">男</case>
+										<case value="2">女</case>
+										<default />未填
+									</switch>
+								</td>
+								<td>{:$vo['phone']==null?'未填':$vo['phone']}</td>
+								<td>{:$vo['email']}</td>
+								<td>{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
+							</tr>
+						</foreach>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
 
-    <script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
-    <script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
-    <script>
-            $(document).ready(function () {
-                $('#dataTables-activity').dataTable({
-                	order: [[ 0, 'desc' ]],
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#dataTables-activity').dataTable({
+				order: [[ 0, 'desc' ]],
 				    language: {
-					    "sProcessing":   "处理中...",
-					    "sLengthMenu":   "显示 _MENU_ 项结果",
-					    "sZeroRecords":  "没有匹配结果",
-					    "sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
-					    "sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
-					    "sInfoFiltered": "(由 _MAX_ 项结果过滤)",
-					    "sInfoPostFix":  "",
-					    "sSearch":       "搜索 ",
-					    "sUrl":          "",
-					    "sEmptyTable":     "表中数据为空",
-					    "sLoadingRecords": "载入中...",
-					    "sInfoThousands":  ",",
-					    "oPaginate": {
-					        "sFirst":    "首页",
-					        "sPrevious": "上页",
-					        "sNext":     "下页",
-					        "sLast":     "末页"
-					    },
-					    "oAria": {
-					        "sSortAscending":  ": 以升序排列此列",
-					        "sSortDescending": ": 以降序排列此列"
-					    }
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "搜索 ",
+					"sUrl":          "",
+					"sEmptyTable":     "表中数据为空",
+					"sLoadingRecords": "载入中...",
+					"sInfoThousands":  ",",
+					"oPaginate": {
+						"sFirst":    "首页",
+						"sPrevious": "上页",
+						"sNext":     "下页",
+						"sLast":     "末页"
+					},
+					"oAria": {
+						"sSortAscending":  ": 以升序排列此列",
+						"sSortDescending": ": 以降序排列此列"
 					}
-				});
+				}
 			});
-    </script>
+		});
+	</script>
 </block>

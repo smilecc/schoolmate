@@ -159,4 +159,26 @@ class ApiController extends Controller {
 		->where('alumnus.class_id=%d AND alumnus.user_id = user.id',$class_id)->select();
 		echo json_encode($res_arr);
 	}
+
+	public function donation_project_create($pro_name)
+	{
+		$resid = M('DonationProject')->add(array(
+			'donationname' => $pro_name
+			));
+		$this->success('创建成功');
+	}
+
+	public function branch_create($name)
+	{
+		M('Branch')->add(array(
+			'branch_name' => $name
+			));
+		$this->success('创建成功');
+	}
+
+	public function branch_delete($id)
+	{
+
+	}
+
 }
