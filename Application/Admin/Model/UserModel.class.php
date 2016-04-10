@@ -26,4 +26,13 @@ class UserModel extends Model {
 				));
 		}
 	}
+
+	public function GetUseridByName($username) {
+		$count = $this->where("username='%s'", $username)->count();
+		if($count == 1) {
+			return $this->where("username='%s'", $username)->getField('id');
+		} else {
+			return false;
+		}
+	}
 }

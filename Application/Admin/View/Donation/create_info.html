@@ -62,8 +62,11 @@
 				</table>
 			</div>
 		<input id="ipt-source" type="hidden" />
-		<form action="" method="post" class="pull-right" id="form">
+		<form action="{:U('/Admin/Api/donation_create')}" method="post" class="pull-right" id="form">
 			<input name="count" id="property-count" type="hidden" value="0" />
+			<input type="hidden" name="projectid" value="{$projectid}" />
+			<input type="hidden" name="sourceid" value="{$sourceid}" />
+			<input type="hidden" name="source" value="{$source}" />
 			<button class="btn btn-success" style="width: 100px;">提交</button>
 		</form>
 		</div>

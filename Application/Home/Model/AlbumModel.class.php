@@ -10,8 +10,8 @@ class AlbumModel extends Model {
 		// else {
 		// 	return $this->add(array(
 		// 		'class_id' => $classid,
-
+		// 		''
 		// 		));
-		// }
+		}
 	}
 }

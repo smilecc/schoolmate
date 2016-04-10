@@ -10,6 +10,26 @@ class DonationController extends Controller {
     	if($proid == -1 || $source == -1) {
     		$this->error('非法提交');
     	}
+        switch ($source) {
+            case '1':
+                $source_content = I('branchid');
+                break;
+            case '2':
+                $source_content = D('User')->GetUseridByName(I('username'));
+                if($source_content == false) {
+                    $this->error('系统中不存在该用户名的用户');
+                }
+                break;
+            case '3':
+                $source_content = I('companyname');
+            default:
+                $source = -1;
+                break;
+        }
+
+        $this->assign('projectid', $proid);
+        $this->assign('sourceid', $source);
+        $this->assign('source', $source_content);
     	$this->display();
     }
 

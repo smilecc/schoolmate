@@ -168,7 +168,67 @@ class ApiController extends Controller {
 		$this->success('创建成功');
 	}
 
-	public function donation_create($projectid)
+	public function donation_create($projectid, $sourceid, $source, $count)
+	{
+		if($sourceid == -1 || $projectid == -1) {
+			$this->error('系统错误');
+		} else {
+			$donation_data = array(
+				'donationproject_id' => $projectid,
+				'enter_uid'			 => session('id')
+				);
+			if ($source == -1 || $source == '') {
+				$this->error('存在无效的数据');
+			}
+
+			$property_arr = array();
+			for ($i = 0; $i < $count; $i++) { 
+				$property_content = I('property'.$i);
+				if ($property_content == null || $property_content == '') {
+					continue;
+				}
+
+				if (is_numeric($property_content)) {
+					$property_arr[] = array(
+						'donationcash' => $property_content,
+						'donationgoods'=> ''
+						);
+				} else {
+					$property_arr[] = array(
+						'donationcash'  => 0,
+						'donationgoods' => $property_content
+						);
+				}
+			}
+
+			if (count($property_arr) == 0) {
+				$this->error('不能提交空的明细列表');
+			}
+
+			switch ($sourceid) {
+				case '1':
+					$donation_data['branch_id'] = $source;
+					break;
+				case '2':
+					$donation_data['alumnus_id'] = $source;
+					break;
+				case '3':
+					$donation_data['donationcompany'] = $source;
+					break;
+				default:
+					$this->error('存在无效的数据');
+					break;
+			}
+
+			$donation_id = M('Donation')->add($donation_data);
+
+			foreach ($property_arr as $key => &$value) {
+				$value['donation_id'] = $donation_id;
+			}
+			M('DonationPersonDetail')->addAll($property_arr);
+			$this->success('提交成功', '/Admin/Donation');
+		}
+	}
 
 	public function branch_create($name)
 	{

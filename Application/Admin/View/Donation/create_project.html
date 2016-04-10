@@ -70,7 +70,7 @@
 						<div class="form-group div-hide" id="div-branch">
 							<label for="ipt-classname" class="col-sm-3 control-label">捐赠分会名称</label>
 							<div class="col-sm-9">
-								<select class="form-control selectpicker" data-live-search="true" data-size="5">
+								<select class="form-control selectpicker" name="branchid" data-live-search="true" data-size="5">
 									<option value="-1">请选择...</option>
 									<foreach name="branchlist" item="vo">
 										<option value="{$vo.id}">{$vo.branch_name}</option>
