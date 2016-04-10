@@ -181,6 +181,7 @@ class ApiController extends Controller {
 				$this->error('存在无效的数据');
 			}
 
+			// 处理捐赠数据
 			$property_arr = array();
 			for ($i = 0; $i < $count; $i++) { 
 				$property_content = I('property'.$i);
@@ -188,6 +189,7 @@ class ApiController extends Controller {
 					continue;
 				}
 
+				// 分类捐赠的是现金还是物品
 				if (is_numeric($property_content)) {
 					$property_arr[] = array(
 						'donationcash' => $property_content,
@@ -205,6 +207,7 @@ class ApiController extends Controller {
 				$this->error('不能提交空的明细列表');
 			}
 
+			// 分类捐赠来源
 			switch ($sourceid) {
 				case '1':
 					$donation_data['branch_id'] = $source;
