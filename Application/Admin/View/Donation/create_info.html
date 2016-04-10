@@ -1,6 +1,6 @@
 <extend name="Base/common"/>
 <block name="navtab">
-	<li class='active'><a href="#">新增捐赠</a></li>
+	<li class='active'><a href="#">填写捐赠明细</a></li>
 </block>
 <block name="body">
 	<script type="text/javascript">$('#sb-donation').addClass('active')</script>
@@ -33,7 +33,7 @@
 	<div class='panel panel-default'>
 		<div class='panel-heading'>
 			<i class='icon-table icon-large'></i>
-			捐赠明细
+			填写捐赠明细
 			<div class='panel-tools'>
 				<div class='btn-group'>
 					<a class='btn' data-toggle="modal" data-target="#addDetailModal">
@@ -52,7 +52,7 @@
 						</tr>
 					</thead>
 					<tbody id="tb">
-						<tr class="odd gradeX" id="tr-source">
+						<tr class="odd gradeX trsource" id="tr-source">
 							<td class="property"></td>
 							<td>
 								<a href="#" class="select-a" proid="" onclick="remove_item(this)"><span class="glyphicon glyphicon-remove"></span> 删除</a>
@@ -61,7 +61,9 @@
 					</tbody>
 				</table>
 			</div>
-		<form action="" method="" class="pull-right">
+		<input id="ipt-source" type="hidden" />
+		<form action="" method="post" class="pull-right" id="form">
+			<input name="count" id="property-count" type="hidden" value="0" />
 			<button class="btn btn-success" style="width: 100px;">提交</button>
 		</form>
 		</div>
@@ -69,7 +71,9 @@
 	<script type="text/javascript">
 	var itemid = 0;
 	function remove_item(item){
-
+		var propertyId = $(item).parent().parent().attr('id');
+		$(item).parent().parent().fadeOut(300);
+		$('#property' + propertyId).remove();
 	}
 
 	$('#btn-add').click(function(){
@@ -82,9 +86,23 @@
 			$('#ipt-property').val('');
 		}
 
+		// 给form添加input
+		var ipt = $('#ipt-source').clone(false);
+		$(ipt).attr('name', 'property' + itemid);
+		$(ipt).val(property);
+		$(ipt).attr('id', 'property' + itemid);
+		$('#form').append(ipt);
+
+		// 给table添加行
 		var tr = $('#tr-source').clone(false);
 		$(tr).children('.property').text(property);
+		$(tr).attr('id', itemid);
 		$('#tb').append(tr);
+		$(tr).show();
+
+		// 数量计数
+		itemid++;
+		$('#property-count').val(itemid);
 	});
 	</script>
 </block>

@@ -168,6 +168,8 @@ class ApiController extends Controller {
 		$this->success('创建成功');
 	}
 
+	public function donation_create($projectid)
+
 	public function branch_create($name)
 	{
 		M('Branch')->add(array(
