@@ -61,7 +61,7 @@
 			<div class="row">
 				<foreach name="albumlist" item="vo">
 					<div class="col-xs-6 col-lg-2 col-md-3 album-div">
-						<span class="glyphicon glyphicon-remove album-remove" aria-hidden="true" onclick="delete_photo({$vo['id']})"></span>
+						<if condition="session('user_role') eq 2"><span class="glyphicon glyphicon-remove album-remove" aria-hidden="true" onclick="delete_photo({$vo['id']})"></span></if>
 						<a target="_blank" href="/{$vo['photourl']}" class="thumbnail" data-toggle="tooltip" data-placement="bottom" title="{:($vo['photodescription']==null?'无介绍':$vo['photodescription'])}">
 							<img src="/{$vo['code1']}sm_{$vo['code2']}" alt="image" >
 						</a>

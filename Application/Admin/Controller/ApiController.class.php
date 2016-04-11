@@ -165,7 +165,21 @@ class ApiController extends Controller {
 		$resid = M('DonationProject')->add(array(
 			'donationname' => $pro_name
 			));
-		$this->success('创建成功');
+		$this->success('创建成功', '/Admin/Donation/create_project?time='.time());
+	}
+
+	public function donation_project_delete($proid)
+	{
+		M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE donationproject_id = %d)', $proid)->delete();
+		M('Donation')->where('donationproject_id = %d', $proid)->delete();
+		if(M('DonationProject')->where('id=%d', $proid)->delete())
+		{
+			$this->success('删除成功', '/Admin/Donation/create_project?time='.time());
+		}
+		else
+		{
+			$this->error('删除失败');
+		}
 	}
 
 	public function donation_create($projectid, $sourceid, $source, $count)
@@ -230,7 +244,20 @@ class ApiController extends Controller {
 				$value['donation_id'] = $donation_id;
 			}
 			M('DonationPersonDetail')->addAll($property_arr);
-			$this->success('提交成功', '/Admin/Donation');
+			$this->success('提交成功', '/Admin/Donation?time='.time());
+		}
+	}
+
+	public function donation_delete($donationid)
+	{
+		M('DonationPersonDetail')->where('donation_id=%d', $donationid)->delete();
+		if(M('Donation')->where('id=%d', $donationid)->delete())
+		{
+			$this->success('删除成功', '/Admin/Donation/branch?time='.time());
+		}
+		else
+		{
+			$this->error('删除失败');
 		}
 	}
 
@@ -239,12 +266,21 @@ class ApiController extends Controller {
 		M('Branch')->add(array(
 			'branch_name' => $name
 			));
-		$this->success('创建成功');
+		$this->success('创建成功', '/Admin/Donation/branch?time='.time());
 	}
 
-	public function branch_delete($id)
+	public function branch_delete($branchid)
 	{
-
+		M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE branch_id = %d)', $branchid)->delete();
+		M('Donation')->where('branch_id = %d', $branchid)->delete();
+		if(M('Branch')->where('id=%d', $branchid)->delete())
+		{
+			$this->success('删除成功', '/Admin/Donation/branch?time='.time());
+		}
+		else
+		{
+			$this->error('删除失败');
+		}
 	}
 
 }

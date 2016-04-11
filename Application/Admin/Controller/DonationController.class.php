@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
+
 class DonationController extends Controller {
 	public function index(){
 		$arr = M('Donation')->field('donation.*,donation_project.donationname as projectname,branch.branch_name,donationuser.username as donationusername,donationuser.realname as donationrealname,enderuser.realname as enderrealname')

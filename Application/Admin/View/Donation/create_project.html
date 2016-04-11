@@ -36,7 +36,29 @@
 		</div>
 	</div>
 
-	<!-- 增加项目Modal -->
+	<!-- 删除项目 -->
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form method="post" action="{:U('/Admin/Api/donation_project_delete')}" enctype="multipart/form-data">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">删除确认</h4>
+					</div>
+					<div class="modal-body">
+						确定要删除该项目吗？<br/>注意：<strong>这项操作将删除该项目下所有捐赠记录。</strong>
+					</div>
+					<input type="hidden" name="proid" id="ipt-delete-pro" value="-1" />
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-danger">确认</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 增加捐赠Modal -->
 	<div class="modal fade" id="editinfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -126,6 +148,7 @@
 									<td>{$vo.donationname}</td>
 									<td>
 										<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-ok"></span> 选定该项目</a>
+										<a href="#" class="a-remove" proid="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 									</td>
 								</tr>
 							</foreach>
@@ -143,6 +166,12 @@
 				var proid = $(this).attr('proid');
 				$('#ipt-proid').val(proid);
 				$('#editinfoModal').modal('show');
+			});
+
+			$('.a-remove').click(function(){
+				var id = $(this).attr('proid');
+				$('#ipt-delete-pro').val(id);
+				$('#deleteModal').modal('show');
 			});
 
 			$('#slt-source').change(function(){

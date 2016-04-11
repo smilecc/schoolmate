@@ -84,9 +84,9 @@
 						<i class="fa fa-user fa-fw"></i>{:cookie('username')} <i class="fa fa-caret-down"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">
-						<li><a href="#"><i class="fa fa-user fa-fw"></i> 我的主页</a>
-						</li>
-						<li><a href="#"><i class="fa fa-gear fa-fw"></i> 用户设置</a>
+<!-- 						<li><a href="#"><i class="fa fa-user fa-fw"></i> 我的主页</a>
+						</li> -->
+						<li><a href="{:U('/Home/User/setting')}"><i class="fa fa-gear fa-fw"></i> 用户设置</a>
 						</li>
 							<if condition="session('user_role') eq 3">
 								<li class="divider"></li>
@@ -110,67 +110,20 @@
 							<a href="#"><i class="fa fa-users"></i> 我的班级<span class="fa arrow"></span></a>
 							<ul class="nav nav-second-level">
 								<li>
-									<a href="{:U('/Home/Class')}">班级概述</a>
+									<a href="{:U('/Home/Class').'?time='.time()}">班级概述</a>
 								</li>
 								<li>
-									<a href="{:U('/Home/Class/activity')}">班级活动</a>
+									<a href="{:U('/Home/Class/activity').'?time='.time()}">班级活动</a>
 								</li>
 								<li>
-									<a href="{:U('/Home/Class/album')}">班级相册</a>
+									<a href="{:U('/Home/Class/album').'?time='.time()}">班级相册</a>
 								</li>
 								<li>
-									<a href="{:U('/Home/Class/member')}">班级通讯录</a>
+									<a href="{:U('/Home/Class/member').'?time='.time()}">班级通讯录</a>
 								</li>
 							</ul>
 						</li>
-<!--                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
-                    </li>
-          <li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
-                    </li>
-                    <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-                    
-                    <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
-                    <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
 
-
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
-                    </li> -->
                 </ul>
 
             </div>

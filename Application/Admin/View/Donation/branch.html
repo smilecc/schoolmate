@@ -33,6 +33,27 @@
 		</div>
 	</div>
 
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<form method="post" action="{:U('/Admin/Api/branch_delete')}" enctype="multipart/form-data">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">删除确认</h4>
+					</div>
+					<div class="modal-body">
+						确定要删除该分会吗？<br/>注意：<strong>这项操作将删除该分会的所有捐赠记录。</strong>
+					</div>
+					<input type="hidden" name="branchid" id="ipt-branch" value="-1" />
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-danger">确认</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class='panel panel-default'>
 		<div class='panel-heading'>
 			<i class='icon-table icon-large'></i>
@@ -61,7 +82,7 @@
 									<td>{$vo.id}</td>
 									<td>{$vo.branch_name}</td>
 									<td>
-										<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
+										<a href="#" class="a-remove" branch="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 									</td>
 								</tr>
 							</foreach>
@@ -75,6 +96,11 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#dataTables-project').dataTable(cn_lang);
+			$('.a-remove').click(function(){
+				var id = $(this).attr('branch');
+				$('#ipt-branch').val(id);
+				$('#deleteModal').modal('show');
+			});
 		})
 	</script>
 </block>
