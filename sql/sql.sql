@@ -1,25 +1,34 @@
-/*
-Navicat MySQL Data Transfer
+-- phpMyAdmin SQL Dump
+-- version 4.1.14
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 2016-04-11 13:06:47
+-- 服务器版本： 5.6.17
+-- PHP Version: 5.5.12
 
-Source Server         : localhost
-Source Server Version : 50547
-Source Host           : localhost:3306
-Source Database       : schoolmate
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-Target Server Type    : MYSQL
-Target Server Version : 50547
-File Encoding         : 65001
 
-Date: 2016-03-30 15:57:21
-*/
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
-SET FOREIGN_KEY_CHECKS=0;
+--
+-- Database: `schoolmate`
+--
+CREATE DATABASE IF NOT EXISTS `schoolmate` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `schoolmate`;
 
--- ----------------------------
--- Table structure for activity
--- ----------------------------
-DROP TABLE IF EXISTS `activity`;
-CREATE TABLE `activity` (
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `activity`
+--
+
+CREATE TABLE IF NOT EXISTS `activity` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `class_id` int(11) DEFAULT NULL,
@@ -29,19 +38,24 @@ CREATE TABLE `activity` (
   `checkidetifier` char(1) DEFAULT NULL,
   `checker` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
--- ----------------------------
--- Records of activity
--- ----------------------------
-INSERT INTO `activity` VALUES ('1', '1', '1', 'test', '&lt;p&gt;test&lt;/p&gt;', '2016-03-22 13:05:35', '0', null);
-INSERT INTO `activity` VALUES ('2', '1', '1', '233', '&lt;p&gt;233333&lt;/p&gt;', '2016-03-24 17:45:31', '0', null);
+--
+-- 转存表中的数据 `activity`
+--
 
--- ----------------------------
--- Table structure for album
--- ----------------------------
-DROP TABLE IF EXISTS `album`;
-CREATE TABLE `album` (
+INSERT INTO `activity` (`id`, `user_id`, `class_id`, `activitytitle`, `activitycontent`, `createddate`, `checkidetifier`, `checker`) VALUES
+(1, 1, 1, 'test', '&lt;p&gt;test&lt;/p&gt;', '2016-03-22 05:05:35', '0', NULL),
+(2, 1, 1, '233', '&lt;p&gt;233333&lt;/p&gt;', '2016-03-24 09:45:31', '0', NULL),
+(4, 42, 11, '23', '&lt;p&gt;23&lt;/p&gt;', '2016-04-11 09:58:39', '0', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `album`
+--
+
+CREATE TABLE IF NOT EXISTS `album` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `albumsize_id` int(11) DEFAULT NULL,
   `class_id` int(11) DEFAULT NULL,
@@ -50,17 +64,23 @@ CREATE TABLE `album` (
   `createddate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
--- ----------------------------
--- Records of album
--- ----------------------------
+--
+-- 转存表中的数据 `album`
+--
 
--- ----------------------------
--- Table structure for albumphoto
--- ----------------------------
-DROP TABLE IF EXISTS `albumphoto`;
-CREATE TABLE `albumphoto` (
+INSERT INTO `album` (`id`, `albumsize_id`, `class_id`, `branch_id`, `albumname`, `createddate`, `created`) VALUES
+(1, NULL, 1, NULL, 'TestAlbum', '2016-04-07 06:46:42', NULL),
+(2, NULL, 11, NULL, '挖掘机1班', '2016-04-08 08:36:41', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `albumphoto`
+--
+
+CREATE TABLE IF NOT EXISTS `albumphoto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `album_id` int(11) DEFAULT NULL,
@@ -68,90 +88,87 @@ CREATE TABLE `albumphoto` (
   `checkidetifier` char(1) DEFAULT NULL,
   `photodescription` varchar(200) DEFAULT NULL,
   `checker` int(11) DEFAULT NULL,
-  `code1` char(10) DEFAULT NULL,
-  `code2` char(10) DEFAULT NULL,
+  `code1` char(32) DEFAULT NULL,
+  `code2` char(32) DEFAULT NULL,
   `code3` char(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
--- ----------------------------
--- Records of albumphoto
--- ----------------------------
+--
+-- 转存表中的数据 `albumphoto`
+--
 
--- ----------------------------
--- Table structure for albumsize
--- ----------------------------
-DROP TABLE IF EXISTS `albumsize`;
-CREATE TABLE `albumsize` (
+INSERT INTO `albumphoto` (`id`, `user_id`, `album_id`, `photourl`, `checkidetifier`, `photodescription`, `checker`, `code1`, `code2`, `code3`) VALUES
+(9, 1, 1, './Public/Uploads/2016-04-07/570660049c494.png', NULL, NULL, NULL, './Public/Uploads/2016-04-07/', '570660049c494.png', NULL),
+(10, 1, 1, './Public/Uploads/2016-04-07/5706600f7aafb.jpg', NULL, NULL, NULL, './Public/Uploads/2016-04-07/', '5706600f7aafb.jpg', NULL),
+(12, 1, 1, './Public/Uploads/2016-04-07/5706610731e92.jpg', NULL, NULL, NULL, './Public/Uploads/2016-04-07/', '5706610731e92.jpg', NULL),
+(13, 1, 1, './Public/Uploads/2016-04-07/5706612b01432.jpg', NULL, NULL, NULL, './Public/Uploads/2016-04-07/', '5706612b01432.jpg', NULL),
+(14, 1, 1, './Public/Uploads/2016-04-07/57066534d2961.jpg', NULL, '', NULL, './Public/Uploads/2016-04-07/', '57066534d2961.jpg', NULL),
+(15, 1, 1, './Public/Uploads/2016-04-07/5706653e332a7.jpg', NULL, '虫师', NULL, './Public/Uploads/2016-04-07/', '5706653e332a7.jpg', NULL),
+(16, 1, 1, './Public/Uploads/2016-04-07/570667bbc8393.jpg', NULL, '我点不到桌面上的东西我点不到桌面上的东西', NULL, './Public/Uploads/2016-04-07/', '570667bbc8393.jpg', NULL),
+(17, 1, 1, './Public/Uploads/2016-04-07/57067947aa7e3.jpg', NULL, '这是虫师', NULL, './Public/Uploads/2016-04-07/', '57067947aa7e3.jpg', NULL),
+(18, 42, 2, './Public/Uploads/2016-04-08/570784b091a51.jpg', NULL, '', NULL, './Public/Uploads/2016-04-08/', '570784b091a51.jpg', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `albumsize`
+--
+
+CREATE TABLE IF NOT EXISTS `albumsize` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sizename` varchar(50) NOT NULL,
   `width` int(11) NOT NULL,
   `height` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Records of albumsize
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for alumnus
--- ----------------------------
-DROP TABLE IF EXISTS `alumnus`;
-CREATE TABLE `alumnus` (
+--
+-- 表的结构 `alumnus`
+--
+
+CREATE TABLE IF NOT EXISTS `alumnus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `class_id` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Relationship_1` (`class_id`),
-  KEY `FK_Relationship_27` (`user_id`),
-  CONSTRAINT `FK_Relationship_1` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
-  CONSTRAINT `FK_Relationship_27` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_27` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=44 ;
 
--- ----------------------------
--- Records of alumnus
--- ----------------------------
-INSERT INTO `alumnus` VALUES ('7', '1', '1');
-INSERT INTO `alumnus` VALUES ('8', '1', '7');
-INSERT INTO `alumnus` VALUES ('9', '1', '8');
-INSERT INTO `alumnus` VALUES ('10', '1', '9');
-INSERT INTO `alumnus` VALUES ('11', '1', '10');
-INSERT INTO `alumnus` VALUES ('12', '1', '11');
-INSERT INTO `alumnus` VALUES ('13', '1', '12');
-INSERT INTO `alumnus` VALUES ('14', '1', '13');
-INSERT INTO `alumnus` VALUES ('15', '1', '14');
-INSERT INTO `alumnus` VALUES ('16', '1', '15');
-INSERT INTO `alumnus` VALUES ('17', '1', '16');
-INSERT INTO `alumnus` VALUES ('18', '1', '17');
-INSERT INTO `alumnus` VALUES ('19', '1', '18');
-INSERT INTO `alumnus` VALUES ('20', '1', '19');
-INSERT INTO `alumnus` VALUES ('21', '1', '20');
-INSERT INTO `alumnus` VALUES ('22', '1', '21');
+--
+-- 转存表中的数据 `alumnus`
+--
 
--- ----------------------------
--- Table structure for alumnus_branch
--- ----------------------------
-DROP TABLE IF EXISTS `alumnus_branch`;
-CREATE TABLE `alumnus_branch` (
+INSERT INTO `alumnus` (`id`, `class_id`, `user_id`) VALUES
+(7, 1, 1),
+(41, 11, 40),
+(42, 11, 41),
+(43, 11, 42);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `alumnus_branch`
+--
+
+CREATE TABLE IF NOT EXISTS `alumnus_branch` (
   `id` int(11) NOT NULL,
   `branch_id` int(11) NOT NULL,
   `status` char(2) DEFAULT NULL,
   PRIMARY KEY (`id`,`branch_id`),
-  KEY `FK_Relationship_6` (`branch_id`),
-  CONSTRAINT `FK_Relationship_5` FOREIGN KEY (`id`) REFERENCES `alumnus` (`id`),
-  CONSTRAINT `FK_Relationship_6` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`)
+  KEY `FK_Relationship_6` (`branch_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of alumnus_branch
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for attachment
--- ----------------------------
-DROP TABLE IF EXISTS `attachment`;
-CREATE TABLE `attachment` (
+--
+-- 表的结构 `attachment`
+--
+
+CREATE TABLE IF NOT EXISTS `attachment` (
   `id` int(11) NOT NULL,
   `content_id` int(11) DEFAULT NULL,
   `activity_id` int(11) DEFAULT NULL,
@@ -160,128 +177,139 @@ CREATE TABLE `attachment` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of attachment
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for attendandate
--- ----------------------------
-DROP TABLE IF EXISTS `attendandate`;
-CREATE TABLE `attendandate` (
+--
+-- 表的结构 `attendandate`
+--
+
+CREATE TABLE IF NOT EXISTS `attendandate` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attendan` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=47 ;
 
--- ----------------------------
--- Records of attendandate
--- ----------------------------
-INSERT INTO `attendandate` VALUES ('1', '1970');
-INSERT INTO `attendandate` VALUES ('2', '1971');
-INSERT INTO `attendandate` VALUES ('3', '1972');
-INSERT INTO `attendandate` VALUES ('4', '1973');
-INSERT INTO `attendandate` VALUES ('5', '1974');
-INSERT INTO `attendandate` VALUES ('6', '1975');
-INSERT INTO `attendandate` VALUES ('7', '1976');
-INSERT INTO `attendandate` VALUES ('8', '1977');
-INSERT INTO `attendandate` VALUES ('9', '1978');
-INSERT INTO `attendandate` VALUES ('10', '1979');
-INSERT INTO `attendandate` VALUES ('11', '1980');
-INSERT INTO `attendandate` VALUES ('12', '1981');
-INSERT INTO `attendandate` VALUES ('13', '1982');
-INSERT INTO `attendandate` VALUES ('14', '1983');
-INSERT INTO `attendandate` VALUES ('15', '1984');
-INSERT INTO `attendandate` VALUES ('16', '1985');
-INSERT INTO `attendandate` VALUES ('17', '1986');
-INSERT INTO `attendandate` VALUES ('18', '1987');
-INSERT INTO `attendandate` VALUES ('19', '1988');
-INSERT INTO `attendandate` VALUES ('20', '1989');
-INSERT INTO `attendandate` VALUES ('21', '1990');
-INSERT INTO `attendandate` VALUES ('22', '1991');
-INSERT INTO `attendandate` VALUES ('23', '1992');
-INSERT INTO `attendandate` VALUES ('24', '1993');
-INSERT INTO `attendandate` VALUES ('25', '1994');
-INSERT INTO `attendandate` VALUES ('26', '1995');
-INSERT INTO `attendandate` VALUES ('27', '1996');
-INSERT INTO `attendandate` VALUES ('28', '1997');
-INSERT INTO `attendandate` VALUES ('29', '1998');
-INSERT INTO `attendandate` VALUES ('30', '1999');
-INSERT INTO `attendandate` VALUES ('31', '2000');
-INSERT INTO `attendandate` VALUES ('32', '2001');
-INSERT INTO `attendandate` VALUES ('33', '2002');
-INSERT INTO `attendandate` VALUES ('34', '2003');
-INSERT INTO `attendandate` VALUES ('35', '2004');
-INSERT INTO `attendandate` VALUES ('36', '2005');
-INSERT INTO `attendandate` VALUES ('37', '2006');
-INSERT INTO `attendandate` VALUES ('38', '2007');
-INSERT INTO `attendandate` VALUES ('39', '2008');
-INSERT INTO `attendandate` VALUES ('40', '2009');
-INSERT INTO `attendandate` VALUES ('41', '2010');
-INSERT INTO `attendandate` VALUES ('42', '2011');
-INSERT INTO `attendandate` VALUES ('43', '2012');
-INSERT INTO `attendandate` VALUES ('44', '2013');
-INSERT INTO `attendandate` VALUES ('45', '2014');
-INSERT INTO `attendandate` VALUES ('46', '2015');
+--
+-- 转存表中的数据 `attendandate`
+--
 
--- ----------------------------
--- Table structure for branch
--- ----------------------------
-DROP TABLE IF EXISTS `branch`;
-CREATE TABLE `branch` (
+INSERT INTO `attendandate` (`id`, `attendan`) VALUES
+(1, '1970'),
+(2, '1971'),
+(3, '1972'),
+(4, '1973'),
+(5, '1974'),
+(6, '1975'),
+(7, '1976'),
+(8, '1977'),
+(9, '1978'),
+(10, '1979'),
+(11, '1980'),
+(12, '1981'),
+(13, '1982'),
+(14, '1983'),
+(15, '1984'),
+(16, '1985'),
+(17, '1986'),
+(18, '1987'),
+(19, '1988'),
+(20, '1989'),
+(21, '1990'),
+(22, '1991'),
+(23, '1992'),
+(24, '1993'),
+(25, '1994'),
+(26, '1995'),
+(27, '1996'),
+(28, '1997'),
+(29, '1998'),
+(30, '1999'),
+(31, '2000'),
+(32, '2001'),
+(33, '2002'),
+(34, '2003'),
+(35, '2004'),
+(36, '2005'),
+(37, '2006'),
+(38, '2007'),
+(39, '2008'),
+(40, '2009'),
+(41, '2010'),
+(42, '2011'),
+(43, '2012'),
+(44, '2013'),
+(45, '2014'),
+(46, '2015');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `branch`
+--
+
+CREATE TABLE IF NOT EXISTS `branch` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `branch_name` varchar(50) NOT NULL,
   `organizion` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
--- ----------------------------
--- Records of branch
--- ----------------------------
+--
+-- 转存表中的数据 `branch`
+--
 
--- ----------------------------
--- Table structure for branch_alumnus_role
--- ----------------------------
-DROP TABLE IF EXISTS `branch_alumnus_role`;
-CREATE TABLE `branch_alumnus_role` (
+INSERT INTO `branch` (`id`, `branch_name`, `organizion`) VALUES
+(1, '六安分会', NULL),
+(3, '北京分会', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `branch_alumnus_role`
+--
+
+CREATE TABLE IF NOT EXISTS `branch_alumnus_role` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `branch_id` int(11) DEFAULT NULL,
   `r_id` int(11) NOT NULL,
   `a_id` int(11) DEFAULT NULL,
   `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_Relationship_34` (`branch_id`),
-  CONSTRAINT `FK_Relationship_34` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_34` (`branch_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Records of branch_alumnus_role
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for class
--- ----------------------------
-DROP TABLE IF EXISTS `class`;
-CREATE TABLE `class` (
+--
+-- 表的结构 `class`
+--
+
+CREATE TABLE IF NOT EXISTS `class` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attendandate_id` int(11) DEFAULT NULL,
   `classname` varchar(50) NOT NULL,
   `headmaster` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_Relationship_17` (`attendandate_id`),
-  CONSTRAINT `FK_Relationship_17` FOREIGN KEY (`attendandate_id`) REFERENCES `attendandate` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_17` (`attendandate_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
--- ----------------------------
--- Records of class
--- ----------------------------
-INSERT INTO `class` VALUES ('1', '21', '挖掘机修理1班', 'test233');
+--
+-- 转存表中的数据 `class`
+--
 
--- ----------------------------
--- Table structure for content
--- ----------------------------
-DROP TABLE IF EXISTS `content`;
-CREATE TABLE `content` (
+INSERT INTO `class` (`id`, `attendandate_id`, `classname`, `headmaster`) VALUES
+(1, 21, '挖掘机修理1班', 'test233'),
+(5, 21, '挖掘机2班', '王三辊'),
+(10, 42, '233', '4444'),
+(11, 45, '挖掘机1班', '无所谓');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `content`
+--
+
+CREATE TABLE IF NOT EXISTS `content` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `contenttype_id` int(11) DEFAULT NULL,
@@ -300,52 +328,44 @@ CREATE TABLE `content` (
   `code5` char(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Relationship_24` (`user_id`),
-  KEY `FK_Relationship_25` (`contenttype_id`),
-  CONSTRAINT `FK_Relationship_24` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  CONSTRAINT `FK_Relationship_25` FOREIGN KEY (`contenttype_id`) REFERENCES `contenttype` (`id`)
+  KEY `FK_Relationship_25` (`contenttype_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of content
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for contenttype
--- ----------------------------
-DROP TABLE IF EXISTS `contenttype`;
-CREATE TABLE `contenttype` (
+--
+-- 表的结构 `contenttype`
+--
+
+CREATE TABLE IF NOT EXISTS `contenttype` (
   `id` int(11) NOT NULL,
   `contenttype_id` int(11) DEFAULT NULL,
   `contenttypename` varchar(50) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_Relationship_23` (`contenttype_id`),
-  CONSTRAINT `FK_Relationship_23` FOREIGN KEY (`contenttype_id`) REFERENCES `contenttype` (`id`)
+  KEY `FK_Relationship_23` (`contenttype_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of contenttype
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for department
--- ----------------------------
-DROP TABLE IF EXISTS `department`;
-CREATE TABLE `department` (
+--
+-- 表的结构 `department`
+--
+
+CREATE TABLE IF NOT EXISTS `department` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dep_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Records of department
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for donation
--- ----------------------------
-DROP TABLE IF EXISTS `donation`;
-CREATE TABLE `donation` (
+--
+-- 表的结构 `donation`
+--
+
+CREATE TABLE IF NOT EXISTS `donation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `donation_source` varchar(2) DEFAULT NULL,
   `donationproject_id` int(11) DEFAULT NULL,
   `branch_id` int(11) DEFAULT NULL,
   `alumnus_id` int(11) DEFAULT NULL,
@@ -353,49 +373,66 @@ CREATE TABLE `donation` (
   `donationcompany` varchar(100) DEFAULT NULL,
   `enter_uid` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
--- ----------------------------
--- Records of donation
--- ----------------------------
+--
+-- 转存表中的数据 `donation`
+--
 
--- ----------------------------
--- Table structure for donationpersondetail
--- ----------------------------
-DROP TABLE IF EXISTS `donationpersondetail`;
-CREATE TABLE `donationpersondetail` (
+INSERT INTO `donation` (`id`, `donation_source`, `donationproject_id`, `branch_id`, `alumnus_id`, `createddate`, `donationcompany`, `enter_uid`) VALUES
+(3, '3', 1, NULL, NULL, '2016-04-10 09:50:18', '大江信息公司', 1),
+(4, '2', 3, NULL, 42, '2016-04-10 10:07:46', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `donation_person_detail`
+--
+
+CREATE TABLE IF NOT EXISTS `donation_person_detail` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `donation_id` int(11) DEFAULT NULL,
   `donationcash` float DEFAULT NULL,
   `donationgoods` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FK_Relationship_3` (`donation_id`),
-  CONSTRAINT `FK_Relationship_3` FOREIGN KEY (`donation_id`) REFERENCES `donation` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_3` (`donation_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
--- ----------------------------
--- Records of donationpersondetail
--- ----------------------------
+--
+-- 转存表中的数据 `donation_person_detail`
+--
 
--- ----------------------------
--- Table structure for donationproject
--- ----------------------------
-DROP TABLE IF EXISTS `donationproject`;
-CREATE TABLE `donationproject` (
+INSERT INTO `donation_person_detail` (`id`, `donation_id`, `donationcash`, `donationgoods`) VALUES
+(4, 3, 0, '电脑一台'),
+(5, 4, 3000, '');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `donation_project`
+--
+
+CREATE TABLE IF NOT EXISTS `donation_project` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `donationname` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
--- ----------------------------
--- Records of donationproject
--- ----------------------------
+--
+-- 转存表中的数据 `donation_project`
+--
 
--- ----------------------------
--- Table structure for enployee
--- ----------------------------
-DROP TABLE IF EXISTS `enployee`;
-CREATE TABLE `enployee` (
+INSERT INTO `donation_project` (`id`, `donationname`) VALUES
+(1, '测试项目'),
+(3, '不知道哪儿来的基金会');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `enployee`
+--
+
+CREATE TABLE IF NOT EXISTS `enployee` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `department_id` int(11) DEFAULT NULL,
@@ -403,20 +440,16 @@ CREATE TABLE `enployee` (
   `department` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Relationship_21` (`user_id`),
-  KEY `FK_Relationship_31` (`department_id`),
-  CONSTRAINT `FK_Relationship_21` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
-  CONSTRAINT `FK_Relationship_31` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_31` (`department_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
--- ----------------------------
--- Records of enployee
--- ----------------------------
+-- --------------------------------------------------------
 
--- ----------------------------
--- Table structure for think_access
--- ----------------------------
-DROP TABLE IF EXISTS `think_access`;
-CREATE TABLE `think_access` (
+--
+-- 表的结构 `think_access`
+--
+
+CREATE TABLE IF NOT EXISTS `think_access` (
   `role_id` smallint(6) unsigned NOT NULL,
   `node_id` smallint(6) unsigned NOT NULL,
   `level` tinyint(1) NOT NULL,
@@ -425,40 +458,46 @@ CREATE TABLE `think_access` (
   KEY `nodeId` (`node_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of think_access
--- ----------------------------
-INSERT INTO `think_access` VALUES ('1', '2', '0', null);
-INSERT INTO `think_access` VALUES ('1', '5', '0', null);
-INSERT INTO `think_access` VALUES ('2', '6', '0', null);
-INSERT INTO `think_access` VALUES ('1', '7', '0', null);
-INSERT INTO `think_access` VALUES ('1', '8', '0', null);
-INSERT INTO `think_access` VALUES ('1', '9', '0', null);
-INSERT INTO `think_access` VALUES ('1', '10', '0', null);
-INSERT INTO `think_access` VALUES ('3', '1', '0', null);
-INSERT INTO `think_access` VALUES ('3', '27', '0', null);
-INSERT INTO `think_access` VALUES ('3', '26', '0', null);
-INSERT INTO `think_access` VALUES ('3', '25', '0', null);
-INSERT INTO `think_access` VALUES ('3', '24', '0', null);
-INSERT INTO `think_access` VALUES ('3', '23', '0', null);
-INSERT INTO `think_access` VALUES ('3', '22', '0', null);
-INSERT INTO `think_access` VALUES ('3', '21', '0', null);
-INSERT INTO `think_access` VALUES ('3', '20', '0', null);
-INSERT INTO `think_access` VALUES ('3', '19', '0', null);
-INSERT INTO `think_access` VALUES ('3', '18', '0', null);
-INSERT INTO `think_access` VALUES ('3', '17', '0', null);
-INSERT INTO `think_access` VALUES ('3', '16', '0', null);
-INSERT INTO `think_access` VALUES ('3', '15', '0', null);
-INSERT INTO `think_access` VALUES ('3', '14', '0', null);
-INSERT INTO `think_access` VALUES ('3', '13', '0', null);
-INSERT INTO `think_access` VALUES ('3', '12', '0', null);
-INSERT INTO `think_access` VALUES ('3', '11', '0', null);
+--
+-- 转存表中的数据 `think_access`
+--
 
--- ----------------------------
--- Table structure for think_node
--- ----------------------------
-DROP TABLE IF EXISTS `think_node`;
-CREATE TABLE `think_node` (
+INSERT INTO `think_access` (`role_id`, `node_id`, `level`, `module`) VALUES
+(1, 2, 0, NULL),
+(1, 5, 0, NULL),
+(2, 6, 0, NULL),
+(1, 7, 0, NULL),
+(1, 8, 0, NULL),
+(1, 9, 0, NULL),
+(1, 10, 0, NULL),
+(3, 1, 0, NULL),
+(3, 27, 0, NULL),
+(3, 26, 0, NULL),
+(3, 25, 0, NULL),
+(3, 24, 0, NULL),
+(3, 23, 0, NULL),
+(3, 22, 0, NULL),
+(3, 21, 0, NULL),
+(3, 20, 0, NULL),
+(3, 19, 0, NULL),
+(3, 18, 0, NULL),
+(3, 17, 0, NULL),
+(3, 16, 0, NULL),
+(3, 15, 0, NULL),
+(3, 14, 0, NULL),
+(3, 13, 0, NULL),
+(3, 12, 0, NULL),
+(3, 11, 0, NULL),
+(3, 28, 0, NULL),
+(1, 29, 0, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `think_node`
+--
+
+CREATE TABLE IF NOT EXISTS `think_node` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `title` varchar(50) DEFAULT NULL,
@@ -472,43 +511,49 @@ CREATE TABLE `think_node` (
   KEY `pid` (`pid`),
   KEY `status` (`status`),
   KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
--- ----------------------------
--- Records of think_node
--- ----------------------------
-INSERT INTO `think_node` VALUES ('1', 'Admin', '管理模块', '1', null, '50', '0', '1');
-INSERT INTO `think_node` VALUES ('2', 'Home', '前台模块', '1', null, '50', '0', '1');
-INSERT INTO `think_node` VALUES ('4', 'User', '用户模块', '1', null, '50', '0', '1');
-INSERT INTO `think_node` VALUES ('5', 'Class', '班级控制器', '1', null, '50', '2', '2');
-INSERT INTO `think_node` VALUES ('6', 'activitycg', '活动增改方法', '1', null, '50', '5', '3');
-INSERT INTO `think_node` VALUES ('7', 'index', '概述方法', '1', null, '50', '5', '3');
-INSERT INTO `think_node` VALUES ('8', 'member', '班级成员方法', '1', null, '50', '5', '3');
-INSERT INTO `think_node` VALUES ('9', 'activity', '班级活动方法', '1', null, '50', '5', '3');
-INSERT INTO `think_node` VALUES ('10', 'album', '班级相册方法', '1', null, '50', '5', '3');
-INSERT INTO `think_node` VALUES ('11', 'Api', 'Api控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('12', 'Class', 'Class控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('13', 'Excel', 'Excel控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('14', 'Index', 'Index控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('15', 'User', 'User控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('16', 'ClassCreate', 'ClassCreate方法', '1', null, '50', '11', '3');
-INSERT INTO `think_node` VALUES ('17', 'ClassDelete', 'ClassDelete方法', '1', null, '50', '11', '3');
-INSERT INTO `think_node` VALUES ('18', 'ClassChange', 'ClassChange方法', '1', null, '50', '11', '3');
-INSERT INTO `think_node` VALUES ('19', 'index', 'index方法', '1', null, '50', '12', '3');
-INSERT INTO `think_node` VALUES ('20', 'lists', 'lists方法', '1', null, '50', '12', '3');
-INSERT INTO `think_node` VALUES ('21', 'upload', '文件上传方法', '1', null, '50', '13', '3');
-INSERT INTO `think_node` VALUES ('22', 'index', '首页入口方法', '1', null, '50', '14', '3');
-INSERT INTO `think_node` VALUES ('23', 'index', 'Excel上传入口方法', '1', null, '50', '15', '3');
-INSERT INTO `think_node` VALUES ('24', 'Donation', '捐赠控制器', '1', null, '50', '1', '2');
-INSERT INTO `think_node` VALUES ('25', 'index', '捐赠index方法', '1', null, '50', '24', '3');
-INSERT INTO `think_node` VALUES ('26', 'role', '权限管理方法', '1', null, '50', '15', '3');
-INSERT INTO `think_node` VALUES ('27', 'rolelists', '权限管理列表方法', '1', null, '50', '15', '3');
+--
+-- 转存表中的数据 `think_node`
+--
 
--- ----------------------------
--- Table structure for think_role
--- ----------------------------
-DROP TABLE IF EXISTS `think_role`;
-CREATE TABLE `think_role` (
+INSERT INTO `think_node` (`id`, `name`, `title`, `status`, `remark`, `sort`, `pid`, `level`) VALUES
+(1, 'Admin', '管理模块', 1, NULL, 50, 0, 1),
+(2, 'Home', '前台模块', 1, NULL, 50, 0, 1),
+(4, 'User', '用户模块', 1, NULL, 50, 0, 1),
+(5, 'Class', '班级控制器', 1, NULL, 50, 2, 2),
+(6, 'activitycg', '活动增改方法', 1, NULL, 50, 5, 3),
+(7, 'index', '概述方法', 1, NULL, 50, 5, 3),
+(8, 'member', '班级成员方法', 1, NULL, 50, 5, 3),
+(9, 'activity', '班级活动方法', 1, NULL, 50, 5, 3),
+(10, 'album', '班级相册方法', 1, NULL, 50, 5, 3),
+(11, 'Api', 'Api控制器', 1, NULL, 50, 1, 2),
+(12, 'Class', 'Class控制器', 1, NULL, 50, 1, 2),
+(13, 'Excel', 'Excel控制器', 1, NULL, 50, 1, 2),
+(14, 'Index', 'Index控制器', 1, NULL, 50, 1, 2),
+(15, 'User', 'User控制器', 1, NULL, 50, 1, 2),
+(16, 'ClassCreate', 'ClassCreate方法', 1, NULL, 50, 11, 3),
+(17, 'ClassDelete', 'ClassDelete方法', 1, NULL, 50, 11, 3),
+(18, 'ClassChange', 'ClassChange方法', 1, NULL, 50, 11, 3),
+(19, 'index', 'index方法', 1, NULL, 50, 12, 3),
+(20, 'lists', 'lists方法', 1, NULL, 50, 12, 3),
+(21, 'upload', '文件上传方法', 1, NULL, 50, 13, 3),
+(22, 'index', '首页入口方法', 1, NULL, 50, 14, 3),
+(23, 'index', 'Excel上传入口方法', 1, NULL, 50, 15, 3),
+(24, 'Donation', '捐赠控制器', 1, NULL, 50, 1, 2),
+(25, 'index', '捐赠index方法', 1, NULL, 50, 24, 3),
+(26, 'role', '权限管理方法', 1, NULL, 50, 15, 3),
+(27, 'rolelists', '权限管理列表方法', 1, NULL, 50, 15, 3),
+(28, 'import', '班级导入方法', 1, NULL, 50, 12, 3),
+(29, 'activitydetail', '活动详情方法', 1, NULL, 50, 5, 3);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `think_role`
+--
+
+CREATE TABLE IF NOT EXISTS `think_role` (
   `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `pid` smallint(6) DEFAULT NULL,
@@ -517,43 +562,55 @@ CREATE TABLE `think_role` (
   PRIMARY KEY (`id`),
   KEY `pid` (`pid`),
   KEY `status` (`status`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
--- ----------------------------
--- Records of think_role
--- ----------------------------
-INSERT INTO `think_role` VALUES ('1', '普通用户', '0', '1', null);
-INSERT INTO `think_role` VALUES ('2', '班级管理员', '1', '1', null);
-INSERT INTO `think_role` VALUES ('3', '网站管理员', '1', '1', null);
+--
+-- 转存表中的数据 `think_role`
+--
 
--- ----------------------------
--- Table structure for think_role_user
--- ----------------------------
-DROP TABLE IF EXISTS `think_role_user`;
-CREATE TABLE `think_role_user` (
+INSERT INTO `think_role` (`id`, `name`, `pid`, `status`, `remark`) VALUES
+(1, '普通用户', 0, 1, NULL),
+(2, '班级管理员', 1, 1, NULL),
+(3, '网站管理员', 1, 1, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `think_role_user`
+--
+
+CREATE TABLE IF NOT EXISTS `think_role_user` (
   `role_id` mediumint(9) unsigned DEFAULT NULL,
   `user_id` char(32) DEFAULT NULL,
   KEY `group_id` (`role_id`),
   KEY `user_id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of think_role_user
--- ----------------------------
-INSERT INTO `think_role_user` VALUES ('3', '1');
+--
+-- 转存表中的数据 `think_role_user`
+--
 
--- ----------------------------
--- Table structure for user
--- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+INSERT INTO `think_role_user` (`role_id`, `user_id`) VALUES
+(3, '1'),
+(2, '1'),
+(1, '40'),
+(1, '41'),
+(2, '42');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(20) NOT NULL,
   `password` varchar(32) NOT NULL,
   `userstatus` char(5) NOT NULL COMMENT '包含用户认证失败、活动状态、锁定状态等',
   `userphoto` varchar(100) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `birthday` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `birthday` date NOT NULL DEFAULT '0000-00-00',
   `realname` varchar(50) NOT NULL,
   `sex` char(2) DEFAULT NULL,
   `phone` varchar(13) DEFAULT NULL,
@@ -566,57 +623,114 @@ CREATE TABLE `user` (
   `code4` char(10) DEFAULT NULL,
   `code5` char(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='此表包含职工信息和注册用户信息';
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='此表包含职工信息和注册用户信息' AUTO_INCREMENT=43 ;
 
--- ----------------------------
--- Records of user
--- ----------------------------
-INSERT INTO `user` VALUES ('1', 'smilec', '5774400129ae437a46cb8d457933841b', '1', null, 'sxcuican@163.com', '0000-00-00 00:00:00', '璨', null, null, null, null, '2016-03-22 12:39:38', null, null, null, null, null);
-INSERT INTO `user` VALUES ('2', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '男', null, '123456789012345678', null, '2016-03-24 18:03:35', null, null, null, null, null);
-INSERT INTO `user` VALUES ('3', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '女', null, null, null, '2016-03-24 18:03:35', null, null, null, null, null);
-INSERT INTO `user` VALUES ('4', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-24 18:03:35', null, null, null, null, null);
-INSERT INTO `user` VALUES ('5', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-24 18:03:35', null, null, null, null, null);
-INSERT INTO `user` VALUES ('6', '', '', '0', null, null, '0000-00-00 00:00:00', '王五', '男', null, '123456789012345678', null, '2016-03-24 18:03:35', null, null, null, null, null);
-INSERT INTO `user` VALUES ('7', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '男', null, '123456789012345678', null, '2016-03-24 22:48:09', null, null, null, null, null);
-INSERT INTO `user` VALUES ('8', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '女', null, null, null, '2016-03-24 22:48:09', null, null, null, null, null);
-INSERT INTO `user` VALUES ('9', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-24 22:48:10', null, null, null, null, null);
-INSERT INTO `user` VALUES ('10', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-24 22:48:10', null, null, null, null, null);
-INSERT INTO `user` VALUES ('11', '', '', '0', null, null, '0000-00-00 00:00:00', '王五', '男', null, '123456789012345678', null, '2016-03-24 22:48:10', null, null, null, null, null);
-INSERT INTO `user` VALUES ('12', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '男', null, '123456789012345678', null, '2016-03-25 22:59:08', null, null, null, null, null);
-INSERT INTO `user` VALUES ('13', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '女', null, null, null, '2016-03-25 22:59:08', null, null, null, null, null);
-INSERT INTO `user` VALUES ('14', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-25 22:59:08', null, null, null, null, null);
-INSERT INTO `user` VALUES ('15', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-25 22:59:08', null, null, null, null, null);
-INSERT INTO `user` VALUES ('16', '', '', '0', null, null, '0000-00-00 00:00:00', '王五', '男', null, '123456789012345678', null, '2016-03-25 22:59:08', null, null, null, null, null);
-INSERT INTO `user` VALUES ('17', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '男', null, '123456789012345678', null, '2016-03-25 23:10:40', null, null, null, null, null);
-INSERT INTO `user` VALUES ('18', '', '', '0', null, null, '0000-00-00 00:00:00', '张三', '女', null, null, null, '2016-03-25 23:10:40', null, null, null, null, null);
-INSERT INTO `user` VALUES ('19', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-25 23:10:40', null, null, null, null, null);
-INSERT INTO `user` VALUES ('20', '', '', '0', null, null, '0000-00-00 00:00:00', '李四', '男', null, null, null, '2016-03-25 23:10:40', null, null, null, null, null);
-INSERT INTO `user` VALUES ('21', '', '', '0', null, null, '0000-00-00 00:00:00', '王五', '男', null, '123456789012345678', null, '2016-03-25 23:10:40', null, null, null, null, null);
+--
+-- 转存表中的数据 `user`
+--
 
--- ----------------------------
--- Table structure for user_salt
--- ----------------------------
-DROP TABLE IF EXISTS `user_salt`;
-CREATE TABLE `user_salt` (
+INSERT INTO `user` (`id`, `username`, `password`, `userstatus`, `userphoto`, `email`, `birthday`, `realname`, `sex`, `phone`, `IDcardNo`, `openID`, `register_time`, `code1`, `code2`, `code3`, `code4`, `code5`) VALUES
+(1, 'smilec', '5774400129ae437a46cb8d457933841b', '1', NULL, 'sxcuican@163.com', '0000-00-00', '璨', '0', NULL, NULL, NULL, '2016-03-22 04:39:38', NULL, NULL, NULL, NULL, NULL),
+(40, '', '', '0', NULL, NULL, '0000-00-00', '崔璨', '1', NULL, '123456789012345678', NULL, '2016-04-08 08:36:48', NULL, NULL, NULL, NULL, NULL),
+(41, '', '', '0', NULL, NULL, '0000-00-00', '张三', '2', NULL, NULL, NULL, '2016-04-08 08:36:48', NULL, NULL, NULL, NULL, NULL),
+(42, 'ceshi', 'cc4455eba664e375edd4351597b42e5d', '1', NULL, 'ceshi@163.com', '0000-00-00', '测试', '1', NULL, NULL, NULL, '2016-04-08 08:36:48', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `user_salt`
+--
+
+CREATE TABLE IF NOT EXISTS `user_salt` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT NULL,
   `random` int(11) DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `FK_Relationship_41` (`user_id`),
-  CONSTRAINT `FK_Relationship_41` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+  KEY `FK_Relationship_41` (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=84 ;
 
--- ----------------------------
--- Records of user_salt
--- ----------------------------
-INSERT INTO `user_salt` VALUES ('1', '1', '795', '0', '2016-03-22 12:39:38');
-INSERT INTO `user_salt` VALUES ('8', '1', '262', '1', '2016-03-22 17:54:23');
-INSERT INTO `user_salt` VALUES ('9', '1', '30014', '1', '2016-03-24 17:45:15');
-INSERT INTO `user_salt` VALUES ('10', '1', '19109', '1', '2016-03-24 22:00:40');
-INSERT INTO `user_salt` VALUES ('34', '1', '16115', '1', '2016-03-26 21:33:31');
-INSERT INTO `user_salt` VALUES ('35', '1', '24832', '1', '2016-03-26 21:36:26');
-INSERT INTO `user_salt` VALUES ('45', '1', '25480', '1', '2016-03-26 22:35:33');
-INSERT INTO `user_salt` VALUES ('49', '1', '23157', '1', '2016-03-27 20:08:54');
-INSERT INTO `user_salt` VALUES ('50', '1', '30937', '1', '2016-03-28 16:30:57');
+--
+-- 转存表中的数据 `user_salt`
+--
+
+INSERT INTO `user_salt` (`id`, `user_id`, `random`, `type`, `time`) VALUES
+(1, 1, 795, 0, '2016-03-22 04:39:38'),
+(8, 1, 262, 1, '2016-03-22 09:54:23'),
+(9, 1, 30014, 1, '2016-03-24 09:45:15'),
+(10, 1, 19109, 1, '2016-03-24 14:00:40'),
+(34, 1, 16115, 1, '2016-03-26 13:33:31'),
+(35, 1, 24832, 1, '2016-03-26 13:36:26'),
+(45, 1, 25480, 1, '2016-03-26 14:35:33'),
+(53, 1, 29355, 1, '2016-04-06 16:31:36'),
+(54, 1, 19690, 1, '2016-04-07 04:56:20'),
+(55, 1, 9397, 1, '2016-04-07 13:11:53'),
+(70, 42, 4636, 0, '2016-04-08 08:37:18'),
+(83, 1, 15641, 1, '2016-04-11 10:02:27');
+
+--
+-- 限制导出的表
+--
+
+--
+-- 限制表 `alumnus`
+--
+ALTER TABLE `alumnus`
+  ADD CONSTRAINT `FK_Relationship_1` FOREIGN KEY (`class_id`) REFERENCES `class` (`id`),
+  ADD CONSTRAINT `FK_Relationship_27` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+--
+-- 限制表 `alumnus_branch`
+--
+ALTER TABLE `alumnus_branch`
+  ADD CONSTRAINT `FK_Relationship_5` FOREIGN KEY (`id`) REFERENCES `alumnus` (`id`),
+  ADD CONSTRAINT `FK_Relationship_6` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`);
+
+--
+-- 限制表 `branch_alumnus_role`
+--
+ALTER TABLE `branch_alumnus_role`
+  ADD CONSTRAINT `FK_Relationship_34` FOREIGN KEY (`branch_id`) REFERENCES `branch` (`id`);
+
+--
+-- 限制表 `class`
+--
+ALTER TABLE `class`
+  ADD CONSTRAINT `FK_Relationship_17` FOREIGN KEY (`attendandate_id`) REFERENCES `attendandate` (`id`);
+
+--
+-- 限制表 `content`
+--
+ALTER TABLE `content`
+  ADD CONSTRAINT `FK_Relationship_24` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `FK_Relationship_25` FOREIGN KEY (`contenttype_id`) REFERENCES `contenttype` (`id`);
+
+--
+-- 限制表 `contenttype`
+--
+ALTER TABLE `contenttype`
+  ADD CONSTRAINT `FK_Relationship_23` FOREIGN KEY (`contenttype_id`) REFERENCES `contenttype` (`id`);
+
+--
+-- 限制表 `donation_person_detail`
+--
+ALTER TABLE `donation_person_detail`
+  ADD CONSTRAINT `FK_Relationship_3` FOREIGN KEY (`donation_id`) REFERENCES `donation` (`id`);
+
+--
+-- 限制表 `enployee`
+--
+ALTER TABLE `enployee`
+  ADD CONSTRAINT `FK_Relationship_21` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  ADD CONSTRAINT `FK_Relationship_31` FOREIGN KEY (`department_id`) REFERENCES `department` (`id`);
+
+--
+-- 限制表 `user_salt`
+--
+ALTER TABLE `user_salt`
+  ADD CONSTRAINT `FK_Relationship_41` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
