@@ -240,24 +240,24 @@ Class UserModel extends Model{
 			$resultArr['error'] = '登录已失效';
 			return $resultArr;
 		}
-		$userinfo = $this->where('username="%s"',cookie('username'))->find();
+		$userinfo = $this->where('id=%d', session('id'))->find();
 
 		if($userinfo['password'] != login_en_code($old))
 		{
-			$resultArr['error'] = '旧密码不对啦~';
+			$resultArr['error'] = '原密码不正确';
 			return $resultArr;
 		}
 
 		if(!preg_match('/[\S]{6,128}/',$new))
 		{
-			return $jsonResult = array('status' => false,'error' => '密码不符合条件<br/>请输入6-128位密码' );
+			return $jsonResult = array('status' => false,'error' => '密码不符合条件，请输入6-128位密码' );
 		}
 
 		$data = array(
 			'password' 	=> login_en_code($new)
 			);
 		trace($data,'debug');
-		if($this->where('username="%s"',cookie('username'))->save($data))
+		if($this->where('id=%d', session('id'))->save($data))
 		{
 			$resultArr['status'] = true;
 			$resultArr['info']	= '修改密码成功';

@@ -43,4 +43,16 @@ class ApiController extends Controller {
 			$this->error($check_res['info']);
 		}
 	}
+
+	public function change_password($old, $new) {
+		$res = D('User')->ChangePassword($old, $new);
+		if(I('renew') != null && I('renew') != $new) {
+			$this->error('两次输入的密码不一致');
+		}
+		if($res['status']) {
+			$this->success($res['info']);
+		} else {
+			$this->error($res['error']);
+		}
+	}
 }

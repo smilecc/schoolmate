@@ -3,69 +3,97 @@
 <block name="header-title">用户设置 <small>个人资料设置</small></block>
 <block name="body">
 	<script type="text/javascript">$('#li-class').addClass('active')</script>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					资料设置
+				</div>
+				<div class="panel-body">
 
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			活动列表 <if condition="session('user_role') eq 2"><a class="btn btn-success btn-xs" style="font-weight: normal;" href="{:U('/Home/Class/activitycg')}">发起新活动</a></if>
-		</div>
-		<div class="panel-body">
-
-			<div>
-				<ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">资料设置</a></li>
-					<li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">密码修改</a></li>
-				</ul>
-
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane active" id="profile">
-						<form class="form-horizontal tab-form">
-							<div class="form-group">
-								<label for="inputEmail3" class="col-sm-2 control-label">电子邮箱</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="电子邮箱" readonly="readonly" value="{$userinfo.email}">
-								</div>
+					<form class="form-horizontal tab-form" method="post" action="{:U('/Home/User/update_setting')}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">电子邮箱</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="电子邮箱" readonly="readonly" value="{$userinfo.email}">
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">用户名</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="用户名" readonly="readonly" value="{$userinfo.username}">
-								</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">用户名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="用户名" readonly="readonly" value="{$userinfo.username}">
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">性别</label>
-								<div class="col-sm-10">
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">性别</label>
+							<div class="col-sm-10">
+								<if condition="$userinfo['sex'] eq 0">
 									<label class="radio-inline">
-									  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+										<input type="radio" name="sex" id="inlineRadio1" value="1"> 男
 									</label>
 									<label class="radio-inline">
-									  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+										<input type="radio" name="sex" id="inlineRadio2" value="2"> 女
 									</label>
 									<label class="radio-inline">（只能提交一次）</label>
-								</div>
+								<else />
+									<label class="radio-inline">性别已经提交，无法修改</label>
+								</if>
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">电话号码</label>
-								<div class="col-sm-10">
-									<input type="number" class="form-control" placeholder="电话号码" value="{$userinfo.phone}">
-								</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">电话号码</label>
+							<div class="col-sm-10">
+								<input type="number" class="form-control" placeholder="电话号码" name="phone" value="{$userinfo.phone}">
 							</div>
-							<div class="form-group">
-								<label for="inputPassword3" class="col-sm-2 control-label">出生日期</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="出生日期" value="{$userinfo.birthday}">
-									(请以0000-00-00为格式，如2015年1月1日则填写2015-01-01)
-								</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">出生日期</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="出生日期" name="birthday" value="{$userinfo.birthday}">
+								(请以0000-00-00为格式，如2015年1月1日则填写2015-01-01)
 							</div>
-							<div class="form-group">
-								<div class="col-sm-offset-2 col-sm-10">
-									<button type="submit" class="btn btn-success">保存资料</button>
-								</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-success">保存资料</button>
 							</div>
-						</form>
-					</div>
-					<div role="tabpanel" class="tab-pane" id="password">
-						
-					</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					密码修改
+				</div>
+				<div class="panel-body">
+
+					<form class="form-horizontal tab-form" method="post" action="{:U('/User/Api/change_password')}">
+						<div class="form-group">
+							<label for="inputEmail3" class="col-sm-2 control-label">原密码</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" name="old" placeholder="账户原本的密码" >
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">新密码</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" name="new" placeholder="所要修改的新密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">重复密码</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" name="renew" placeholder="重复输入一次新密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-success">修改密码</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
