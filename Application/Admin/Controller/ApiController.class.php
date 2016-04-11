@@ -175,7 +175,8 @@ class ApiController extends Controller {
 		} else {
 			$donation_data = array(
 				'donationproject_id' => $projectid,
-				'enter_uid'			 => session('id')
+				'enter_uid'			 => session('id'),
+				'donation_source'	 => $sourceid
 				);
 			if ($source == -1 || $source == '') {
 				$this->error('存在无效的数据');

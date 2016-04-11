@@ -13,6 +13,53 @@
 			</div>
 		</div>
 		<div class='panel-body'>
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover" id="dataTables-project">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>捐赠项目</th>
+							<th>捐赠来源</th>
+							<th>录入人</th>
+							<th>录入时间</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<foreach name="donationlist" item="vo">
+							<tr class="odd gradeX">
+								<td>{$vo.id}</td>
+								<td>{$vo['projectname']}</td>
+								<td>
+									<switch name="vo['donation_source']" >
+										<case value="1"><span class="label label-primary">分会</span> {$vo['branch_name']}</case>
+										<case value="2"><span class="label label-info">个人</span> {$vo['donationrealname']}({$vo['donationusername']})</case>
+										<case value="3"><span class="label label-success">机构</span> {$vo['donationcompany']}</case>
+									<default />未知数据
+									</switch>	
+								</td>
+								<td>{$vo['enderrealname']}</td>
+								<td>{$vo['createddate']}</td>
+								<td><a href="#" class="a-detail" donation="{$vo.id}"><span class="glyphicon glyphicon-th-list"></span> 查看详情</a></td>
+							</tr>
+						</foreach>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
+
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#dataTables-project').dataTable(cn_lang);
+			$('.a-detail').click(function(){
+					$('#msg-text').text('正在加载数据...');
+					var donationid = $(this).attr('donation');
+					$('#msg-text').load("{:U('/Admin/Donation/donation_detail').'?donationid='}" + donationid);
+					$('#msgModal').modal('show');
+				});
+		})
+	</script>
 </block>

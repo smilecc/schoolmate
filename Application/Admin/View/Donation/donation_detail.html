@@ -1,0 +1,24 @@
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-hover" id="dataTables-project">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>所捐财物</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="detaillist" item="vo">
+				<tr class="odd gradeX">
+					<td>{$vo.id}</td>
+					<td>
+						<if condition="$vo['donationcash'] eq 0">
+							{$vo['donationgoods']}
+						<else/>
+							{$vo['donationcash']}元
+						</if>
+					</td>
+				</tr>
+			</foreach>
+		</tbody>
+	</table>
+</div>
