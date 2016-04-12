@@ -1,1 +1,152 @@
-介绍页面
+<html>
+<head>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+<!-- 	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<link href="__PUBLIC__/resources/home/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+	<title>校友录 - {:C('SITE_NAME')}</title>
+	<style type="text/css">
+	body{
+		font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+	}
+	.intro{
+		color: #fff;
+		text-align: center;
+		text-shadow: 0 1px 3px rgba(0,0,0,.4),0 0 30px rgba(0,0,0,.075);
+		background: #020031;
+		background: -moz-linear-gradient(45deg,#020031 0,#6d3353 100%);
+		background: -webkit-gradient(linear,left bottom,right top,color-stop(0%,#020031),color-stop(100%,#6d3353));
+		background: -webkit-linear-gradient(45deg,#020031 0,#6d3353 100%);
+		background: -o-linear-gradient(45deg,#020031 0,#6d3353 100%);
+		background: -ms-linear-gradient(45deg,#020031 0,#6d3353 100%);
+		background: linear-gradient(45deg,#020031 0,#6d3353 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#020031', endColorstr='#6d3353', GradientType=1);
+		-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+		-moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+		box-shadow: inset 0 3px 7px rgba(0,0,0,.2),inset 0 -3px 7px rgba(0,0,0,.2);
+		margin-top: 50px;
+	}
+
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">{:C('SITE_NAME')}</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{:U('/User/Page/login')}">登录</a></li>
+					<li><a href="{:U('/User/Page/register')}">注册</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+	<div class="container-fluid intro jumbotron">
+		<h1>校友录</h1>
+		<p>追忆往昔，通信你我</p>
+<!-- 		<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p> -->
+	</div>
+	<div class="container">
+
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			<foreach name="yearlist" item="vo">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="{$vo.id}">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{$vo.id}" aria-expanded="true" aria-controls="collapse{$vo.id}">
+									{$vo.attendan}年
+								</a>
+							</h4>
+						</div>
+						<div id="collapse{$vo.id}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{$vo.id}">
+							<div class="panel-body">
+								<ul class="nav nav-pills" role="tablist">
+									<foreach name="vo['classlist']" item="cvo">
+										<li role="presentation"><a href="#" class="class-detail" classid="{$cvo.id}">{$cvo.classname} <span class="badge">{$cvo.usercount}人</span></a></li>
+									</foreach>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</foreach>
+			</div>
+		
+	</div>
+	<div class="modal fade bs-example-modal-lg" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">班级人员详情</h4>
+				</div>
+				<div class="modal-body" id="classdetail">
+					正在加载...
+				</div>
+				<input type="hidden" name="photoid" id="ipt-photoid" value="-1" />
+				<div class="modal-footer">
+					<button type="button" class="btn btn-success" data-dismiss="modal">关闭</button>
+			</div>
+		</div>
+	</div>
+<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+<script type="text/javascript">
+var cn_lang = {
+				order: [[ 0, 'desc' ]],
+				    language: {
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "搜索 ",
+					"sUrl":          "",
+					"sEmptyTable":     "表中数据为空",
+					"sLoadingRecords": "载入中...",
+					"sInfoThousands":  ",",
+					"oPaginate": {
+						"sFirst":    "首页",
+						"sPrevious": "上页",
+						"sNext":     "下页",
+						"sLast":     "末页"
+					},
+					"oAria": {
+						"sSortAscending":  ": 以升序排列此列",
+						"sSortDescending": ": 以降序排列此列"
+					}
+				}
+			};
+	$('.class-detail').click(function(){
+		$('#classdetail').text('正在加载...');
+		$('#detailModal').modal('show');
+		var classid = $(this).attr('classid');
+		$('#classdetail').load("{:U('/User/Page/classlist')}" + '?classid=' + classid);
+	});
+</script>
+</body>
+</html>

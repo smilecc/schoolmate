@@ -235,14 +235,16 @@ Class UserModel extends Model{
 		$resultArr = array(
 			'status' => false
 		 );
-		if(!test_user())
+		if(session('id') == null)
 		{
 			$resultArr['error'] = '登录已失效';
 			return $resultArr;
 		}
 		$userinfo = $this->where('id=%d', session('id'))->find();
 
-		if($userinfo['password'] != login_en_code($old))
+		// 校对密码
+		$registerRand = M('UserSalt')->where('user_id=%d AND type=0', session('id'))->getField('random');
+		if($userinfo['password'] != \User\Api\UserApi::LoginEncode($old.$registerRand))
 		{
 			$resultArr['error'] = '原密码不正确';
 			return $resultArr;
@@ -254,7 +256,7 @@ Class UserModel extends Model{
 		}
 
 		$data = array(
-			'password' 	=> login_en_code($new)
+			'password' 	=> \User\Api\UserApi::LoginEncode($new.$registerRand)
 			);
 		trace($data,'debug');
 		if($this->where('id=%d', session('id'))->save($data))
