@@ -9,6 +9,12 @@ class BaseController extends Controller {
 		{
 			// session _ACCESS_LIST
 			// print_r($_SESSION);
+			if(session('user_role') == 3 || session('user_role') == 4)
+			{
+				$this->redirect('/User/Page/Intro');
+				return;
+			}
+			
 			$access = \Org\Util\Rbac::AccessDecision();
 			if(!$access)
 			{
@@ -17,7 +23,7 @@ class BaseController extends Controller {
 		}
 		else
 		{
-			$this->redirect('/User/Page/Intro');
+			$this->error('对不起，你没有登录', '/User/Page/intro');
 		}
 	}
 }

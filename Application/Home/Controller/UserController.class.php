@@ -2,7 +2,11 @@
 namespace Home\Controller;
 use Think\Controller;
 class UserController extends Controller {
-	public function index() {}
+	public function _initialize() {
+		if(session('id') == null) {
+			$this->error('对不起，你未登录', '/User/Page/login');
+		}
+	}
 
 	public function setting() {
 		$userinfo = M('User')->where('id=%d', session('id'))->find();

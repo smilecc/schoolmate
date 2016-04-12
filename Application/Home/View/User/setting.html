@@ -2,7 +2,19 @@
 <block name="title">用户设置 - {:C('SITE_NAME')}</block>
 <block name="header-title">用户设置 <small>个人资料设置</small></block>
 <block name="body">
-	<script type="text/javascript">$('#li-class').addClass('active')</script>
+	<script type="text/javascript">
+		switch({:session('user_role')})
+		{
+			case 1:
+			case 2:
+				$('#li-class').addClass('active');
+				break;
+			case 3:
+			case 4:
+				$('#li-class').hide();
+				break;
+		}
+	</script>
 	<div class="row">
 		<div class="col-lg-6">
 			<div class="panel panel-default">

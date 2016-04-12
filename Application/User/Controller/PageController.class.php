@@ -37,11 +37,18 @@ class PageController extends Controller {
 
 	public function classlist($classid)
 	{
-		if (session('id') == null) {
-			$isLogin = false;
-		} else {
+		$auto_login = new \User\Api\UserApi;
+		if($auto_login->AutoLogin()) {
 			$isLogin = true;
+			if(session('user_role') != 3 && session('user_role') != 4)
+			{
+				echo '你没有权限查看班级成员列表';
+				return;
+			}
+		} else {
+			$isLogin = false;
 		}
+		
 		$class = new \Home\Model\ClassModel();
 		$classlist = $class->GetMember($classid);
 
