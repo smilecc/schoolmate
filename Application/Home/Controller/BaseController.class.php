@@ -11,10 +11,10 @@ class BaseController extends Controller {
 			// print_r($_SESSION);
 			if(session('user_role') == 3 || session('user_role') == 4)
 			{
-				$this->redirect('/User/Page/Intro');
+				$this->redirect('/User/Page/intro');
 				return;
 			}
-			
+
 			$access = \Org\Util\Rbac::AccessDecision();
 			if(!$access)
 			{
