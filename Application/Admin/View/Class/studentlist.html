@@ -1,0 +1,194 @@
+<extend name="Base/common"/>
+<block name="navtab">
+	<li><a href="{:U('/Admin/Class')}">班级管理</a></li>
+	<li class='active'><a href="#">班级成员列表</a></li>
+</block>
+<block name="body">
+	<script type="text/javascript">$('#sb-class').addClass('active')</script>
+	<!-- Create Modal -->
+	<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">创建班级</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" id="fm-addclass" method="post" action="{:U('/Admin/Api/ClassCreate')}">
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-2 control-label">班级名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-classname" name="name" placeholder="班级的名字">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-headmaster" class="col-sm-2 control-label">班主任</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-headmaster" name="headmaster" placeholder="班主任的名字">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-headmaster" class="col-sm-2 control-label">入学年份</label>
+							<div class="col-sm-10">
+								<select class="form-control" id="slt-attendandate" name="attendandate">
+									<option value="-1">请选择...</option>
+									<foreach name="attendanlist" item="vo">
+										<option value="{$vo['id']}">{$vo['attendan']}</option>
+									</foreach>
+								</select>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary" id="btn-add-submit">提交</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Delete Modal -->
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">提示</h4>
+				</div>
+				<div class="modal-body">
+					是否删除该班级？
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-danger" id="btn-delete">确认</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Change Modal -->
+	<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改用户信息</h4>
+				</div>
+				<form class="form-horizontal" id="fm-cgclass" method="post" action="{:U('/Admin/Api/save_user')}">
+					<div class="modal-body">
+						<input type="hidden" id="ipt-cg-id" name="id" value="-1">
+						<div class="form-group">
+							<label for="ipt-cg-realname" class="col-sm-2 control-label">姓名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-realname" name="realname" placeholder="姓名">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">性别</label>
+							<div class="col-sm-10">
+									<label class="radio-inline">
+										<input type="radio" name="sex" id="ipt-sex-0" value="0"> 未知
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="sex" id="ipt-sex-1" value="1"> 男
+									</label>
+									<label class="radio-inline">
+										<input type="radio" name="sex" id="ipt-sex-2" value="2"> 女
+									</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-phone" class="col-sm-2 control-label">电话</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-phone" name="phone" placeholder="电话">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-email" class="col-sm-2 control-label">邮箱</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-email" name="email" placeholder="邮箱">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-birthday" class="col-sm-2 control-label">生日</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-birthday" name="birthday" placeholder="生日">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-change-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			<i class='icon-table icon-large'></i>
+			成员列表
+			<div class='panel-tools'>
+
+			</div>
+		</div>
+		<div class='panel-body'>
+			<table class="table table-striped table-bordered table-hover" id="dataTables">
+				<thead>
+					<tr>
+						<th>用户名</th>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>电话</th>
+						<th>邮箱</th>
+						<th>生日</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="classlist" item="vo">
+						<tr class="odd gradeX">
+							<td id="username-{$vo.user_id}">{:($vo['username']==null?'未注册':$vo['username'])}</td>
+							<td id="realname-{$vo.user_id}">{$vo.realname}</td>
+							<td id="sex-{$vo.user_id}" value="{$vo['sex']}">
+								<switch name="vo['sex']" >
+									<case value="1">男</case>
+									<case value="2">女</case>
+									<default />未填
+								</switch>
+							</td>
+							<td id="phone-{$vo.user_id}" value="{$vo['phone']}">{:$vo['phone']==null?'未填':$vo['phone']}</td>
+							<td id="email-{$vo.user_id}">{:$vo['email']}</td>
+							<td id="birthday-{$vo.user_id}" value="{$vo['birthday']}">{:$vo['birthday']=='0000-00-00'?'未填':substr($vo['birthday'],0,10)}</td>
+							<td userid="{$vo.user_id}">
+								<a class="a-change" href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改信息</a> 
+								<a class="a-resetpwd" href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 重置密码</a> 
+								<a class="a-remove" href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 删除</a> 
+							</td>
+						</tr>
+					</foreach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			cn_lang.order[0][1] = 'asc';
+			$('#dataTables').dataTable(cn_lang);
+			$('.a-change').click(function(){
+				var userid = $(this).parent().attr('userid');
+				$('#ipt-cg-id').val(userid);
+				$('#ipt-cg-realname').val($('#realname-' + userid).text());
+				$('#ipt-sex-' + $('#sex-' + userid).attr('value')).attr('checked', true);
+				$('#ipt-cg-phone').val($('#phone-' + userid).attr('value'));
+				$('#ipt-cg-email').val($('#email-' + userid).text());
+				$('#ipt-cg-birthday').val($('#birthday-' + userid).attr('value'));
+
+				$('#changeModal').modal('show');
+			});
+		})
+	</script>
+</block>

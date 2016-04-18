@@ -289,4 +289,26 @@ class ApiController extends Controller {
 		}
 	}
 
+	public function save_user()
+	{
+		if (IS_POST) {
+			$data = array(
+				'realname' 	=> I('realname'),
+				'sex' 		=> I('sex'),
+				'phone'		=> I('phone'),
+				'email'		=> I('email'),
+				'birthday'	=> I('birthday')
+				);
+
+			if(M('User')->where('id=%d', I('id'))->save($data))
+			{
+				$this->success('修改成功');
+			}
+			else
+			{
+				$this->error('修改失败，未修改或系统错误');
+			}
+		}
+	}
+
 }

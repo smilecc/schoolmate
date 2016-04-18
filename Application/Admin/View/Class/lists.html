@@ -17,7 +17,7 @@
   <foreach name="list" item="vo">
     <tr>
       <td>{$vo['id']}</td>
-      <td>{$vo['classname']}</td>
+      <td><a href="{:U('/Admin/Class/studentlist?classid='.$vo['id'])}">{$vo['classname']}</a></td>
       <td>{$vo['headmaster']}</td>
       <td>{$vo['attendan']}</td>
       <td class='action'>
