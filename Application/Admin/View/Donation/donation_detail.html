@@ -4,21 +4,122 @@
 			<tr>
 				<th>#</th>
 				<th>所捐财物</th>
+				<th>时间</th>
+				<th>操作</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="tbody">
 			<foreach name="detaillist" item="vo">
-				<tr class="odd gradeX">
+				<tr class="odd gradeX" id="tr-{$vo.id}">
 					<td>{$vo.id}</td>
-					<td>
+					<td id="">
+						<i class="icon-spinner icon-spin" id="load-{$vo.id}" style="display: none"></i>
+						<!-- <i class="icon-ok" id="over-{$vo.id}" style="display: none"></i> -->
 						<if condition="$vo['donationcash'] eq 0">
-							{$vo['donationgoods']}
+							<span id="val-{$vo.id}">{$vo['donationgoods']}</span>
+							<input type="hidden" id="ipt-{$vo.id}" value="{$vo['donationgoods']}" />
 						<else/>
-							{$vo['donationcash']}元
+							<span id="val-{$vo.id}">{$vo['donationcash']}</span><input type="hidden" id="ipt-{$vo.id}" value="{$vo['donationcash']}" />元</span>
 						</if>
+					</td>
+					<td>
+						{$vo['createdtime']}
+					</td>
+					<td donationid="{$vo.id}">
+						<a href="#" onclick="change(this)">修改</a>
+						<a href="#" onclick="deleted(this)">删除</a>
 					</td>
 				</tr>
 			</foreach>
+			<tr id="tr-clone" style="display: none">
+				<td></td>
+				<td>
+					<i class="icon-spinner icon-spin" id="load-clone" style="display: none"></i>
+					<input type="text" id="ipt-clone" value="" placeholder="输入金额(万元)或物品" />
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
 		</tbody>
 	</table>
 </div>
+<div class="pull-right" style="margin-top: 31px; margin-left: 10px;">
+	<button class="btn btn-primary" onclick="create()">新增捐赠明细</button>
+</div>
+<script>
+	var count = 0;
+	function create()
+	{
+		$('#tr-clone').show();
+		$('#ipt-clone').focus().select();
+		$('#ipt-clone').one('blur',function(){
+			$('#load-clone').show();
+			var val = $(this).val();
+			$.ajax({
+				url:'{:U('/Admin/Api/create_donation_detail')}',
+				type:'post',
+				data:{
+					donation_id: {$donationid},
+					value: val
+				},
+				success:function(data){
+					var jobj = JSON.parse(data);
+
+					if(jobj.status) {
+						$('#msg-text').load("{:U('/Admin/Donation/donation_detail?donationid='.$donationid)}");
+					} else alert('创建失败，系统繁忙');
+				}
+			})
+		});
+	}
+
+	function change(item)
+	{
+		var id = $(item).parent().attr('donationid');
+		$('#ipt-' + id).attr('type','text');
+		$('#val-' + id).hide();
+		$('#ipt-' + id).focus().select();
+		$('#ipt-' + id).one('blur',function(){
+			var val = $(this).val();
+			$('#val-' + id).text(val);
+			$('#load-' + id).show();
+
+			$.ajax({
+				url:'{:U('/Admin/Api/change_donation_detail')}',
+				type:'post',
+				data:{
+					did: id,
+					value: val
+				},
+				success:function(data){
+					$('#ipt-' + id).attr('type','hidden');
+					$('#val-' + id).show();
+					$('#load-' + id).hide();
+				}
+			})
+		});
+	}
+
+	function deleted(item)
+	{
+		if(window.confirm('你确定要删除这项捐赠吗？'))
+		{
+			var id = $(item).parent().attr('donationid');
+			$('#load-' + id).show();
+			$.ajax({
+				url:'{:U('/Admin/Api/delete_donation_detail')}',
+				type:'post',
+				data:{
+					did: id
+				},
+				success:function(data){
+					var jobj = JSON.parse(data);
+
+					if(jobj.status) {
+						$('#tr-' + id).fadeOut(200);
+					} else alert('删除失败，系统繁忙');
+				}
+			});
+		}
+	}
+</script>

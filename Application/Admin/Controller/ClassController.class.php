@@ -59,6 +59,7 @@ class ClassController extends Controller {
 		$class = new \Home\Model\ClassModel();
 		$classlist = $class->GetMember($classid);
 
+		$this->assign('classid', $classid);
 		$this->assign('classlist',$classlist);
 		$this->display();
 	}

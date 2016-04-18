@@ -27,6 +27,17 @@ class UserModel extends Model {
 		}
 	}
 
+	public function DeleteUser($userid)
+	{
+		if(M('Alumnus')->where('user_id=%d', $userid)->delete())
+		{
+			if (M('User')->where('id=%d', $userid)->delete()) {
+				return true;
+			} else return false;
+		} else return false;
+
+	}
+
 	public function GetUseridByName($username) {
 		$count = $this->where("username='%s'", $username)->count();
 		if($count == 1) {

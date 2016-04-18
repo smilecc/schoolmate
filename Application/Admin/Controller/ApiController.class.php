@@ -275,6 +275,22 @@ class ApiController extends Controller {
 		$this->success('创建成功', '/Admin/Donation/branch?time='.time());
 	}
 
+	public function branch_change($id, $name)
+	{
+		$data = array(
+			'branch_name' => $name
+			);
+
+		if(M('Branch')->where('id=%d', $id)->save($data))
+		{
+			$this->success('修改成功', '/Admin/Donation/branch?time='.time());
+		}
+		else
+		{
+			$this->error('修改失败，未修改或系统错误');
+		}
+	}
+
 	public function branch_delete($branchid)
 	{
 		M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE branch_id = %d)', $branchid)->delete();
@@ -311,6 +327,29 @@ class ApiController extends Controller {
 		}
 	}
 
+	public function add_user($realname, $sex, $classid)
+	{
+		if (IS_POST) {
+			$data[] = array(
+				'name'		=> $realname,
+				'sex'		=> $sex,
+				'classid'	=> $classid,
+				'id'		=> ''
+				);
+			D('User')->AddUser($data);
+			$this->success('操作成功');
+		}
+	}
+
+	public function delete_user($userid)
+	{
+		if (IS_POST) {
+			if (D('User')->DeleteUser($userid)) {
+				$this->success('操作成功');
+			} else $this->success('操作失败，系统繁忙');
+		}
+	}
+
 	public function reset_pwd()
 	{
 		if (IS_POST) {
@@ -323,4 +362,58 @@ class ApiController extends Controller {
 		}
 	}
 
+	public function create_donation_detail($donation_id, $value)
+	{
+		// 分类捐赠的是现金还是物品
+		if (is_numeric($value)) {
+			$data = array(
+				'donationcash' => $value,
+				'donationgoods'=> ''
+				);
+		} else {
+			$data = array(
+				'donationcash'  => 0,
+				'donationgoods' => $value
+				);
+		}
+		$data['donation_id'] = $donation_id;
+		if (M('DonationPersonDetail')->add($data)) {
+			$res = array('status' => true);
+		} else {
+			$res = array('status' => false);
+		}
+		echo json_encode($res);
+	}
+
+	public function change_donation_detail($did, $value)
+	{
+		// 分类捐赠的是现金还是物品
+		if (is_numeric($value)) {
+			$data = array(
+				'donationcash' => $value,
+				'donationgoods'=> ''
+				);
+		} else {
+			$data = array(
+				'donationcash'  => 0,
+				'donationgoods' => $value
+				);
+		}
+		if (M('DonationPersonDetail')->where('id=%d', $did)->save($data)) {
+			$res = array('status' => true);
+		} else {
+			$res = array('status' => false);
+		}
+		echo json_encode($res);
+	}
+
+	public function delete_donation_detail($did)
+	{
+		if(M('DonationPersonDetail')->where('id=%d', $did)->delete()) {
+			$res = array('status' => true);
+		} else {
+			$res = array('status' => false);
+		}
+		echo json_encode($res);
+	}
 }

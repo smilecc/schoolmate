@@ -54,6 +54,32 @@
 					<p><i class="icon-money"></i> 现金 {$page['company_cash']} 元</p>
 				</div><!--/.col-xs-3.col-lg-2-->
 			</div>
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<volist name="donationlist" id="vo" key="i">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{$i}" aria-expanded="true" aria-controls="collapse{$i}">
+									{$vo.year}年
+								</a>
+							</h4>
+						</div>
+						<div id="collapse{$i}" class="panel-collapse collapse {:($i==1?'in':'')}" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body">
+								<ul class="nav nav-pills" role="tablist">
+									<foreach name="vo['prolist']" item="pvo">
+										<li role="presentation">
+											<a href="#" class="class-detail" classid="{$cvo.id}" data-container="body" data-toggle="popover" data-placement="top" data-content="所捐现金{$pvo.cash}元，物品{$pvo.goods}件" data-trigger="focus">
+												{$pvo.donationname} <span class="badge"><i class="icon-money"></i> {$pvo.cash} <i class="icon-briefcase"></i> {$pvo.goods}</span>
+											</a>
+										</li>
+									</foreach>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</volist>
+			</div>
 		</div>
 	</div>
 </block>

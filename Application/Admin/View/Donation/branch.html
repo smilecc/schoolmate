@@ -11,7 +11,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">创建捐赠项目</h4>
+					<h4 class="modal-title" id="myModalLabel">创建分会</h4>
 				</div>
 				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/branch_create')}">
 					<div class="modal-body">
@@ -20,6 +20,35 @@
 							<label for="ipt-classname" class="col-sm-2 control-label">分会名称</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="ipt-name" name="name" placeholder="分会名称" required>
+							</div>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-edit-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- 修改分会Modal -->
+	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改分会</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/branch_change')}">
+					<div class="modal-body">
+						
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-2 control-label">分会名称</label>
+							<div class="col-sm-10">
+								<input type="hidden" id="ipt-edit-id" name="id" value="-1" />
+								<input type="text" class="form-control" id="ipt-cg-name" name="name" placeholder="分会名称" required>
 							</div>
 						</div>
 						
@@ -80,8 +109,9 @@
 							<foreach name="branchlist" item="vo">
 								<tr class="odd gradeX">
 									<td>{$vo.id}</td>
-									<td>{$vo.branch_name}</td>
+									<td id="tr-{$vo.id}">{$vo.branch_name}</td>
 									<td>
+										<a href="#" class="a-edit" branch="{$vo.id}"><span class="glyphicon glyphicon-edit"></span> 修改</a>
 										<a href="#" class="a-remove" branch="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 									</td>
 								</tr>
@@ -100,6 +130,13 @@
 				var id = $(this).attr('branch');
 				$('#ipt-branch').val(id);
 				$('#deleteModal').modal('show');
+			});
+
+			$('.a-edit').click(function(){
+				var id = $(this).attr('branch');
+				$('#ipt-cg-name').val($('#tr-'+id).text());
+				$('#ipt-edit-id').val(id);
+				$('#editModal').modal('show');
 			});
 		})
 	</script>

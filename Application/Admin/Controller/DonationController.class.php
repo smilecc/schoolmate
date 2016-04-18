@@ -58,6 +58,7 @@ class DonationController extends Controller {
 
 	public function donation_detail($donationid) {
 		$arr = M('DonationPersonDetail')->where('donation_id=%d', $donationid)->select();
+		$this->assign('donationid',$donationid);
 		$this->assign('detaillist', $arr);
 		$this->display();
 	}
