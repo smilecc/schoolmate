@@ -311,4 +311,16 @@ class ApiController extends Controller {
 		}
 	}
 
+	public function reset_pwd()
+	{
+		if (IS_POST) {
+			$user = new \User\Model\UserModel();
+			if ($user->ResetPwd(I('userid'))) {
+				$this->success('重置成功');
+			} else {
+				$this->error('重置失败，用户未注册或系统错误');
+			}
+		}
+	}
+
 }

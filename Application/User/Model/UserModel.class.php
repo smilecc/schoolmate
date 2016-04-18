@@ -271,6 +271,21 @@ Class UserModel extends Model{
 		return $resultArr;
 	}
 
+	// 重置密码
+	public function ResetPwd($userid)
+	{
+		$registerRand = M('UserSalt')->where('user_id=%d AND type=0', $userid)->getField('random');
+		if ($registerRand == null) {
+			return false;
+		}
+		
+		$data = array(
+			'password' 	=> \User\Api\UserApi::LoginEncode('123456'.$registerRand)
+			);
+
+		return $this->where('id=%d', $userid)->save($data);
+	}
+
 	protected function CheckUsername($str)
 	{
 		if(preg_match('/^[0-9a-zA-Z_\x{4e00}-\x{9fa5}]{2,16}$/u',$str))
