@@ -9,7 +9,9 @@ class BaseController extends Controller {
         {
             // session _ACCESS_LIST
             // print_r($_SESSION['_ACCESS_LIST']);
-            $access = \Org\Util\Rbac::AccessDecision();
+
+            // $access = \Org\Util\Rbac::AccessDecision();
+            $access = (session('user_role') == 3);
             if(!$access)
             {
                 $this->error('对不起，您没有访问权限');

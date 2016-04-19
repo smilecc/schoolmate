@@ -1,13 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class ApiController extends Controller {
-	public function _initialize() {
-		if(session('user_role') != 3) {
-			$this->error('对不起，您没有访问权限');
-		}
-	}
-
+class ApiController extends BaseController {
 	public function index(){ }
 
 	public function ClassCreate(){

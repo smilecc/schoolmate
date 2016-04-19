@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class ClassController extends Controller {
+class ClassController extends BaseController {
 	public function index($page=1){
         // 映射
 		$count = M('Class')->count('id');

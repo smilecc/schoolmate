@@ -14,7 +14,7 @@ Excel 用户 上传接口
 	2 => 解析错误
 }
 */
-class ExcelController extends Controller {
+class ExcelController extends BaseController {
 	public function upload(){
 		$upload = new \Think\Upload();// 实例化上传类
 		$upload->maxSize   =     0 ;// 设置附件上传大小
