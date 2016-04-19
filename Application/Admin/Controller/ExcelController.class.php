@@ -43,6 +43,9 @@ class ExcelController extends Controller {
 
 			$errorList = array();
 			$insertList = array();
+			$countList = array();
+			$reArr = array();
+			$userdb = D('User');
 
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 				// $data->sheets[0]['cells'][$i][$j]
@@ -51,6 +54,10 @@ class ExcelController extends Controller {
 				$student['classname'] = trim($data->sheets[0]['cells'][$i][3]);
 				$student['sex'] = trim($data->sheets[0]['cells'][$i][4]);
 				$student['id'] = isset($data->sheets[0]['cells'][$i][5]) ? trim($data->sheets[0]['cells'][$i][5]) : null;
+
+				if ($student['name'] == null || $student['name'] == '') {
+					continue;
+				}
 
 				switch ($student['sex']) {
 					case '男':
@@ -64,28 +71,69 @@ class ExcelController extends Controller {
 						break;
 				}
 
+				$student['roleid'] = 1;
+
+				if(isset($countList[$student['attendandate'].'年 '.$student['classname']]) == false){
+					$countList[$student['attendandate'].'年 '.$student['classname']] = 0;
+				}
+
 				// 存在则入库 不存在则反馈给用户
 				if(isset($classList[$student['attendandate'].$student['classname']]) == false) {
 					$errorList[] = array(
 						'line' => $i,
 						'classname' => $student['classname'],
-						'year' => $student['attendandate']
+						'year' 		=> $student['attendandate'],
+						'name'		=> $student['name']
 						);
 				} else {
 					$student['classid'] =  $classList[$student['attendandate'].$student['classname']];
-					$insertList[] = $student;
+
+					$isRepeat = ($data->sheets[0]['cells'][$i][6] == 1);
+					$count = $userdb->FindUser($student['classid'], $student['name']);
+
+					if($count == 0) {
+						$insertList[] = $student;
+					} else {
+						if($isRepeat AND $count == 1) {
+							$insertList[] = $student;
+						} else {
+							continue;
+						}
+					}
+
+					$countList[$student['attendandate'].'年 '.$student['classname']]++;
+
 				}
 			}
+			D('User')->AddUser($insertList);
+		}
 
-			if (count($errorList) != 0) {
-				echo json_encode(array(
-						'status' => 2,
-						'info' => '存在不符数据，没有任何数据被导入，请修改正确后重新导入即可',
-						'lines' => $errorList
-					));
-			} else {
-				D('User')->AddUser($insertList);
-				echo json_encode(array('status' => 0, 'info' => '操作成功'));
+		$this->assign('errorlist', $errorList);
+		$this->assign('countlist', $countList);
+		$this->display();
+	}
+
+	public function upload_enployee()
+	{
+		$upload = new \Think\Upload();// 实例化上传类
+		$upload->maxSize   =     0 ;// 设置附件上传大小
+		$upload->exts      =     array('xls');// 设置附件上传类型
+		$upload->rootPath  =     './Public/Uploads/'; // 设置附件上传根目录
+		$upload->savePath  =     ''; // 设置附件上传（子）目录
+		// 上传文件 
+		$info   =   $upload->upload();
+		$res = array('status' => 1);
+		if(!$info) {// 上传错误提示错误信息
+			$res['info'] = $upload->getError();
+			echo json_encode($res);
+			return;
+		}else{// 上传成功
+			$data = new \Spreadsheet_Excel_Reader();
+			$data->setOutputEncoding('utf-8');
+			$data->read($_SERVER['DOCUMENT_ROOT'].'/Public/Uploads/'.$info['file']['savepath'].$info['file']['savename']);
+
+			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
+
 			}
 		}
 	}

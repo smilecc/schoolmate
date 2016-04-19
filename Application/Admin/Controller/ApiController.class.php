@@ -196,7 +196,8 @@ class ApiController extends Controller {
 			$donation_data = array(
 				'donationproject_id' => $projectid,
 				'enter_uid'			 => session('id'),
-				'donation_source'	 => $sourceid
+				'donation_source'	 => $sourceid,
+				'donationcompany'	 => I('companyname')
 				);
 			if ($source == -1 || $source == '') {
 				$this->error('存在无效的数据');
@@ -237,7 +238,7 @@ class ApiController extends Controller {
 					$donation_data['alumnus_id'] = $source;
 					break;
 				case '3':
-					$donation_data['donationcompany'] = $source;
+					$donation_data['foreign_name'] = $source;
 					break;
 				default:
 					$this->error('存在无效的数据');
@@ -259,7 +260,7 @@ class ApiController extends Controller {
 		M('DonationPersonDetail')->where('donation_id=%d', $donationid)->delete();
 		if(M('Donation')->where('id=%d', $donationid)->delete())
 		{
-			$this->success('删除成功', '/Admin/Donation/branch?time='.time());
+			$this->success('删除成功', '/Admin/Donation/?time='.time());
 		}
 		else
 		{

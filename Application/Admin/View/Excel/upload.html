@@ -1,0 +1,41 @@
+<h4>新增统计</h4>
+<table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+	<thead>
+		<tr>
+			<th>班级</th>
+			<th>新增的记录</th>
+		</tr>
+	</thead>
+	<tbody>
+		<foreach name="countlist" item="vo" key="k">
+			<tr class="odd gradeX">
+				<td>{$k}</td>
+				<td>{$vo}条</td>
+			</tr>
+		</foreach>
+	</tbody>
+</table>
+
+<notempty name="errorlist">
+<h4>新增失败 <small>所填学年不存在该班级</small></h4>
+	<table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+		<thead>
+			<tr>
+				<th>所在行</th>
+				<th>姓名</th>
+				<th>学年</th>
+				<th>班级</th>
+			</tr>
+		</thead>
+		<tbody>
+			<foreach name="errorlist" item="vo" key="k">
+				<tr class="odd gradeX">
+					<td>{$vo.line}</td>
+					<td>{$vo.name}</td>
+					<td>{$vo.year}</td>
+					<td>{$vo.classname}</td>
+				</tr>
+			</foreach>
+		</tbody>
+	</table>
+</notempty>

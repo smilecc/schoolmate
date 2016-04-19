@@ -12,7 +12,7 @@ class ClassController extends Controller {
 		$this->display();
 	}
 
-	public function lists($page,$search=''){
+	public function lists($page,$year,$search=''){
         // 映射
 		if($search == '')
 		{
@@ -29,7 +29,13 @@ class ClassController extends Controller {
 			if($page > $pagecount){
 				$page = $pagecount;
 			}
-			$list = M('Class')->order('id desc')->page($page,10)->select();
+
+			if ($year == -1) {
+				$list = M('Class')->order('id desc')->page($page,10)->select();
+			} else {
+				$list = M('Class')->where('attendandate_id=%d', $year)->order('id desc')->page($page,10)->select();
+			}
+			
 		}
 		else
 		{

@@ -209,7 +209,7 @@
 			</div>
 		</div>
 		<div class='panel-body' id="panel-class">
-			<table class="table table-striped table-bordered table-hover" id="dataTables-activity">
+			<table class="table table-striped table-bordered table-hover" id="dataTables-class">
 				<thead>
 					<tr>
 						<th>姓名</th>
@@ -235,4 +235,11 @@
 			</table>
 		</div>
 	</div>
+		<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('#dataTables-class').dataTable(cn_lang);
+		});
+	</script>
 </block>

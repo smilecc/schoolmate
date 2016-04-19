@@ -89,7 +89,7 @@
 	<div class="container">
 
 		<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-			<foreach name="yearlist" item="vo">
+			<volist name="yearlist" id="vo" >
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="{$vo.id}">
 						<h4 class="panel-title">
@@ -98,7 +98,7 @@
 							</a>
 						</h4>
 					</div>
-					<div id="collapse{$vo.id}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="{$vo.id}">
+					<div id="collapse{$vo.id}" class="panel-collapse collapse {:($i==1?' in':'')}" role="tabpanel" aria-labelledby="{$vo.id}">
 						<div class="panel-body">
 							<ul class="nav nav-pills" role="tablist">
 								<foreach name="vo['classlist']" item="cvo">
@@ -108,7 +108,7 @@
 						</div>
 					</div>
 				</div>
-			</foreach>
+			</volist>
 		</div>
 		
 	</div>

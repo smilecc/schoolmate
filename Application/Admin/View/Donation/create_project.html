@@ -75,17 +75,19 @@
 								<select class="form-control selectpicker" id="slt-source" name="source">
 									<option value="-1">请选择...</option>
 									<option value="1">分会捐赠</option>
-									<option value="2">个人捐赠</option>
-									<option value="3">机构公司捐赠</option>
+									<option value="2">校友捐赠</option>
+									<option value="3">非校友捐赠</option>
 								</select>
 								<!-- <input type="text" class="form-control" id="ipt-name" name="pro_name" placeholder="项目名称"> -->
 							</div>
 						</div>
 
-						<div class="form-group div-hide" id="div-user">
-							<label for="ipt-classname" class="col-sm-3 control-label">捐赠人用户名</label>
-							<div class="col-sm-9">
-								<input type="text" class="form-control" id="ipt-username" name="username" placeholder="捐赠人用户名">
+						<div class="div-hide" id="div-user">
+							<div class="form-group">
+								<label for="ipt-classname" class="col-sm-3 control-label">捐赠人用户名</label>
+								<div class="col-sm-9">
+									<input type="text" class="form-control" id="ipt-username" name="username" placeholder="捐赠人用户名">
+								</div>
 							</div>
 						</div>
 
@@ -102,13 +104,19 @@
 							</div>
 						</div>
 
-						<div class="form-group div-hide" id="div-company">
-							<label for="ipt-classname" class="col-sm-3 control-label">捐赠机构名称</label>
+						<div class="form-group div-hide" id="div-foreignname">
+							<label for="ipt-classname" class="col-sm-3 control-label">姓名</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="ipt-company" name="companyname" placeholder="捐赠机构名称">
+								<input type="text" class="form-control" id="ipt-foreignname" name="foreignname" placeholder="捐赠人姓名">
 							</div>
 						</div>
 
+						<div class="form-group div-hide" id="div-company">
+							<label for="ipt-classname" class="col-sm-3 control-label">机构名称</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" name="companyname" placeholder="捐赠人所属机构名称（可空）">
+							</div>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -165,6 +173,8 @@
 			$('.select-a').click(function(){
 				var proid = $(this).attr('proid');
 				$('#ipt-proid').val(proid);
+				$('#slt-source').selectpicker('val', '-1');
+				$('.div-hide').hide();
 				$('#editinfoModal').modal('show');
 			});
 
@@ -190,11 +200,13 @@
 						break;
 					case '2':
 						$('#div-user').show();
+						$('#div-company').show();
 						$('#ipt-username').attr('required', true);
 						break;
 					case '3':
+						$('#div-foreignname').show();
 						$('#div-company').show();
-						$('#ipt-company').attr('required', true);
+						$('#ipt-foreignname').attr('required', true);
 						break;
 					default:
 						$('#btn-add-submit').attr('disabled', true);

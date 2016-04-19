@@ -2,6 +2,16 @@
 namespace Admin\Model;
 use Think\Model;
 class AttendandateModel extends Model {
+	public function _initialize()
+	{
+		$toyear = M('Attendandate')->where('attendan=%d', date('Y'))->count();
+		if($toyear == 0) {
+			M('Attendandate')->add(array(
+				'attendan' => date('Y')
+				));
+		}
+	}
+
 	public function DisposeClass(&$class) {
 		$alist = $this->select();
 		foreach ($alist as $key => $value) {

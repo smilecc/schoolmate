@@ -15,15 +15,19 @@ class UserModel extends Model {
 				);
 
 			$resid = $this->add($data);
-			$alumnus->add(array(
+
+			$roleid = $value['roleid'];
+			$roleuser->add(array(
+					'role_id' => $roleid,
+					'user_id' => $resid
+				));
+
+			if($roleid != 4) {
+				$alumnus->add(array(
 					'class_id' => $value['classid'],
 					'user_id'  => $resid
 				));
-
-			$roleuser->add(array(
-					'role_id' => 1,
-					'user_id' => $resid
-				));
+			}
 		}
 	}
 
@@ -45,5 +49,10 @@ class UserModel extends Model {
 		} else {
 			return false;
 		}
+	}
+
+	public function FindUser($classid, $realname)
+	{
+		return $this->join("alumnus ON alumnus.class_id = ".$classid." AND `user`.id = alumnus.user_id")->where("realname = '%s'", $realname)->count();
 	}
 }

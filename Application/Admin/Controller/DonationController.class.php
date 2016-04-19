@@ -15,6 +15,9 @@ class DonationController extends Controller {
 	}
 
 	public function create_info($proid, $source) {
+		if ($source == 1 && I('branchid') == -1) {
+			$this->error('请选择一个分会');
+		}
 		if($proid == -1 || $source == -1) {
 			$this->error('非法提交');
 		}
@@ -29,7 +32,7 @@ class DonationController extends Controller {
 			}
 			break;
 			case '3':
-			$source_content = I('companyname');
+			$source_content = I('foreignname');
 			break;
 			default:
 			$source = -1;
@@ -39,6 +42,7 @@ class DonationController extends Controller {
 		$this->assign('projectid', $proid);
 		$this->assign('sourceid', $source);
 		$this->assign('source', $source_content);
+		$this->assign('companyname', I('companyname'));
 		$this->display();
 	}
 

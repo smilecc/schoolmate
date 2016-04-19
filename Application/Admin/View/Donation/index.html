@@ -46,6 +46,7 @@
 							<th>#</th>
 							<th>捐赠项目</th>
 							<th>捐赠来源</th>
+							<th>捐赠机构</th>
 							<th>录入人</th>
 							<th>录入时间</th>
 							<th>操作</th>
@@ -59,11 +60,12 @@
 								<td>
 									<switch name="vo['donation_source']" >
 										<case value="1"><span class="label label-primary">分会</span> {$vo['branch_name']}</case>
-										<case value="2"><span class="label label-info">个人</span> {$vo['donationrealname']}({$vo['donationusername']})</case>
-										<case value="3"><span class="label label-success">机构</span> {$vo['donationcompany']}</case>
+										<case value="2"><span class="label label-info">校友</span> {$vo['donationrealname']}({$vo['donationusername']})</case>
+										<case value="3"><span class="label label-success">非校友</span> {$vo['foreign_name']}</case>
 									<default />未知数据
 									</switch>	
 								</td>
+								<td>{$vo['donationcompany']}</td>
 								<td>{$vo['enderrealname']}</td>
 								<td>{$vo['createddate']}</td>
 								<td>

@@ -1,4 +1,5 @@
 var search = '';
+var year = -1;
 
 function SetBtnStatus(id, status){
 	status.bool = !status.bool;
@@ -49,6 +50,11 @@ $(function(){
     	Reload();
     });
 
+    $('#slt-year').change(function(){
+    	year = $(this).children('option:selected').val();
+    	Reload();
+    });
+
     // 搜索按钮
     $('#btn-search').click(function(){
     	search = $('#ipt-search').val();
@@ -89,6 +95,7 @@ function Reload(){
 		if(search != ''){
 			strload = '/index.php/Admin/Class/lists.html?page=' + page + '&search=' + search;
 		}
+		strload = strload + '&year=' + year;
 
 		$('#class-list').load(strload,function(){
 			$('#class-list-cover').height($('#class-table').height());
