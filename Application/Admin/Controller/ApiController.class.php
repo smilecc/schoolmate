@@ -142,13 +142,25 @@ class ApiController extends Controller {
 	}
 
 	public function delete_role_user($user_id, $role_id) {
-		if(M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->setField('role_id', '1') > 0)
-		{
-			$this->success('删除成功');
-		}
-		else
-		{
-			$this->error('删除失败');
+		if($role_id == 4) {
+			M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->delete();
+			if(M('User')->where('id=%d', $user_id)->delete())
+			{
+				$this->success('删除成功');
+			}
+			else
+			{
+				$this->error('删除失败');
+			}
+		} else {
+			if(M('ThinkRoleUser')->where('user_id=%d AND role_id=%d',$user_id, $role_id)->setField('role_id', '1') > 0)
+			{
+				$this->success('删除成功');
+			}
+			else
+			{
+				$this->error('删除失败');
+			}
 		}
 	}
 
@@ -314,7 +326,8 @@ class ApiController extends Controller {
 				'sex' 		=> I('sex'),
 				'phone'		=> I('phone'),
 				'email'		=> I('email'),
-				'birthday'	=> I('birthday')
+				'birthday'	=> I('birthday'),
+				'username'	=> I('username')
 				);
 
 			if(M('User')->where('id=%d', I('id'))->save($data))
@@ -328,7 +341,7 @@ class ApiController extends Controller {
 		}
 	}
 
-	public function add_user($realname, $sex, $classid)
+	public function add_user($realname, $sex, $classid, $isteacher=0)
 	{
 		if (IS_POST) {
 			$data[] = array(
@@ -337,6 +350,16 @@ class ApiController extends Controller {
 				'classid'	=> $classid,
 				'id'		=> ''
 				);
+
+			if ($isteacher == 1) {
+				$data[0]['roleid'] = 4;
+				$data[0]['username'] = I('username');
+
+				if ($data[0]['username'] == null || $data[0]['username'] == '') {
+					$this->error('工号不能为空');
+				}
+			}
+
 			D('User')->AddUser($data);
 			$this->success('操作成功');
 		}

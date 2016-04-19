@@ -14,9 +14,20 @@ class UserModel extends Model {
 				'IDcardNo'		 => $value['id']
 				);
 
+			$roleid = $value['roleid'];
+			if ($roleid == 4) {
+				$data['username'] = $value['username'];
+			}
+
 			$resid = $this->add($data);
 
-			$roleid = $value['roleid'];
+			if ($roleid == 4) {
+				$user = new \User\Model\UserModel();
+				$user->RegisterRandom($resid);
+				$user->ResetPwd($resid);
+			}
+
+			
 			$roleuser->add(array(
 					'role_id' => $roleid,
 					'user_id' => $resid
@@ -54,5 +65,23 @@ class UserModel extends Model {
 	public function FindUser($classid, $realname)
 	{
 		return $this->join("alumnus ON alumnus.class_id = ".$classid." AND `user`.id = alumnus.user_id")->where("realname = '%s'", $realname)->count();
+	}
+
+	public function FindTeacher($realname)
+	{
+		return $this->join('JOIN think_role_user ON `user`.id = think_role_user.user_id AND think_role_user.role_id = 4')->where("realname='%s'", $realname)->count();
+	}
+
+	public function GetTeacher()
+	{
+		return $this->join('JOIN think_role_user ON `user`.id = think_role_user.user_id AND think_role_user.role_id = 4')->select();
+	}
+
+	public function FindUsername($username)
+	{
+		$res = $this->where("username='%s'", $username)->count();
+		if ($res == 1) {
+			return true;
+		} else return false;
 	}
 }

@@ -7,19 +7,16 @@
 	<div class='panel panel-default'>
 		<div class='panel-heading'>
 			<i class='icon-table icon-large'></i>
-			Excel 数据导入
+			学生数据导入
 			<div class='panel-tools'>
 
 			</div>
 		</div>
 		<div class='panel-body'>
-			<if condition="$alert">
-				<div class="alert alert-success" role="alert">导入成功！请勿重复操作！</div>
-			</if>
 			<form id="form-upload" action="{:U('/Admin/Excel/upload')}" method="post">
 				<div class="form-group">
-					<label for="exampleInputFile">Excel 文件上传 <a href="#">点击下载模板文件</a></label>
-					<input type="file" id="file" name="file">
+					<label for="exampleInputFile">Excel 文件上传 <a href="#">点击下载学生数据模板文件</a></label>
+					<input type="file" name="file">
 					<p class="help-block">请按模板填写，并且上传为xls格式（Office Excel 2003）的文件</p>
 				</div>
 				<hr/>
@@ -28,6 +25,28 @@
 			</form>
 		</div>
 	</div>
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			<i class='icon-table icon-large'></i>
+			教职工数据导入
+			<div class='panel-tools'>
+
+			</div>
+		</div>
+		<div class='panel-body'>
+			<form id="form-uploadenployee" action="{:U('/Admin/Excel/upload_enployee')}" method="post">
+				<div class="form-group">
+					<label for="exampleInputFile">Excel 文件上传 <a href="#">点击下载教职工数据模板文件</a></label>
+					<input type="file" name="file">
+					<p class="help-block">请按模板填写，并且上传为xls格式（Office Excel 2003）的文件</p>
+				</div>
+				<hr/>
+				<button class="btn btn-primary" id="uploadenployee-btn" type="submit">确认上传</button>
+				<button class="btn btn-warring" type="button" onclick="$('#form-uploadenployee')[0].reset();">重置</button>
+			</form>
+		</div>
+	</div>
+
 	<script type="text/javascript">
 		$(function(){
 			$('#form-upload').submit(function(e){
@@ -43,9 +62,27 @@
 							$('#msgModal').modal('show');
                         }
                     });
-}else document.forms[0].reportValidity();
-return false;
+				}else document.forms[0].reportValidity();
+				return false;
+				});
+
+				$('#form-uploadenployee').submit(function(e){
+				$('#uploadenployee-btn').attr('disabled',true);
+				$('#uploadenployee-btn').text('正在上传');
+				if($(this)[0].checkValidity()) {
+					$(this).ajaxSubmit({
+						success:function(data){
+							$('#uploadenployee-btn').attr('disabled',false);
+							$('#uploadenployee-btn').text('确认上传');
+
+							$('#msg-text').html(data);
+							$('#msgModal').modal('show');
+                        }
+                    });
+				}else document.forms[0].reportValidity();
+				return false;
+				});
 });
-});
+
 </script>
 </block>

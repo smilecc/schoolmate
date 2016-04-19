@@ -16,6 +16,7 @@ class UserController extends BaseController {
 
 		$rolelist = M('ThinkRole')->select();
 
+		$this->assign('teacherlist', D('User')->GetTeacher());
 		$this->assign('rolelist',$rolelist);
 		$this->assign('weblist',$weblist);
 		$this->assign('classlist',$classlist);

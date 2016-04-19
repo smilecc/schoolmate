@@ -79,9 +79,8 @@ Class UserModel extends Model{
 		return $this->Random($userid,1);
 	}
 	
-	protected function RegisterRandom($userid)
+	public function RegisterRandom($userid)
 	{
-		trace($userid);
 		return $this->Random($userid,0);
 	}
 
@@ -107,7 +106,7 @@ Class UserModel extends Model{
 			);
 			return $resultArr;
 		}
-		$userinfo = $this->where('email="%s"',$email)->find();
+		$userinfo = $this->where('email="%s" OR username="%s"',$email, $email)->find();
 		$resultArr = array(
 			'status' => false
 			 );

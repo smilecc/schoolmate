@@ -102,7 +102,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">添加用户</h4>
+					<h4 class="modal-title" id="myModalLabel">添加用户权限</h4>
 				</div>
 				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/op_user_role')}">
 					<div class="modal-body">
@@ -235,11 +235,224 @@
 			</table>
 		</div>
 	</div>
-		<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
+
+	<!-- Create Modal -->
+	<div class="modal fade" id="createTeacherModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">新增教职工</h4>
+				</div>
+				<form class="form-horizontal" method="post" action="{:U('/Admin/Api/add_user')}">
+					<input type="hidden" name="classid" value="-1" />
+					<input type="hidden" name="isteacher" value="1">
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="ipt-add-realname" class="col-sm-2 control-label">姓名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-add-realname" name="realname" placeholder="姓名" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-realname" class="col-sm-2 control-label">工号</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-add-username" name="username" placeholder="工号（用户名）" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">性别</label>
+							<div class="col-sm-10">
+								<label class="radio-inline">
+									<input type="radio" name="sex" value="0" checked="checked"> 未知
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" value="1"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" value="2"> 女
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-change-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- ResetPassword Modal -->
+	<div class="modal fade" id="resetpwdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">提示</h4>
+				</div>
+				<div class="modal-body">
+					是否重置用户的密码？<br/>
+					重置密码后，用户的密码将变为123456。<br/>
+					请注意：你不能重置未注册用户的密码。
+				</div>
+				<div class="modal-footer">
+					<form method="post" action="{:U('/Admin/Api/reset_pwd')}">
+						<input type="hidden" id="ipt-reset" name="userid" value="-1" />
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-danger" id="btn-delete">确认</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Change Modal -->
+	<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改用户信息</h4>
+				</div>
+				<form class="form-horizontal" id="fm-cgclass" method="post" action="{:U('/Admin/Api/save_user')}">
+					<div class="modal-body">
+						<input type="hidden" id="ipt-cg-id" name="id" value="-1">
+						<div class="form-group">
+							<label for="ipt-cg-realname" class="col-sm-2 control-label">姓名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-realname" name="realname" placeholder="姓名" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-realname" class="col-sm-2 control-label">工号</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-username" name="username" placeholder="工号（用户名）" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">性别</label>
+							<div class="col-sm-10">
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-0" value="0"> 未知
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-1" value="1"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-2" value="2"> 女
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-phone" class="col-sm-2 control-label">电话</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-phone" name="phone" placeholder="电话">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-email" class="col-sm-2 control-label">邮箱</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-email" name="email" placeholder="邮箱">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-birthday" class="col-sm-2 control-label">生日</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-birthday" name="birthday" placeholder="生日">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-change-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			<i class='icon-group icon-large'></i>
+			教职工管理
+			<div class='panel-tools'>
+				<div class='btn-group'>
+					<a class='btn' data-toggle="modal" data-target="#createTeacherModal">
+						<i class='icon-plus'> 添加</i>
+					</a>
+				</div>
+				<div class='badge'><span id="records">{:count($teacherlist)}</span> 条记录</div>
+			</div>
+		</div>
+		<div class='panel-body' id="panel-class">
+			<table class="table table-striped table-bordered table-hover" id="dataTables-teacher">
+				<thead>
+					<tr>
+						<th>姓名</th>
+						<th>性别</th>
+						<th>工号(用户名)</th>
+						<th>电话</th>
+						<th>邮箱</th>
+						<th>生日</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="teacherlist" item="vo">
+						<tr class="odd gradeX">
+							<td id="realname-{$vo.user_id}">{$vo.realname}</td>
+							<td id="sex-{$vo.user_id}" value="{$vo['sex']}">
+								<switch name="vo['sex']" >
+									<case value="1">男</case>
+									<case value="2">女</case>
+									<default />未填
+								</switch>
+							</td>
+							<td id="username-{$vo.user_id}">{:$vo['username']}</td>
+							<td id="phone-{$vo.user_id}" value="{$vo['phone']}">{:$vo['phone']==null?'未填':$vo['phone']}</td>
+							<td id="email-{$vo.user_id}">{:$vo['email']}</td>
+							<td id="birthday-{$vo.user_id}" value="{$vo['birthday']}">{:$vo['birthday']=='0000-00-00'?'未填':substr($vo['birthday'],0,10)}</td>
+							<td userid="{$vo.user_id}">
+								<a class="a-change" href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改信息</a> 
+								<a class="a-resetpwd" href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 重置密码</a> 
+								<a class="web-delete" href="#" id="web-delete-{$vo.user_id}" role="4">
+									<i class="icon-remove"></i> 删除
+								</a>
+							</td>
+						</tr>
+					</foreach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
 	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			$('#dataTables-class').dataTable(cn_lang);
+			$('#dataTables-teacher').dataTable(cn_lang);
+			$('.a-change').click(function(){
+				var userid = $(this).parent().attr('userid');
+				$('#ipt-cg-id').val(userid);
+				$('#ipt-cg-realname').val($('#realname-' + userid).text());
+				$('#ipt-sex-' + $('#sex-' + userid).attr('value')).attr('checked', true);
+				$('#ipt-cg-phone').val($('#phone-' + userid).attr('value'));
+				$('#ipt-cg-email').val($('#email-' + userid).text());
+				$('#ipt-cg-birthday').val($('#birthday-' + userid).attr('value'));
+				$('#ipt-cg-username').val($('#username-' + userid).text());
+
+				$('#changeModal').modal('show');
+			});
+
+			$('.a-resetpwd').click(function(){
+				var userid = $(this).parent().attr('userid');
+				$('#ipt-reset').val(userid);
+				$('#resetpwdModal').modal('show');
+			});
 		});
 	</script>
 </block>

@@ -101,11 +101,11 @@ class ExcelController extends Controller {
 						}
 					}
 
+					D('User')->AddUser($insertList);
+					unset($insertList);
 					$countList[$student['attendandate'].'年 '.$student['classname']]++;
-
 				}
 			}
-			D('User')->AddUser($insertList);
 		}
 
 		$this->assign('errorlist', $errorList);
@@ -131,10 +131,70 @@ class ExcelController extends Controller {
 			$data = new \Spreadsheet_Excel_Reader();
 			$data->setOutputEncoding('utf-8');
 			$data->read($_SERVER['DOCUMENT_ROOT'].'/Public/Uploads/'.$info['file']['savepath'].$info['file']['savename']);
+			$user = D('User');
 
+			$errorList = array();
+			$insert_count = 0;
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
+				unset($insertList);
+				
+				$teacher['name'] = trim($data->sheets[0]['cells'][$i][1]);
+				$teacher['sex'] = trim($data->sheets[0]['cells'][$i][2]);
+				$teacher['username'] = trim($data->sheets[0]['cells'][$i][3]);
+				$teacher['roleid'] = 4;
 
+				if ($teacher['name'] == null || $teacher['name'] == '') {
+					continue;
+				}
+
+				if ($teacher['username'] == null || $teacher['username'] == '') {
+					$errorList[] = array(
+						'line' 	=> $i,
+						'name'	=> $teacher['name'],
+						'bec'	=> '工号为空'
+						);
+					continue;
+				}
+
+
+				switch ($teacher['sex']) {
+					case '男':
+						$teacher['sex'] = 1;
+						break;
+					case '女':
+						$teacher['sex'] = 2;
+						break;
+					default:
+						$teacher['sex'] = 0;
+						break;
+				}
+
+				$count = $user->FindTeacher($teacher['name']);
+				$isRepeat = ($data->sheets[0]['cells'][$i][4] == 1);
+
+				if($count == 0 OR ($isRepeat AND $count == 1)) {
+					$insertList[] = $teacher;
+
+					if($user->FindUsername($teacher['username'])) {
+						$errorList[] = array(
+							'line' 		=> $i,
+							'name'		=> $teacher['name'],
+							'bec'		=> '工号存在重复'
+							);
+						continue;
+					}
+				} else {
+					continue;
+				}
+
+				$user->AddUser($insertList);
+				$insert_count++;
 			}
+
+			echo '操作成功，本次共导入'.$insert_count.'记录';
+			print_r($errorlist);
+			$this->assign('errorlist', $errorList);
+			$this->display();
 		}
 	}
 
