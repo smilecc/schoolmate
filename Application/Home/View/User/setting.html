@@ -48,7 +48,7 @@
 									</label>
 									<label class="radio-inline">（只能提交一次）</label>
 								<else />
-									<label class="radio-inline">性别已经提交，无法修改</label>
+									<label class="radio-inline">{:($userinfo['sex'] == '1'?'男':'女')}（性别已经提交，无法修改）</label>
 								</if>
 							</div>
 						</div>
