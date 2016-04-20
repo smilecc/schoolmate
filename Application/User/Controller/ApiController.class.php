@@ -29,6 +29,7 @@ class ApiController extends Controller {
 
 	public function student_register($realname, $sex, $classid, $classmate, $username, $email, $password)
 	{
+		$realname = str_replace(' ','',$realname);
 		$user = D('User');
 		$check_res = $user->CheckStudent($realname, $sex, $classid, $classmate);
 

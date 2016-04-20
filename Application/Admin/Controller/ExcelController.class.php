@@ -49,7 +49,7 @@ class ExcelController extends BaseController {
 
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 				// $data->sheets[0]['cells'][$i][$j]
-				$student['name'] = trim($data->sheets[0]['cells'][$i][1]);
+				$student['name'] = str_replace(' ','',trim($data->sheets[0]['cells'][$i][1]));
 				$student['attendandate'] = trim($data->sheets[0]['cells'][$i][2]);
 				$student['classname'] = trim($data->sheets[0]['cells'][$i][3]);
 				$student['sex'] = trim($data->sheets[0]['cells'][$i][4]);
@@ -138,7 +138,7 @@ class ExcelController extends BaseController {
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 				unset($insertList);
 				
-				$teacher['name'] = trim($data->sheets[0]['cells'][$i][1]);
+				$teacher['name'] = str_replace(' ','',trim($data->sheets[0]['cells'][$i][1]));
 				$teacher['sex'] = trim($data->sheets[0]['cells'][$i][2]);
 				$teacher['username'] = trim($data->sheets[0]['cells'][$i][3]);
 				$teacher['roleid'] = 4;
