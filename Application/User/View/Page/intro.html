@@ -140,10 +140,6 @@
 		<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
 		<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
 		
-		<!--[if lte IE 9]>
-		<script src="__PUBLIC__/resources/bsie/html5shiv.min.js"></script>
-		<script src="__PUBLIC__/resources/bsie/html5shiv-printshiv.min.js"></script>
-		<![endif]-->
 
 		<script type="text/javascript">
 			var cn_lang = {
@@ -179,7 +175,6 @@
 				var classid = $(this).attr('classid');
 				$('#classdetail').load("{:U('/User/Page/classlist')}" + '?classid=' + classid);
 			});
-			$.bootstrapIE6(el)
 		</script>
 	</body>
 	</html>

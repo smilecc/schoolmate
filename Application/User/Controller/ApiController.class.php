@@ -9,7 +9,7 @@ class ApiController extends Controller {
 		$resArr = \User\Api\UserApi::Login($email,$password);
 		//echo json_encode($resArr);
 		if ($resArr['status']) {
-			$this->success('登录成功', '/User/Page/intro?time=' + time());
+			$this->success('登录成功', U('/User/Page/intro'));
 		} else {
 			$this->error($resArr['info']);
 		}

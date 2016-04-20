@@ -35,7 +35,7 @@
                 <input class='form-control' placeholder='用户名、工号或电子邮箱' name="email" type='text' required>
               </div>
               <div class='form-group'>
-                <input class='form-control' placeholder='密码' name="password" type='password' required>
+                <input class='form-control' pw="true" id="test" placeholder='密码' name="password" type='password' required>
               </div>
               <div class='text-center'>
                 <div class='checkbox'>
@@ -64,6 +64,13 @@
     <script src="__PUBLIC__/resources/admin/javascripts/application-985b892b.js" type="text/javascript"></script>
     <script src="//cdn.bootcss.com/jquery.form/3.51/jquery.form.min.js"></script>
     <!-- Google Analytics -->
+
+    <!--[if lte IE 9]>
+    <script src="__PUBLIC__/resources/bsie/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/resources/bsie/html5shiv-printshiv.min.js"></script>
+    <script src="__PUBLIC__/resources/bsie/html5input.js"></script>
+    <![endif]-->
+
     <script>
       var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

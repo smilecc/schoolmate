@@ -14,6 +14,7 @@ class PageController extends Controller {
         //         );
         //     M('ThinkAccess')->add($data);
         // }
+        (new \User\Api\UserApi)->Logout();
 		$this->display();
 	}
 
@@ -26,6 +27,8 @@ class PageController extends Controller {
 
 	public function intro()
 	{
+		$auto_login = new \User\Api\UserApi;
+		$auto_login->AutoLogin();
 		if (getbrowser() == 'IELOW') {
 			$this->redirect('/User/Page/intro_ie');
 		}
@@ -41,6 +44,8 @@ class PageController extends Controller {
 
 	public function intro_ie()
 	{
+		$auto_login = new \User\Api\UserApi;
+		$auto_login->AutoLogin();
 		$year_arr = M('Attendandate')->where('id in (SELECT attendandate_id FROM class)')->order('id desc')->select();
 		foreach ($year_arr as $key => &$value) {
 			$value['classlist'] = M('Class')->query("SELECT class.*,COUNT(alumnus.id) as usercount FROM class LEFT JOIN alumnus ON class.id = alumnus.class_id WHERE attendandate_id=".$value['id']." GROUP BY class.id");
