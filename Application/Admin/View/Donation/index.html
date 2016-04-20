@@ -30,6 +30,12 @@
 		<div class='panel-heading'>
 			<i class='icon-table icon-large'></i>
 			捐赠列表
+			<select id="slt-project" style="height: 30px;font-size: 12px;">
+				<option value="-1" {:($proid==-1?'selected="selected"':'')}>查看全部项目</option>
+				<foreach name="prolist" item="vo">
+					<option value="{$vo['id']}" {:($proid==$vo['id']?'selected="selected"':'')}>{$vo['donationname']}</option>
+				</foreach>
+			</select>
 			<div class='panel-tools'>
 				<div class='btn-group'>
 					<a class='btn' href="{:U('/Admin/Donation/create_project').'?time='.time()}">
@@ -96,6 +102,11 @@
 				var donationid = $(this).attr('donation');
 				$('#ipt-donationid').val(donationid);
 				$('#deleteModal').modal('show');
+			});
+
+			$('#slt-project').change(function(){
+				var proid = $(this).children('option:selected').val();
+				window.location.href = '{:U('/Admin/Donation/index')}' + '?projectid=' + proid; 
 			});
 		})
 	</script>

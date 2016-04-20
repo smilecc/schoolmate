@@ -36,10 +36,18 @@ class ApiController extends BaseController {
 
 	public function ClassDelete($id){
 		if(IS_POST){
-			if(D('Class')->DeleteClass($id)){
-				echo GetResult();
-			}else{
-				echo GetResult(false);
+			switch (D('Class')->DeleteClass($id)) {
+				case -1:
+					echo GetResult(false, '该班级已有校友相关数据，请先删除校友数据再进行操作');
+					break;
+				case 1:
+					echo GetResult();
+					break;
+				case 0:
+					echo GetResult(false);
+					break;
+				default:
+					break;
 			}
 		}
 	}
@@ -180,8 +188,28 @@ class ApiController extends BaseController {
 		$this->success('创建成功', '/Admin/Donation/create_project?time='.time());
 	}
 
+	public function donation_project_change($id, $name)
+	{
+		$res = M('DonationProject')->save(array(
+			'id'		   => $id,
+			'donationname' => $name
+			));
+
+		if ($res) {
+			$this->success('修改成功', '/Admin/Donation/create_project?time='.time());	
+		} else {
+			$this->error('修改失败，项目名无变化或系统错误');	
+		}
+	}
+
 	public function donation_project_delete($proid)
 	{
+		$detail_count = M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE donationproject_id = %d)', $proid)->count();
+		if ($detail_count != 0) {
+			$this->error('该项目下存在捐赠记录，请先删除相关捐赠记录再进行删除');
+			return;
+		}
+
 		M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE donationproject_id = %d)', $proid)->delete();
 		M('Donation')->where('donationproject_id = %d', $proid)->delete();
 		if(M('DonationProject')->where('id=%d', $proid)->delete())
@@ -263,6 +291,12 @@ class ApiController extends BaseController {
 
 	public function donation_delete($donationid)
 	{
+		$detail_count = M('DonationPersonDetail')->where('donation_id=%d', $donationid)->count();
+		if ($detail_count != 0) {
+			$this->error('该次捐赠下存在有未删除的捐赠明细，请先删除相关捐赠记录再进行删除');
+			return;
+		}
+
 		M('DonationPersonDetail')->where('donation_id=%d', $donationid)->delete();
 		if(M('Donation')->where('id=%d', $donationid)->delete())
 		{
@@ -300,6 +334,12 @@ class ApiController extends BaseController {
 
 	public function branch_delete($branchid)
 	{
+		$detail_count = M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE branch_id = %d)', $branchid)->count();
+		if ($detail_count != 0) {
+			$this->error('该分会下存在捐赠记录，请先删除相关捐赠记录再进行删除');
+			return;
+		}
+
 		M('DonationPersonDetail')->where('donation_id in (SELECT id FROM donation WHERE branch_id = %d)', $branchid)->delete();
 		M('Donation')->where('branch_id = %d', $branchid)->delete();
 		if(M('Branch')->where('id=%d', $branchid)->delete())

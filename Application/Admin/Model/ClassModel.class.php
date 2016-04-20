@@ -15,22 +15,20 @@ class ClassModel extends Model {
 
 	public function DeleteClass($classid)
 	{
-		$albumid = M('Album')->where('class_id = %d', $classid)->getField('id');
-		if($albumid != null) {
-			M('Albumphoto')->where('album_id',$albumid)->delete();
-			M('Album')->where('id=%d',$albumid)->delete();
-		}
+		$homeclass = new \Home\Model\ClassModel();
+		$member_count = count($homeclass->GetMember($classid));
 
-		M('Alumnus')->where('class_id=%d', $classid)->delete();
-		M('User')->where('`user`.id in (SELECT user_id FROM alumnus WHERE class_id = %d)', $classid)->setField('status', '2');
+		if ($member_count != 0) {
+			return -1;
+		}
 
 		if($this->where('id=%d',$classid)->delete() > 0)
 		{
-			return true;
+			return 1;
 		}
 		else
 		{
-			return false;
+			return 0;
 		}
 	}
 

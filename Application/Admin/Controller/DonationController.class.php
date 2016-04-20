@@ -3,14 +3,24 @@ namespace Admin\Controller;
 use Think\Controller;
 
 class DonationController extends BaseController {
-	public function index(){
-		$arr = M('Donation')->field('donation.*,donation_project.donationname as projectname,branch.branch_name,donationuser.username as donationusername,donationuser.realname as donationrealname,enderuser.realname as enderrealname')
+	public function index($projectid=-1){
+		$db = M('Donation')->field('donation.*,donation_project.donationname as projectname,branch.branch_name,donationuser.username as donationusername,donationuser.realname as donationrealname,enderuser.realname as enderrealname')
 		->join('LEFT JOIN `user` as donationuser ON donation.alumnus_id = donationuser.id')
 		->join('LEFT JOIN `user` as enderuser ON donation.enter_uid = enderuser.id')
 		->join('LEFT JOIN branch ON branch_id = branch.id')
-		->join('LEFT JOIN donation_project ON donation_project.id = donationproject_id')->select();
+		->join('LEFT JOIN donation_project ON donation_project.id = donationproject_id');
 
-		$this->assign('donationlist',$arr);
+		if ($projectid == -1) {
+			$arr = $db->select();
+		} else {
+			$arr = $db->where('donationproject_id=%d', $projectid)->select();
+		}
+
+		$proarr = M('DonationProject')->select();
+
+		$this->assign('proid', $projectid);
+		$this->assign('prolist', $proarr);
+		$this->assign('donationlist', $arr);
 		$this->display();
 	}
 

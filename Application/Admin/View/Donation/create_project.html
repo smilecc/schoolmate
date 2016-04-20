@@ -36,6 +36,36 @@
 		</div>
 	</div>
 
+	<!-- 修改项目Modal -->
+	<div class="modal fade" id="editProjectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改捐赠项目</h4>
+				</div>
+				<form class="form-horizontal" id="fm-addweb" method="post" action="{:U('/Admin/Api/donation_project_change')}">
+					<input type="hidden" name="id" value="-1" id="ipt-cg-id" />
+					<div class="modal-body">
+						
+						<div class="form-group">
+							<label for="ipt-classname" class="col-sm-2 control-label">项目名称</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-name" name="name" placeholder="项目名称" required>
+							</div>
+						</div>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-edit-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- 删除项目 -->
 	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -46,7 +76,7 @@
 						<h4 class="modal-title" id="myModalLabel">删除确认</h4>
 					</div>
 					<div class="modal-body">
-						确定要删除该项目吗？<br/>注意：<strong>这项操作将删除该项目下所有捐赠记录。</strong>
+						确定要删除该项目吗？<br/>注意：<strong>你只能删除捐赠记录为空的捐赠项目。</strong>
 					</div>
 					<input type="hidden" name="proid" id="ipt-delete-pro" value="-1" />
 					<div class="modal-footer">
@@ -156,6 +186,7 @@
 									<td>{$vo.donationname}</td>
 									<td>
 										<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-ok"></span> 选定该项目</a>
+										<a href="#" class="a-edit" proid="{$vo.id}" proname="{$vo.donationname}"><span class="glyphicon glyphicon-edit"></span> 修改</a>
 										<a href="#" class="a-remove" proid="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 									</td>
 								</tr>
@@ -182,6 +213,15 @@
 				var id = $(this).attr('proid');
 				$('#ipt-delete-pro').val(id);
 				$('#deleteModal').modal('show');
+			});
+
+			$('.a-edit').click(function(){
+				var proid = $(this).attr('proid');
+				var proname = $(this).attr('proname');
+
+				$('#ipt-cg-id').val(proid);
+				$('#ipt-cg-name').val(proname);
+				$('#editProjectModal').modal('show');
 			});
 
 			$('#slt-source').change(function(){
