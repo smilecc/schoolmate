@@ -26,6 +26,21 @@ class PageController extends Controller {
 
 	public function intro()
 	{
+		if (getbrowser() == 'IELOW') {
+			$this->redirect('/User/Page/intro_ie');
+		}
+
+		$year_arr = M('Attendandate')->where('id in (SELECT attendandate_id FROM class)')->order('id desc')->select();
+		foreach ($year_arr as $key => &$value) {
+			$value['classlist'] = M('Class')->query("SELECT class.*,COUNT(alumnus.id) as usercount FROM class LEFT JOIN alumnus ON class.id = alumnus.class_id WHERE attendandate_id=".$value['id']." GROUP BY class.id");
+		}
+		
+		$this->assign('yearlist', $year_arr);
+		$this->display();
+	}
+
+	public function intro_ie()
+	{
 		$year_arr = M('Attendandate')->where('id in (SELECT attendandate_id FROM class)')->order('id desc')->select();
 		foreach ($year_arr as $key => &$value) {
 			$value['classlist'] = M('Class')->query("SELECT class.*,COUNT(alumnus.id) as usercount FROM class LEFT JOIN alumnus ON class.id = alumnus.class_id WHERE attendandate_id=".$value['id']." GROUP BY class.id");

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>校友录 - {:C('SITE_NAME')}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="//cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 40px;
+      }
+		.jumbotron {
+			padding: 40px 0;
+			color: #fff;
+			text-align: center;
+			background-color: #020031;
+		}
+		#accordion2{
+			padding-top: 20px;
+		}
+		.class-detail.btn{
+			margin-right: 4px;
+		}
+    </style>
+
+
+  </head>
+
+  <body>
+<!-- Modal -->
+<div id="detailModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">班级人员详情</h3>
+  </div>
+  <div class="modal-body" id="classdetail">
+    正在加载...
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+  </div>
+</div>
+
+<div class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>校友录</h1>
+    <p class="lead">追忆往昔，通信你我</p>
+  </div>
+</div>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">{:C('SITE_NAME')}</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+            </ul>
+            <ul class="nav pull-right">
+            	<if condition="session('id') eq null">
+	            	<li><a href="{:U('/User/Page/login')}">登录</a></li>
+	            	<li><a href="{:U('/User/Page/register')}">注册</a></li>
+            	<else/>
+	            	<li class="dropdown">
+	            		<a href="#" class="dropdown-toggle" data-toggle="dropdown">{:cookie('username')} <b class="caret"></b></a>
+	            		<ul class="dropdown-menu">
+	            			<if condition="session('user_role') eq 1 OR session('user_role') eq 2">
+	            				<li><a href="#"><a href="{:U('/Home')}">我的班级</a></a></li>
+	            			</if>
+	            			<li><a href="{:U('/Home/User/setting')}">用户设置</a></li>
+	            			<if condition="session('user_role') eq 3">
+	            				<li><a href="{:U('/Admin')}">网站管理</a></li>
+	            			</if>
+	            			<li class="divider"></li>
+	            			<li><a href="{:U('/User/Api/logout')}">登出账号</a></li>
+	            		</ul>
+	            	</li>
+	            </if>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+	<div class="accordion" id="accordion2">
+	<volist name="yearlist" id="vo" >
+		  <div class="accordion-group">
+		    <div class="accordion-heading">
+		      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{$vo.id}">
+		        {$vo.attendan}年
+		      </a>
+		    </div>
+		    <div id="collapse{$vo.id}" class="accordion-body collapse {:($i==1?' in':'')}">
+		      <div class="accordion-inner">
+					<foreach name="vo['classlist']" item="cvo">
+						<a href="#" class="class-detail btn" classid="{$cvo.id}">{$cvo.classname} <span class="badge">{$cvo.usercount}人</span></a>
+					</foreach>
+		      </div>
+		    </div>
+		  </div>
+	  </volist>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="//cdn.bootcss.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+			var cn_lang = {
+				order: [[ 0, 'desc' ]],
+				    language: {
+					"sProcessing":   "处理中...",
+					"sLengthMenu":   "显示 _MENU_ 项结果",
+					"sZeroRecords":  "没有匹配结果",
+					"sInfo":         "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+					"sInfoEmpty":    "显示第 0 至 0 项结果，共 0 项",
+					"sInfoFiltered": "(由 _MAX_ 项结果过滤)",
+					"sInfoPostFix":  "",
+					"sSearch":       "搜索 ",
+					"sUrl":          "",
+					"sEmptyTable":     "表中数据为空",
+					"sLoadingRecords": "载入中...",
+					"sInfoThousands":  ",",
+					"oPaginate": {
+						"sFirst":    "首页",
+						"sPrevious": "上页",
+						"sNext":     "下页",
+						"sLast":     "末页"
+					},
+					"oAria": {
+						"sSortAscending":  ": 以升序排列此列",
+						"sSortDescending": ": 以降序排列此列"
+					}
+				}
+			};
+			$('.class-detail').click(function(){
+				$('#classdetail').text('正在加载...');
+				$('#detailModal').modal('show');
+				var classid = $(this).attr('classid');
+				$('#classdetail').load("{:U('/User/Page/classlist')}" + '?classid=' + classid);
+			});
+	</script>
+  </body>
+</html>

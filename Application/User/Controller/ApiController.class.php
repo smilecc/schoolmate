@@ -7,7 +7,12 @@ class ApiController extends Controller {
 	public function login($email,$password)
 	{
 		$resArr = \User\Api\UserApi::Login($email,$password);
-		echo json_encode($resArr);
+		//echo json_encode($resArr);
+		if ($resArr['status']) {
+			$this->success('登录成功', '/User/Page/intro?time=' + time());
+		} else {
+			$this->error($resArr['info']);
+		}
 	}
 
 	public function register($username,$password,$email)

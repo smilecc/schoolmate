@@ -12,6 +12,15 @@
 	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 	<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link href="__PUBLIC__/resources/home/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+
+	<!-- bsie 额外的 css 补丁文件 -->
+
+
+	<!--[if lte IE 9]>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/resources/bsie/bootstrap-ie6.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/resources/bsie/ie.css">
+	<![endif]-->
+
 	<title>校友录 - {:C('SITE_NAME')}</title>
 	<style type="text/css">
 		body{
@@ -130,6 +139,12 @@
 		</div>
 		<script src="//cdn.bootcss.com/datatables/1.10.10/js/jquery.dataTables.min.js"></script>
 		<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
+		
+		<!--[if lte IE 9]>
+		<script src="__PUBLIC__/resources/bsie/html5shiv.min.js"></script>
+		<script src="__PUBLIC__/resources/bsie/html5shiv-printshiv.min.js"></script>
+		<![endif]-->
+
 		<script type="text/javascript">
 			var cn_lang = {
 				order: [[ 0, 'desc' ]],
@@ -164,6 +179,7 @@
 				var classid = $(this).attr('classid');
 				$('#classdetail').load("{:U('/User/Page/classlist')}" + '?classid=' + classid);
 			});
+			$.bootstrapIE6(el)
 		</script>
 	</body>
 	</html>

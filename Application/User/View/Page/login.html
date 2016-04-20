@@ -70,28 +70,6 @@
       g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
       s.parentNode.insertBefore(g,s)}(document,'script'));
 
-      $(function(){
-        $('#form').submit(function(e){
-            if($(this)[0].checkValidity()) {
-                	$('#label-error').html('<i class="icon-spinner icon-spin"></i> ' + '正在加载');
-                	$('#label-error').removeClass('icon-remove label-error');
-                	$('#label-error').show();
-                    $(this).ajaxSubmit({
-                        success:function(data){
-                            var obj = JSON.parse(data);
-                            if(obj['status']){
-                                window.location.href = "/";
-                            } else {
-                            	$('#label-error').addClass('icon-remove label-error');
-                                $('#label-error').text(' ' + obj['info']);
-                                $('#label-error').show();
-                            }
-                        }
-                    });
-                }else document.forms[0].reportValidity();
-            return false;
-        });
-      });
     </script>
   </body>
 </html>
