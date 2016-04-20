@@ -69,7 +69,7 @@
 								<ul class="nav nav-pills" role="tablist">
 									<foreach name="vo['prolist']" item="pvo">
 										<li role="presentation">
-											<a href="#" class="class-detail" classid="{$cvo.id}" data-container="body" data-toggle="popover" data-placement="top" data-content="所捐现金{$pvo.cash}万元，物品{$pvo.goods}件" data-trigger="focus">
+											<a href="{:U('/Admin/Donation/index?projectid='.$pvo['id'])}" class="class-detail" classid="{$cvo.id}" data-container="body" data-toggle="tooltip" data-placement="top" title="所捐现金{$pvo.cash}万元，物品{$pvo.goods}件" data-trigger="focus">
 												{$pvo.donationname} <span class="badge"><i class="icon-money"></i> {$pvo.cash} <i class="icon-briefcase"></i> {$pvo.goods}</span>
 											</a>
 										</li>
@@ -82,4 +82,6 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">$(function () {$('[data-toggle="tooltip"]').tooltip()})</script>
 </block>
