@@ -176,16 +176,40 @@
 						<th>姓名</th>
 						<th>用户名</th>
 						<th>性别</th>
-						<th>电话</th>
+<!-- 						<th>电话</th>
 						<th>邮箱</th>
-						<th>生日</th>
+						<th>生日</th> -->
+						<th>所在城市</th>
+						<th>工作单位</th>
+<!-- 						<th>职务</th>
+						<th>职称</th>
+						<th>是否自主创业</th> -->
 						<th>操作</th>
 					</tr>
 				</thead>
 				<tbody>
 					<foreach name="classlist" item="vo">
 						<tr class="odd gradeX">
-							<td id="realname-{$vo.user_id}">{$vo.realname}</td>
+							<td id="realname-{$vo.user_id}"><a href="#" class="a-info" 
+							realname="{$vo.realname}"
+							sex="<switch name="vo['sex']" >
+									<case value="1">男</case>
+									<case value="2">女</case>
+									<default />未填
+								</switch>"
+							username="{$vo['username']}" 
+							email="{:$vo['email']}"
+							phone="{:$vo['phone']==null?'未填':$vo['phone']}"
+							birthday="{:$vo['birthday']=='0000-00-00'?'未填':substr($vo['birthday'],0,10)}"
+							city="{:$vo['city']==null?'未填':$vo['city']}"
+							workplace="{:$vo['workplace']==null?'未填':$vo['workplace']}"
+							positions="{:$vo['positions']==null?'未填':$vo['positions']}"
+							title="{:$vo['title']==null?'未填':$vo['title']}"
+							startabusiness="<switch name="vo['startabusiness']" >
+									<case value="1">是</case>
+									<case value="2">否</case>
+									<default />未填
+								</switch>">{$vo.realname}</a></td>
 							<td id="username-{$vo.user_id}" value="{$vo['username']}">{:($vo['username']==null?'未注册':$vo['username'])}</td>
 							<td id="sex-{$vo.user_id}" value="{$vo['sex']}">
 								<switch name="vo['sex']" >
@@ -194,9 +218,20 @@
 									<default />未填
 								</switch>
 							</td>
-							<td id="phone-{$vo.user_id}" value="{$vo['phone']}">{:$vo['phone']==null?'未填':$vo['phone']}</td>
+<!-- 							<td id="phone-{$vo.user_id}" value="{$vo['phone']}">{:$vo['phone']==null?'未填':$vo['phone']}</td>
 							<td id="email-{$vo.user_id}">{:$vo['email']}</td>
-							<td id="birthday-{$vo.user_id}" value="{$vo['birthday']}">{:$vo['birthday']=='0000-00-00'?'未填':substr($vo['birthday'],0,10)}</td>
+							<td id="birthday-{$vo.user_id}" value="{$vo['birthday']}">{:$vo['birthday']=='0000-00-00'?'未填':substr($vo['birthday'],0,10)}</td> -->
+							<td>{:$vo['city']==null?'未填':$vo['city']}</td>
+							<td>{:$vo['workplace']==null?'未填':$vo['workplace']}</td>
+<!-- 							<td>{:$vo['positions']==null?'未填':$vo['positions']}</td>
+							<td>{:$vo['title']==null?'未填':$vo['title']}</td> -->
+<!-- 							<td>
+								<switch name="vo['startabusiness']" >
+									<case value="1">是</case>
+									<case value="2">否</case>
+									<default />未填
+								</switch>
+							</td> -->
 							<td userid="{$vo.user_id}">
 								<a class="a-change" href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改信息</a> 
 								<a class="a-resetpwd" href="#"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span> 重置密码</a> 
@@ -239,6 +274,52 @@
 				$('#ipt-delete-id').val(userid);
 				$('#deleteModal').modal('show');
 			});
+
+			$('.a-info').click(function(){
+				var html = '';
+				var attr = $(this).get(0).attributes;
+				for (var i = 0; i < attr.length; i++) {
+					var res = getAttrName(attr[i].name);
+
+					if (res == false) {
+						continue;
+					} else {
+						html += '<p><strong>' + res + '：</strong>' + attr[i].value + '</p>';
+					}
+				};
+
+				$('#msg-text').html(html);
+				$('#msgModal').modal('show');
+			});
+
+			function getAttrName(attr) {
+				switch(attr) {
+					case 'realname':
+						return '姓名';
+					case 'email':
+						return '邮箱';
+					case 'username':
+						return '用户名';
+					case 'sex':
+						return '性别';
+					case 'phone':
+						return '电话';
+					case 'birthday':
+						return '生日';
+					case 'city':
+						return '所在城市';
+					case 'workplace':
+						return '工作单位';
+					case 'positions':
+						return '职务';
+					case 'title':
+						return '职称';
+					case 'startabusiness':
+						return '是否自主创业';
+					default:
+						return false;
+				}
+			}
 		})
 	</script>
 </block>

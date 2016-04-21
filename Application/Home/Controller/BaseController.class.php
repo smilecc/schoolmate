@@ -23,7 +23,7 @@ class BaseController extends Controller {
 		}
 		else
 		{
-			$this->error('对不起，你没有登录', '/User/Page/intro');
+			$this->redirect('/User/Page/intro');
 		}
 	}
 }

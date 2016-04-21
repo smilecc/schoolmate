@@ -43,10 +43,10 @@ class ApiController extends Controller {
 			if ($res_arr['status']) {
 				$this->success($res_arr['info'],'/User/Page/login');
 			} else {
-				$this->error($res_arr['info']);
+				$this->error($res_arr['info'], '/User/Page/register/');
 			}
 		} else {
-			$this->error($check_res['info']);
+			$this->error($check_res['info'],  '/User/Page/register/');
 		}
 	}
 

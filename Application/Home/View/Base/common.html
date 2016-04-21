@@ -1,3 +1,18 @@
+<!--
+      ___           ___           ___     
+     /\  \         /\  \         /\__\    
+    /::\  \       /::\  \       /::|  |   
+   /:/\:\  \     /:/\:\  \     /:|:|  |   
+  /:/  \:\  \   /::\~\:\  \   /:/|:|  |__ 
+ /:/__/ \:\__\ /:/\:\ \:\__\ /:/ |:| /\__\
+ \:\  \  \/__/ \/__\:\/:/  / \/__|:|/:/  /
+  \:\  \            \::/  /      |:/:/  / 
+   \:\  \           /:/  /       |::/  /  
+    \:\__\         /:/  /        /:/  /   
+     \/__/         \/__/         \/__/    
+
+developed by can / 2016.04 / smilexcc@gmail.com
+-->
 <!DOCTYPE HTML>
 <php>
 	//$auto_login = new \User\Api\UserApi;
@@ -8,7 +23,27 @@
 	<include file="Public/head"/>
 </head>
 <body>
-
+<!--[if lte IE 9]>
+<div style="display: block;" id="browser_ie">
+    <div class="brower_info">
+        <div class="notice_info">
+            <p>你的浏览器版本过低，可能导致网站不能正常访问！<br>为了你能正常使用网站功能，请使用这些浏览器。</p></div>
+            <div class="browser_list">
+            <span><a href="http://se.360.cn/" target="_blank"><img src="__PUBLIC__/resources/ieimages/360.png"><br>360浏览器
+            </a></span>
+            <span><a href="http://www.firefox.com.cn/download/" target="_blank"><img src="__PUBLIC__/resources/ieimages/firefox.png"><br>Firefox
+            </a></span>
+            <span>
+            <a href="http://www.google.cn/chrome/browser/index.html?hl=zh-CN&standalone=1" target="_blank">
+            <img src="__PUBLIC__/resources/ieimages/chrome.png"><br>Chrome
+            </a>
+            </span>
+            <span><a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank"><img src="__PUBLIC__/resources/ieimages/ie.png"><br>IE9及以上
+            </a></span>
+            </div>
+    </div>
+</div>
+<![endif]-->
 		<div id="wrapper">
 			<!-- 头部 -->
 			<include file="Public/header"/>

@@ -3,6 +3,59 @@
 <block name="header-title">班级通讯录 <small>我的同学们</small></block>
 <block name="body">
 	<script type="text/javascript">$('#li-class').addClass('active')</script>
+
+	<!-- Change Modal -->
+	<div class="modal fade" id="changeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">修改用户信息</h4>
+				</div>
+				<form class="form-horizontal" id="fm-cgclass" method="post" action="{:U('/Home/Api/save_user')}">
+					<div class="modal-body">
+						<input type="hidden" id="ipt-cg-id" name="id" value="-1">
+						<div class="form-group">
+							<label for="ipt-cg-realname" class="col-sm-2 control-label">姓名</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-realname" name="realname" placeholder="姓名" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">性别</label>
+							<div class="col-sm-10">
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-0" value="0"> 未知
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-1" value="1"> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="ipt-sex-2" value="2"> 女
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-phone" class="col-sm-2 control-label">电话</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-phone" name="phone" placeholder="电话">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="ipt-cg-birthday" class="col-sm-2 control-label">生日</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" id="ipt-cg-birthday" name="birthday" placeholder="生日">
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary" id="btn-change-submit">提交</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			班级成员列表
@@ -17,23 +70,46 @@
 							<th>电话</th>
 							<th>邮箱</th>
 							<th>生日</th>
+							<th>所在城市</th>
+							<th>工作单位</th>
+							<th>职务</th>
+							<th>职称</th>
+							<th>是否自主创业</th>
+							<if condition="session('user_role') eq 2">
+								<th>操作</th>
+							</if>
 						</tr>
 					</thead>
 					<tbody>
 						<foreach name="list" item="vo">
 							<tr class="odd gradeX">
-								<td>{$vo.realname}</td>
-								<td>
+								<td id="realname-{$vo.user_id}">{$vo.realname}</td>
+								<td id="sex-{$vo.user_id}" value="{$vo['sex']}">
 									<switch name="vo['sex']" >
 										<case value="1">男</case>
 										<case value="2">女</case>
 										<default />未填
 									</switch>
 								</td>
-								<td>{:$vo['phone']==null?'未填':$vo['phone']}</td>
+								<td id="phone-{$vo.user_id}" value="{$vo['phone']}">{:$vo['phone']==null?'未填':$vo['phone']}</td>
 								<td>{:$vo['email']}</td>
-								<td>{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
-							</tr>
+								<td id="birthday-{$vo.user_id}" value="{$vo['birthday']}">{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
+								<td>{:$vo['city']==null?'未填':$vo['city']}</td>
+								<td>{:$vo['workplace']==null?'未填':$vo['workplace']}</td>
+								<td>{:$vo['positions']==null?'未填':$vo['positions']}</td>
+								<td>{:$vo['title']==null?'未填':$vo['title']}</td>
+								<td>
+									<switch name="vo['startabusiness']" >
+										<case value="1">是</case>
+										<case value="2">否</case>
+										<default />未填
+									</switch>
+								</td>
+								<if condition="session('user_role') eq 2">
+									<td userid="{$vo.user_id}">
+										<a class="a-change" href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> 修改基础信息</a>
+									</td>
+								</if>
 						</foreach>
 					</tbody>
 				</table>
@@ -46,6 +122,17 @@
 	<script src="//cdn.bootcss.com/datatables/1.10.10/js/dataTables.bootstrap.js"></script>
 	<script>
 		$(document).ready(function () {
+			$('.a-change').click(function(){
+				var userid = $(this).parent().attr('userid');
+				$('#ipt-cg-id').val(userid);
+				$('#ipt-cg-realname').val($('#realname-' + userid).text());
+				$('#ipt-sex-' + $('#sex-' + userid).attr('value')).attr('checked', true);
+				$('#ipt-cg-phone').val($('#phone-' + userid).attr('value'));
+				$('#ipt-cg-birthday').val($('#birthday-' + userid).attr('value'));
+
+				$('#changeModal').modal('show');
+			});
+
 			$('#dataTables-activity').dataTable({
 				order: [[ 0, 'desc' ]],
 				    language: {
@@ -75,4 +162,5 @@
 			});
 		});
 	</script>
+
 </block>

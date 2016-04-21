@@ -19,7 +19,12 @@ class UserController extends Controller {
 		$data = array(
 			'id'		=> session('id'),
 			'phone'  	=> $phone,
-			'birthday' 	=> $birthday
+			'birthday' 	=> $birthday,
+			'city'		=> I('city'),
+			'workplace' => I('workplace'),
+			'positions'	=> I('positions'),
+			'title'		=> I('title'),
+			'startabusiness' => I('startabusiness')
 			);
 		if ($sex != null && ($sex == 1 || $sex == 2)) {
 			$data['sex'] = $sex;

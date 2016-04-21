@@ -39,17 +39,12 @@
 						<div class="form-group">
 							<label for="inputPassword3" class="col-sm-2 control-label">性别</label>
 							<div class="col-sm-10">
-								<if condition="$userinfo['sex'] eq 0">
-									<label class="radio-inline">
-										<input type="radio" name="sex" id="inlineRadio1" value="1"> 男
-									</label>
-									<label class="radio-inline">
-										<input type="radio" name="sex" id="inlineRadio2" value="2"> 女
-									</label>
-									<label class="radio-inline">（只能提交一次）</label>
-								<else />
-									<label class="radio-inline">{:($userinfo['sex'] == '1'?'男':'女')}（性别已经提交，无法修改）</label>
-								</if>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="inlineRadio1" value="1" {:($userinfo['sex'] == '1'?'checked="checked"':'')}> 男
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="sex" id="inlineRadio2" value="2" {:($userinfo['sex'] == '2'?'checked="checked"':'')}> 女
+								</label>
 							</div>
 						</div>
 						<div class="form-group">
@@ -63,6 +58,41 @@
 							<div class="col-sm-10">
 								<input type="text" class="form-control" placeholder="出生日期" name="birthday" value="{$userinfo.birthday}">
 								(请以0000-00-00为格式，如2015年1月1日则填写2015-01-01)
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">所在城市</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="所在城市" name="city" value="{$userinfo.city}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">工作单位</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="工作单位" name="workplace" value="{$userinfo.workplace}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">职务</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="职务" name="positions" value="{$userinfo.positions}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">职称</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" placeholder="职称" name="title" value="{$userinfo.title}">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputPassword3" class="col-sm-2 control-label">自主创业</label>
+							<div class="col-sm-10">
+								<label class="radio-inline">
+									<input type="radio" name="startabusiness" id="inlineRadio3" value="1" {:($userinfo['startabusiness'] == '1'?'checked="checked"':'')}> 是
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="startabusiness" id="inlineRadio4" value="2" {:($userinfo['startabusiness'] == '2'?'checked="checked"':'')}> 否
+								</label>
 							</div>
 						</div>
 						<div class="form-group">

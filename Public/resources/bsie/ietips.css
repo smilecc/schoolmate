@@ -1,0 +1,21 @@
+#browser_ie {
+	background-color: #f6f6b4; display: none; height: 75px; color: #000; font-size: 15px
+}
+#browser_ie .brower_info {
+	margin: 0px auto; width: 800px; padding-top: 9px
+}
+#browser_ie .brower_info .notice_info {
+	position: relative; margin-top: 5px; float: left
+}
+#browser_ie .brower_info .notice_info p {
+	text-align: left; line-height: 25px; width: 400px; display: inline-block; margin: 0px; padding: 0px;
+}
+#browser_ie .browser_list {
+	position: relative; float: left
+}
+#browser_ie .browser_list img {
+	width: 40px; height: 40px
+}
+#browser_ie .browser_list span {
+	text-align: center; width: 80px; display: inline-block
+}

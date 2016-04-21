@@ -31,6 +31,27 @@ class ApiController extends Controller {
 		}
 	}
 
+	public function save_user()
+	{
+		if (IS_POST) {
+			$data = array(
+				'realname' 	=> I('realname'),
+				'sex' 		=> I('sex'),
+				'phone'		=> I('phone'),
+				'birthday'	=> I('birthday'),
+				);
+
+			if(M('User')->where('id=%d', I('id'))->save($data))
+			{
+				$this->success('修改成功');
+			}
+			else
+			{
+				$this->error('修改失败，未修改或系统错误');
+			}
+		}
+	}
+
 	public function upload_photo(){
 		$upload = new \Think\Upload();// 实例化上传类
 		$upload->maxSize   =     10145728 ;// 设置附件上传大小

@@ -8,6 +8,11 @@
 					<th>电话</th>
 					<th>邮箱</th>
 					<th>生日</th>
+					<th>所在城市</th>
+					<th>工作单位</th>
+					<th>职务</th>
+					<th>职称</th>
+					<th>是否自主创业</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -24,6 +29,17 @@
 						<td>{:$vo['phone']==null?'未填':$vo['phone']}</td>
 						<td>{:$vo['email']}</td>
 						<td>{:$vo['birthday']=='0000-00-00 00:00:00'?'未填':substr($vo['birthday'],0,10)}</td>
+						<td>{:$vo['city']==null?'未填':$vo['city']}</td>
+						<td>{:$vo['workplace']==null?'未填':$vo['workplace']}</td>
+						<td>{:$vo['positions']==null?'未填':$vo['positions']}</td>
+						<td>{:$vo['title']==null?'未填':$vo['title']}</td>
+						<td>
+							<switch name="vo['startabusiness']" >
+								<case value="1">是</case>
+								<case value="2">否</case>
+								<default />未填
+							</switch>
+						</td>
 					</tr>
 				</foreach>
 			</tbody>

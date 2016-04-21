@@ -129,7 +129,7 @@
 			if(select_attendan == -1) {
 				$('#slt-classlist').hide();
 			} else {
-				CAJAX('/index.php/User/Api/get_class',{
+				CAJAX('/class_community.php/User/Api/get_class',{
 					attendandate_id: select_attendan
 				},function(data){
 					console.log(data);

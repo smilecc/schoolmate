@@ -56,9 +56,10 @@ class DonationController extends BaseController {
 		$this->display();
 	}
 
-	public function create_project() {
+	public function create_project($mode=0) {
 		$pro_arr = M('DonationProject')->order('id desc')->select();
 		$branch_arr = M('Branch')->order('id desc')->select();
+		$this->assign('mode', $mode);
 		$this->assign('branchlist',$branch_arr);
 		$this->assign('prolist', $pro_arr);
 		$this->display();

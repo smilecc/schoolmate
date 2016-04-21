@@ -91,9 +91,9 @@ function Reload(){
 	$('#cls-reload').children().addClass('icon-spin');
 
 	setTimeout(function(){
-		var strload = '/index.php/Admin/Class/lists.html?page=' + page;
+		var strload = '/class_community.php/Admin/Class/lists.html?page=' + page;
 		if(search != ''){
-			strload = '/index.php/Admin/Class/lists.html?page=' + page + '&search=' + search;
+			strload = '/class_community.php/Admin/Class/lists.html?page=' + page + '&search=' + search;
 		}
 		strload = strload + '&year=' + year;
 
@@ -126,7 +126,7 @@ function showDeleteModal(id){
 			bool: false
 		});
 		$.ajax({
-			url:'/index.php/Admin/Api/ClassDelete',
+			url:'/class_community.php/Admin/Api/ClassDelete',
 			type:'POST',
 			data:{
 				'id':id

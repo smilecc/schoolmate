@@ -1,7 +1,11 @@
 <extend name="Base/common"/>
 <block name="navtab">
-  <li><a href="#">新增捐赠</a></li>
-  <li class='active'><a href="#">选择捐赠项目</a></li>
+	<if condition="$mode eq 0">
+		<li><a href="#">新增捐赠</a></li>
+		<li class='active'><a href="#">选择捐赠项目</a></li>
+	<else />
+		<li class='active'><a href="#">捐赠项目管理</a></li>
+	</if>
 </block>
 <block name="body">
 <script src="//cdn.bootcss.com/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
@@ -185,7 +189,9 @@
 									<td>{$vo.id}</td>
 									<td>{$vo.donationname}</td>
 									<td>
-										<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-ok"></span> 选定该项目</a>
+										<if condition="$mode eq 0">
+											<a href="#" class="select-a" proid="{$vo.id}"><span class="glyphicon glyphicon-ok"></span> 选定该项目</a>
+										</if>
 										<a href="#" class="a-edit" proid="{$vo.id}" proname="{$vo.donationname}"><span class="glyphicon glyphicon-edit"></span> 修改</a>
 										<a href="#" class="a-remove" proid="{$vo.id}"><span class="glyphicon glyphicon-remove"></span> 删除</a>
 									</td>

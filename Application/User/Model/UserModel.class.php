@@ -23,6 +23,10 @@ Class UserModel extends Model{
 		$backup_user = null; // 防止出现同名用户抢占性别不确定用户的情况
 		$res_arr = array('userid' => -1);
 
+		if ($sex != 1 && $sex != 2) {
+			return GetResult(false, '性别数据有误');
+		}
+		
 		foreach ($class_arr as $key => $value) {
 			// 查找姓名
 			if ($value['realname'] == $realname) {
@@ -31,15 +35,9 @@ Class UserModel extends Model{
 					continue;
 				}
 
-				if($value['sex'] == $sex) {
-					$find_user = true;
-					$res_arr['userid'] = $value['id'];
-					continue;
-				}
-
-				if ($value['sex'] == 0) {
-					$backup_user = $value['id'];
-				}
+				$find_user = true;
+				$this->where('id=%d', $value['id'])->setField('sex', $sex);
+				$res_arr['userid'] = $value['id'];
 				continue;
 			}
 
@@ -47,12 +45,6 @@ Class UserModel extends Model{
 			if($value['realname'] == $classmate) {
 				$find_classmate = true;
 			}
-		}
-
-		// 找不到相同性别 若存在未知性别 则替补
-		if($find_user == false && $backup_user != null) {
-			$res_arr['userid'] = $backup_user;
-			$find_user = true;
 		}
 
 		if($find_user) {
@@ -175,7 +167,7 @@ Class UserModel extends Model{
 		{
 			if($userinfo['username'] == $username)
 			{
-				$resultArr['info'] = '用户已存在';
+				$resultArr['info'] = '用户名已存在';
 			}
 			else 
 			{
