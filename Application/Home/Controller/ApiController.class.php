@@ -24,7 +24,7 @@ class ApiController extends Controller {
 	public function delete_activity($aid) {
 		if(IS_POST) {
 			if(M('Activity')->where('id=%d', $aid)->delete() > 0) {
-				$this->success('删除成功', '/Home/Class/activity?time='.time());
+				$this->success('删除成功', U('/Home/Class/activity?time='.time()));
 			} else {
 				$this->error('删除失败');
 			}
@@ -77,7 +77,7 @@ class ApiController extends Controller {
 				);
 			M('Albumphoto')->add($photo);
 
-			$this->success('上传成功', '/Home/Class/album?time='.time());
+			$this->success('上传成功', U('/Home/Class/album?time='.time()));
 		}
 	}
 
@@ -86,7 +86,7 @@ class ApiController extends Controller {
 		if($count == 0) {
 			$this->error('删除失败，系统繁忙，请稍后再试');
 		} else {
-			$this->success('删除成功', '/Home/Class/album?time='.time());
+			$this->success('删除成功', U('/Home/Class/album?time='.time()));
 		}
 	}
 }

@@ -185,7 +185,7 @@ class ApiController extends BaseController {
 		$resid = M('DonationProject')->add(array(
 			'donationname' => $pro_name
 			));
-		$this->success('创建成功', '/Admin/Donation/create_project?time='.time());
+		$this->success('创建成功', U('/Admin/Donation/create_project?time='.time()));
 	}
 
 	public function donation_project_change($id, $name)
@@ -196,7 +196,7 @@ class ApiController extends BaseController {
 			));
 
 		if ($res) {
-			$this->success('修改成功', '/Admin/Donation/create_project?time='.time());	
+			$this->success('修改成功', U('/Admin/Donation/create_project?time='.time()));	
 		} else {
 			$this->error('修改失败，项目名无变化或系统错误');	
 		}
@@ -214,7 +214,7 @@ class ApiController extends BaseController {
 		M('Donation')->where('donationproject_id = %d', $proid)->delete();
 		if(M('DonationProject')->where('id=%d', $proid)->delete())
 		{
-			$this->success('删除成功', '/Admin/Donation/create_project?time='.time());
+			$this->success('删除成功', U('/Admin/Donation/create_project?time='.time()));
 		}
 		else
 		{
@@ -285,7 +285,7 @@ class ApiController extends BaseController {
 				$value['donation_id'] = $donation_id;
 			}
 			M('DonationPersonDetail')->addAll($property_arr);
-			$this->success('提交成功', '/Admin/Donation?time='.time());
+			$this->success('提交成功', U('/Admin/Donation/index?time='.time()));
 		}
 	}
 
@@ -300,7 +300,7 @@ class ApiController extends BaseController {
 		M('DonationPersonDetail')->where('donation_id=%d', $donationid)->delete();
 		if(M('Donation')->where('id=%d', $donationid)->delete())
 		{
-			$this->success('删除成功', '/Admin/Donation/?time='.time());
+			$this->success('删除成功', U('/Admin/Donation/index?time='.time()));
 		}
 		else
 		{
@@ -313,7 +313,7 @@ class ApiController extends BaseController {
 		M('Branch')->add(array(
 			'branch_name' => $name
 			));
-		$this->success('创建成功', '/Admin/Donation/branch?time='.time());
+		$this->success('创建成功', U('/Admin/Donation/branch?time='.time()));
 	}
 
 	public function branch_change($id, $name)
@@ -324,7 +324,7 @@ class ApiController extends BaseController {
 
 		if(M('Branch')->where('id=%d', $id)->save($data))
 		{
-			$this->success('修改成功', '/Admin/Donation/branch?time='.time());
+			$this->success('修改成功', U('/Admin/Donation/branch?time='.time()));
 		}
 		else
 		{
@@ -344,7 +344,7 @@ class ApiController extends BaseController {
 		M('Donation')->where('branch_id = %d', $branchid)->delete();
 		if(M('Branch')->where('id=%d', $branchid)->delete())
 		{
-			$this->success('删除成功', '/Admin/Donation/branch?time='.time());
+			$this->success('删除成功', U('/Admin/Donation/branch?time='.time()));
 		}
 		else
 		{

@@ -32,7 +32,7 @@ class ExcelController extends BaseController {
 			//$res = array('status' => true, 'info' => '上传成功');
 			$data = new \Spreadsheet_Excel_Reader();
 			$data->setOutputEncoding('utf-8');
-			$data->read($_SERVER['DOCUMENT_ROOT'].'/Public/Uploads/'.$info['file']['savepath'].$info['file']['savename']);
+			$data->read($_SERVER['DOCUMENT_ROOT'].$info['file']['savepath'].$info['file']['savename']);
 
 			// 对班级和入学年份进行存在性认证
 			$tempClassList = D('Class')->GetAll();
@@ -130,7 +130,7 @@ class ExcelController extends BaseController {
 		}else{// 上传成功
 			$data = new \Spreadsheet_Excel_Reader();
 			$data->setOutputEncoding('utf-8');
-			$data->read($_SERVER['DOCUMENT_ROOT'].'/Public/Uploads/'.$info['file']['savepath'].$info['file']['savename']);
+			$data->read($_SERVER['DOCUMENT_ROOT'].$info['file']['savepath'].$info['file']['savename']);
 			$user = D('User');
 
 			$errorList = array();
@@ -215,10 +215,11 @@ class ExcelController extends BaseController {
 			//$res = array('status' => true, 'info' => '上传成功');
 			$data = new \Spreadsheet_Excel_Reader();
 			$data->setOutputEncoding('utf-8');
-			$data->read($_SERVER['DOCUMENT_ROOT'].'/Public/Uploads/'.$info['file']['savepath'].$info['file']['savename']);
+			$data->read($_SERVER['DOCUMENT_ROOT'].$info['file']['savepath'].$info['file']['savename']);
 
 			$attendanMap = D('Attendandate')->GetMap();
 			$errorList = array();
+			$insertCount = 0;
 
 			for ($i = 2; $i <= $data->sheets[0]['numRows']; $i++) {
 				// $data->sheets[0]['cells'][$i][$j]
@@ -233,20 +234,25 @@ class ExcelController extends BaseController {
 					$student['attendan'] = $attendan;
 					$student['line'] = $i;
 					$errorList[] = $student;
+				} else {
+					if(M('Class')->where("attendandate_id=%d AND classname='%s'", $student['attendandate_id'], $student['classname'])->count() != 0) {
+						continue;
+					}
+
+					D('Class')->CreateClass($student);
+					$insertCount++;
 				}
 			}
-			if (count($errorList) != 0) {
-				echo json_encode(array(
-					'status' => 2, 
-					'info'   => '存在不符的年份数据，没有任何数据被导入，请修改正确后重新导入即可',
-					'lines'	 => $errorList
-					));
-			} else {
-				foreach ($insertList as $key => $value) {
-					D('Class')->CreateClass($value);
+			$res = array(
+				'info' => '本次导入'.$insertCount.'条数据'
+				);
+
+			if(count($errorList) != 0) {
+				foreach($errorList as $value){
+					$res['info'] = $res['info'].'<br/>第'.$value['line'].'行，学年不存在';
 				}
-				echo json_encode(array('status' => 0, 'info' => '操作成功'));
 			}
+			echo json_encode($res);
 		}
 	}
 }

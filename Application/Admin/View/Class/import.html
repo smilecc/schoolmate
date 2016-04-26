@@ -41,24 +41,7 @@
 							console.log(data);
 							var obj = JSON.parse(data);
 
-							switch(obj['status'])
-							{
-								case 0:
-								window.location.href = '{:U('/Admin/Class/import?alert=1')}';
-								break;
-                            	case 1: // Upload file error
-                            	msg(obj['info']);
-                            	$('#form-upload')[0].reset();
-                            	break;
-                            	case 2: // excel parse error
-                            	var lineObj = obj['lines'];
-                            	var alertText = obj['info'] + '<br/>存在以下问题，<strong>请修复问题后重新上传</strong>：<br/>';
-                            	for (var i = lineObj.length - 1; i >= 0; i--) {
-                            		alertText += ('第' + lineObj[i].line + '行 找不到学年 - <strong>'+ lineObj[i].attendan + lineObj[i].classname +'</strong><br/>')
-                            	};
-                            	msg(alertText);
-                            	break;
-                            }
+							msg(obj['info']);
                         }
                     });
 }else document.forms[0].reportValidity();

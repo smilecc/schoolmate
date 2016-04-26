@@ -19,7 +19,7 @@ $(function(){
 			if(roleid == -1){
 				alert('请选择一个选项');
 			} else {
-				CAJAX('/class_community.php/Admin/Api/op_user_role',{
+				CAJAX('/index.php/Admin/Api/op_user_role',{
 						user_id: userid,
 						role_id: roleid,
 						type: 'edit',
@@ -44,7 +44,7 @@ $(function(){
 		if(select_attendan == -1) {
 			$('#role-div-class').hide();
 		} else {
-			CAJAX('/class_community.php/Admin/Api/get_class',{
+			CAJAX('/index.php/Admin/Api/get_class',{
 				attendandate_id: select_attendan
 			},function(data){
 				console.log(data);
@@ -78,7 +78,7 @@ $(function(){
 		} else {
 
 			CAJAX(
-				'/class_community.php/Admin/Api/get_student',
+				'/index.php/Admin/Api/get_student',
 			{
 				class_id: select_class
 			},
@@ -113,7 +113,7 @@ $(function(){
 });
 
 // CAJAX(
-// 	'/class_community.php/Admin/Api/op_user_role',
+// 	'/index.php/Admin/Api/op_user_role',
 // 	{
 // 		user_id: userid,
 
